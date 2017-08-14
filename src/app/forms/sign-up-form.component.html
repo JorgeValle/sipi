@@ -1,0 +1,27 @@
+<form class="ui form">
+	<div class="field">
+		<label for="name">Nombre</label>
+		<input type="text" name="name" placeholder="Name" [(ngModel)]="user.name" required>
+		<div *ngIf=""></div>
+		
+	</div>
+	<div class="field">
+		<label for="email">Email</label>
+		<input type="text" name="email" placeholder="Email" [(ngModel)]="user.email"required>
+		<div *ngIf=""></div>
+		
+	</div>
+	<div class="field">
+		<label for="password">Contrasena</label>
+		<input type="password" name="password" placeholder="Password" [(ngModel)]="user.password" required>
+		<div *ngIf=""></div>
+		
+	</div>  
+	<div class="field">
+		<div class="ui checkbox">
+			<input type="checkbox" tabindex="0" class="hidden">
+			<label>Estoy de acuerdo con los terminos</label>
+		</div>
+	</div>
+	<button class="ui button" type="submit">Submit</button>
+</form>

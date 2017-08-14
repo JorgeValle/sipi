@@ -1,0 +1,31 @@
+<breadcrumb-menu></breadcrumb-menu>
+
+<!-- html templates with angularized markup -->
+<div class="ui four cards">
+	<div *ngFor="let place of places" class="card">
+		<div class="content">
+			<div class="image">
+				<img>
+			</div>
+			<div class="header">{{place.name}}</div>
+			<span *ngFor="let subcategory of place['subcategories'];">{{subcategory}}</span>
+			<div class="description">
+				<address>{{place.address}} <br>
+				{{place.phone}}
+				</address>
+			</div>
+		</div>
+		<div class="extra content">
+			<span class="left floated like">
+			<i class="like icon"></i>
+			Amor
+			</span>
+			<span class="right floated star">
+			<i class="star icon"></i>
+			Favorito
+			</span>
+		</div>
+	</div>
+</div>
+
+<review-list></review-list>
