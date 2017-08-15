@@ -1,13 +1,13 @@
 <form class="ui form">
   <div class="field">
     <label>Nombre o Email</label>
-    <input type="text" name="name" placeholder="Nombre o Email" required [(ngModel)]="form.name">
-	<div *ngIf="name.errors.required">Por favor ingrese su usuario</div>
+    <input type="text" name="name" placeholder="Nombre o Email" required >
+
   </div>
   <div class="field">
     <label>Contrasena</label>
-    <input type="password" name="password" placeholder="Contrasena" required [(ngModel)]="form.password">
-	<div *ngIf="password.errors.required">Por favor ingrese su contrasena</div>
+    <input type="password" name="password" placeholder="Contrasena" required>
+
   </div>
   <button class="ui button blue" type="submit">Iniciar sesion</button>
 </form>

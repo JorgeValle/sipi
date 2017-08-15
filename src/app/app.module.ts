@@ -14,6 +14,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
+// pages
+import { HomePageComponent } from './pages/home-page.component';
+
 // places
 import { PlaceListComponent }      from './places/place-list.component';
 import { PlaceDetailComponent }  from './places/place-detail.component';
@@ -48,7 +51,7 @@ import { AppComponent } from './app.component';
 // the router logs activity in the browser's history journal so the back and forward buttons work as well
 const appRoutes: Routes = [
 	// first match wins strategy
-
+	{ path: '', component: HomePageComponent },
 	{ path: 'lugar', component: PlaceDetailComponent },
 	{ path: 'categoria', component: PlaceListComponent },
 	{ path: 'registro', component: SignUpFormComponent },
@@ -85,7 +88,8 @@ const appRoutes: Routes = [
 		SignInFormComponent,
 		SearchFormComponent,
 		BreadcrumbMenuComponent,
-		ProgressBarComponent
+		ProgressBarComponent,
+		HomePageComponent
 	],
 	// other modules whose exported classes are needed by component templates declared in this module
 	imports: [

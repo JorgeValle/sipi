@@ -16,7 +16,19 @@ export class InMemoryDataService implements InMemoryDbService {
 		{ id: 2, name: 'Automovil' },
 		{ id: 3, name: 'Comercio' },
 		{ id: 4, name: 'Turistico' }
-	]
-	return { places, reviews, categories};
+	];
+	const countries = [
+		{ id: 0, name: 'Guatemala' },
+		{ id: 1, name: 'Belize' },
+		{ id: 2, name: 'El Salvador' },
+		{ id: 3, name: 'Honduras' },
+		{ id: 4, name: 'Nicaragua' },
+		{ id: 5, name: 'Costa Rica' },
+		{ id: 6, name: 'Panama' },
+		{ id: 7, name: 'Republica Dominicana' },
+		{ id: 8, name: 'Cuba' },
+		{ id: 9, name: 'Haiti' }
+	];
+	return { places, reviews, categories, countries };
   }
 }

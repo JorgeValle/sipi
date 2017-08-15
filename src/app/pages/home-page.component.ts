@@ -7,9 +7,9 @@ import { Location }                 from '@angular/common';
 
 
 @Component({
-	selector: 'search-form',
-	templateUrl: './search-form.component.html',
-	styleUrls: [ './search-form.component.css' ],
+	selector: 'home-page',
+	templateUrl: './home-page.component.html',
+	styleUrls: [ './home-page.component.css' ],
 	//providers: [PlaceService]
 })
 
@@ -19,7 +19,8 @@ import { Location }                 from '@angular/common';
 // components are big consumers of services
 // components jobs is to enbale the user experience, nothing more
 // components should be lean
-export class SearchFormComponent {
+export class HomePageComponent {
+	
 
 
 }
