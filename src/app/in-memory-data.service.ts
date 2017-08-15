@@ -8,7 +8,8 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 13, name: 'Chez Francois', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', phone: '239-2322' }
     ];
 	const reviews = [
-		{ id: 0, author: 'Giovanni Max', body: 'Muy buen lugar!' }
+		{ id: 0, author: 'Giovanni Max', body: 'Muy buen lugar!' },
+		{ id: 1, author: 'Mario Valle', body: 'Este lugar es muy bueno pero lastima que el vencindario es muy peligroso. La vez pasada me robaron x, y y z.' }
 	];
 	const categories = [
 		{ id: 0, name: 'Restaurantes' },

@@ -46,6 +46,10 @@ import { RegisterButtonComponent } from './buttons/register-button.component';
 // progress bar
 import { ProgressBarComponent } from './progress-bars/progress-bar.component';
 
+// ads
+import { LeaderboardAdComponent } from './ads/leaderboard-ad.component';
+import { LargeRectangleAdComponent } from './ads/large-rectangle-ad.component';
+
 import { AppComponent } from './app.component';
 
 // the router logs activity in the browser's history journal so the back and forward buttons work as well
@@ -89,7 +93,9 @@ const appRoutes: Routes = [
 		SearchFormComponent,
 		BreadcrumbMenuComponent,
 		ProgressBarComponent,
-		HomePageComponent
+		HomePageComponent,
+		LeaderboardAdComponent,
+		LargeRectangleAdComponent
 	],
 	// other modules whose exported classes are needed by component templates declared in this module
 	imports: [
