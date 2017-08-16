@@ -25,6 +25,7 @@ export class PlaceListComponent implements OnInit {
 	places: Place[];
 	place: Place;
 	
+	// constructors for services
 	constructor(
 		private placeService: PlaceService,
 		private route: ActivatedRoute,
@@ -34,6 +35,7 @@ export class PlaceListComponent implements OnInit {
 	getPlaces(): void {
 		this.placeService
 		.getPlaces()
+		// when the promise resolves...
 		.then(places => this.places = places);
 	}
 	

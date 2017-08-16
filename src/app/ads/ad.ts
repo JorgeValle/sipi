@@ -1,4 +1,4 @@
 export class Ad {
-  id: number;
-  source: string;
+	id: number;
+	source: string;
 }

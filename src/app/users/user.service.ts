@@ -3,40 +3,39 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Review } from './review';
-
+import { User } from './user';
 
 // application logic is added here, in the service
 @Injectable()
-export class ReviewService {
+export class UserService {
 
 	private headers = new Headers({'Content-Type': 'application/json'});
-	private reviewsUrl = 'api/reviews';  // URL to web api
+	private usersUrl = 'api/users';  // URL to web api
 
 	constructor(private http: Http) { }
 
 	// get all reviews
-	getReviews(): Promise<Review[]> {
-		return this.http.get(this.reviewsUrl)
+	getUsers(): Promise<User[]> {
+		return this.http.get(this.usersUrl)
 		.toPromise()
-		.then(response => response.json().data as Review[])
+		.then(response => response.json().data as User[])
 		.catch(this.handleError);
 	}
 	
-	// get one specific review
-	getReview() {
+	// get one specific user
+	getUser() {
 	}
 	
-	// create one new review
-	createReview() {
+	// create one new user
+	createUser() {
 	}
 	
-	// update one specific review
-	updateReview() {
+	// update one specific user
+	updateUser() {
 	}
 	
-	// delete one specific review
-	deleteReview() {
+	// delete one specific user
+	deleteUser() {
 	}
 	
 	private handleError(error: any): Promise<any> {
