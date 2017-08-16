@@ -1,0 +1,49 @@
+<div class="ui">
+
+<div class="ui tiny statistic">
+	<div class="value">2,204</div>
+	<div class="label">Restaurantes</div>
+</div>
+
+<div class="ui compact menu">
+	<a class="active red item">$</a>
+	<a class="orange item">$$</a>
+	<a class="yellow item">$$$</a>
+</div>
+
+<div class="ui compact menu">
+	<a class="active green item">Abierto</a>
+</div>
+
+<div class="ui compact menu">
+	<a class="green item">Entrega Domicilio</a>
+</div>
+
+<div class="ui compact menu">
+	<a class="green item">Romantico</a>
+</div>
+
+<div class="ui grid">
+	<div class="four wide column">
+		<h3 class="header">Organize</h3>
+	</div>
+	
+	<div class="four wide column">
+		<h3 class="header">Distancia</h3>
+	</div>
+	
+	<div class="four wide column">
+		<h3 class="header">Subcategorias</h3>
+		<div *ngFor="let subcategory of subcategories" class="field">
+			<div class="ui checkbox">
+				<input type="checkbox" name="example">
+				<label>{{subcategory.name}}</label>
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+</div>

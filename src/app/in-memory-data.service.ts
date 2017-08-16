@@ -3,9 +3,9 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const places = [
       { id: 0,  name: 'Rafael', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', phone: '883-9980' },
-      { id: 11, name: 'Cala', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', phone: '883-8766' },
-      { id: 12, name: 'Drago Dorado', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', phone: '332-9340' },
-      { id: 13, name: 'Chez Francois', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', phone: '239-2322' }
+      { id: 1, name: 'Cala', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', phone: '883-8766' },
+      { id: 2, name: 'Drago Dorado', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', phone: '332-9340' },
+      { id: 3, name: 'Chez Francois', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', phone: '239-2322' }
     ];
 	const reviews = [
 		{ id: 0, author: 'Giovanni Max', body: 'Muy buen lugar!' },
@@ -17,6 +17,18 @@ export class InMemoryDataService implements InMemoryDbService {
 		{ id: 2, name: 'Automovil' },
 		{ id: 3, name: 'Comercio' },
 		{ id: 4, name: 'Turistico' }
+	];
+	const subcategories = [
+		{ id: 0, name: 'Asiatico' },
+		{ id: 1, name: 'Mejicano' },
+		{ id: 2, name: 'Peruano' },
+		{ id: 3, name: 'Japones' }
+	];
+	const distances = [
+		{ id: 0, name: 'Asiatico' },
+		{ id: 1, name: 'Mejicano' },
+		{ id: 2, name: 'Peruano' },
+		{ id: 3, name: 'Japones' }
 	];
 	const countries = [
 		{ id: 0, name: 'Guatemala' },
@@ -30,6 +42,6 @@ export class InMemoryDataService implements InMemoryDbService {
 		{ id: 8, name: 'Cuba' },
 		{ id: 9, name: 'Haiti' }
 	];
-	return { places, reviews, categories, countries };
+	return { places, reviews, categories, subcategories, distances, countries };
   }
 }

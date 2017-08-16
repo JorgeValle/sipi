@@ -36,6 +36,7 @@ import { BreadcrumbMenuComponent } from './menus/breadcrumb-menu.component';
 
 // forms
 import { AddPlaceFormComponent } from './forms/add-place-form.component';
+import { FilterRestaurantFormComponent } from './forms/filter-restaurant-form.component';
 import { SignUpFormComponent } from './forms/sign-up-form.component';
 import { SignInFormComponent } from './forms/sign-in-form.component';
 import { SearchFormComponent } from './forms/search-form.component';
@@ -56,7 +57,7 @@ import { AppComponent } from './app.component';
 const appRoutes: Routes = [
 	// first match wins strategy
 	{ path: '', component: HomePageComponent },
-	{ path: 'lugar', component: PlaceDetailComponent },
+	{ path: 'lugar/:id', component: PlaceDetailComponent },
 	{ path: 'categoria', component: PlaceListComponent },
 	{ path: 'registro', component: SignUpFormComponent },
 	{ path: 'inicio', component: SignInFormComponent }
@@ -88,6 +89,7 @@ const appRoutes: Routes = [
 		PaginationMenuComponent,
 		RegisterButtonComponent,
 		AddPlaceFormComponent,
+		FilterRestaurantFormComponent,
 		SignUpFormComponent,
 		SignInFormComponent,
 		SearchFormComponent,

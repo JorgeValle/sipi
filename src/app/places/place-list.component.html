@@ -1,5 +1,7 @@
 <breadcrumb-menu></breadcrumb-menu>
 
+<filter-restaurant-form></filter-restaurant-form>
+
 <!-- html templates with angularized markup -->
 <div class="ui four cards">
 	<div *ngFor="let place of places" class="card">
@@ -7,7 +9,9 @@
 			<div class="image">
 				<img>
 			</div>
-			<div class="header">{{place.name}}</div>
+			<div class="header">
+				<a href="#">{{place.name}}</a>
+			</div>
 			<span *ngFor="let subcategory of place['subcategories'];">{{subcategory}}</span>
 			<div class="description">
 				<address>{{place.address}} <br>

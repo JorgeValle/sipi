@@ -6,8 +6,10 @@
 	
 <breadcrumb-menu></breadcrumb-menu>
 
-<h1 class="ui header">Rafael</h1><a class="ui teal tag label">Confirmado</a>
-<div class="ui star rating" data-rating="3"></div>
+
+<div *ngIf="place">
+	<h1 class="ui header">{{place.name}}</h1><a class="ui teal tag label">Confirmado</a>
+	<div class="ui star rating" data-rating="3"></div>
 <span><a href="#">Asiatico</a>,&nbsp;<a href="#">Mediterraneo</a>,&nbsp;<a href="#">Vegetariano</a></span>
 <p>This example shows how to use lazy loaded images, a sticky menu, and a simple text container</p>
 
@@ -33,4 +35,5 @@
 		<img class="ui small image" src="https://deliciousdawn.files.wordpress.com/2010/04/img_3956.jpg">	
 	</div>
 	
+</div>
 </div>

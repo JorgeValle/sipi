@@ -32,6 +32,15 @@ export class PlaceService {
 		.then(response => response.json().data as Place)
 		.catch(this.handleError);
 	}
+	
+	// gets one specific place from endpoint
+	getPlaceByName(name: string): Promise<Place> {
+		const url = `${this.placesUrl}/${name}`;
+		return this.http.get(url)
+		.toPromise()
+		.then(response => response.json().data as Place)
+		.catch(this.handleError);
+	}
 		
 	// create one new place on endpoint
 	createPlace() {
