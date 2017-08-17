@@ -14,6 +14,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
+// users
+import { UserDetailComponent } from './users/user-detail.component';
+
 // pages
 import { HomePageComponent } from './pages/home-page.component';
 
@@ -57,10 +60,12 @@ import { AppComponent } from './app.component';
 const appRoutes: Routes = [
 	// first match wins strategy
 	{ path: '', component: HomePageComponent },
+	{ path: 'usuario', component: UserDetailComponent },
 	{ path: 'lugar/:id', component: PlaceDetailComponent },
 	{ path: 'categoria', component: PlaceListComponent },
 	{ path: 'registro', component: SignUpFormComponent },
-	{ path: 'inicio', component: SignInFormComponent }
+	{ path: 'inicio', component: SignInFormComponent },
+	{ path: 'agregar-lugar', component: AddPlaceFormComponent }
 	// { path: 'hero/:id',      component: HeroDetailComponent },
 	// {
 	// path: 'heroes',
@@ -79,6 +84,7 @@ const appRoutes: Routes = [
 	// the view classes that belong to this module
 	declarations: [
 		AppComponent,
+		UserDetailComponent,
 		PlaceDetailComponent,
 		PlaceListComponent,
 		RelatedPlacesListComponent,

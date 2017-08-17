@@ -1,4 +1,94 @@
-<progress-bar></progress-bar>
+<h1 class="header">Agregar un Lugar</h1>
+
+<div class="ui tablet stackable steps">
+	<div class="step">
+		<i class="building icon"></i>
+		<div class="content">
+			<div class="title">
+				<a href="#">Detalles</a>
+			</div>
+			<div class="description">Ingrese el nombre, direccion y otros</div>
+		</div>
+	</div>
+	<div class="active step">
+		<i class="grid layout icon"></i>
+		<div class="content">
+			<div class="title">
+				<a href="#">Categorias</a>
+			</div>
+			<div class="description">Escoja la categoria o categorias</div>
+		</div>
+	</div>
+	<div class="disabled step">
+		<i class="photo icon"></i>
+		<div class="content">
+			<div class="title">
+				<a href="#">Fotos y Mapa</a>
+			</div>
+			<div class="description">Si tiene fotos</div>
+		</div>
+	</div>
+	<div class="disabled step">
+		<i class="checkmark icon"></i>
+		<div class="content">
+			<div class="title">
+				<a href="#">Confirmar</a>
+			</div>
+			<div class="description">Verifique todo</div>
+		</div>
+	</div>
+</div>
+
+<h2 class="header">Detalles</h2>
+<form class="ui form">
+	<div class="ui form">
+		<div class="fields">
+			<div class="field">
+				<label>Lugar</label>
+				<input type="text" placeholder="Lugar" required="required">
+			</div>
+			<div class="field error">
+				<label>Telefono</label>
+				<input type="number" placeholder="Telefono">
+			</div>
+			<div class="field">
+				<label>Last name</label>
+				<input type="text" placeholder="Last Name">
+			</div>
+		</div>
+	</div>
+	<button class="ui blue button" (click)="updatePlace()">Avanzar</button>
+</form>
+
+<h2 class="header">Categorias</h2>
+<form class="ui form">
+	<div class="ui form">
+		<div *ngFor="let subcategory of subcategories" class="field">
+			<div class="ui checkbox">
+				<input type="checkbox" name="example">
+				<label>{{subcategory.name}}</label>
+			</div>
+		</div>
+	</div>
+	<button class="ui red button">Retroceder</button>
+	<button class="ui blue button" (click)="updatePlace()">Avanzar</button>
+</form>
+
+<h2 class="header">Fotos y Mapa</h2>
+<form class="ui form">
+	<div class="ui form">
+		<div *ngFor="let subcategory of subcategories" class="field">
+			<div class="ui checkbox">
+				<input type="checkbox" name="example">
+				<label>{{subcategory.name}}</label>
+			</div>
+		</div>
+	</div>
+	<button class="ui red button">Retroceder</button>
+	<button class="ui blue button" (click)="updatePlace()">Avanzar</button>
+</form>
+
+
 <form class="ui form">
 	<div class="field">
 		<label>Nombre</label>
