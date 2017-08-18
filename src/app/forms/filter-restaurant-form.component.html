@@ -1,7 +1,7 @@
 <div class="ui">
 
 <div class="ui tiny statistic">
-	<div class="value">2,204</div>
+	<div class="value">256</div>
 	<div class="label">Restaurantes</div>
 </div>
 
@@ -34,13 +34,21 @@
 	
 	<div class="four wide column">
 		<h3 class="header">Distancia</h3>
+		<div class="ui form">
+			<div class="field" *ngFor="let distance of distances">
+				<div class="ui toggle checkbox">
+					<input type="radio" name="throughput" checked="checked" (click)="applyFilter()">
+					<label>{{distance.label}} {{distance.value}} km</label>
+				</div>
+			</div>
+		</div>
 	</div>
 	
 	<div class="four wide column">
 		<h3 class="header">Subcategorias</h3>
-		<div *ngFor="let subcategory of subcategories" class="field">
+		<div class="field" *ngFor="let subcategory of subcategories">
 			<div class="ui checkbox">
-				<input type="checkbox" name="example">
+				<input type="checkbox" name="example" (click)="applyFilter()">
 				<label>{{subcategory.name}}</label>
 			</div>
 		</div>

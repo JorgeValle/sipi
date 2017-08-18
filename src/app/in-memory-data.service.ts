@@ -2,10 +2,17 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const places = [
-      { id: 0,  name: 'Rafael', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', phone: '883-9980' },
-      { id: 1, name: 'Cala', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', phone: '883-8766' },
-      { id: 2, name: 'Drago Dorado', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', phone: '332-9340' },
-      { id: 3, name: 'Chez Francois', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', phone: '239-2322' }
+		{ id: 0,  name: 'Rafael', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', phone: '883-9980' },
+		{ id: 1, name: 'Cala', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', phone: '883-8766' },
+		{ id: 2, name: 'Drago Dorado', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', phone: '332-9340' },
+		{ id: 3, name: 'Chez Francois', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', phone: '239-2322' },
+		{ id: 4,  name: 'Otro Restaurante', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', phone: '883-9980' },
+		{ id: 5, name: 'Moja Majo', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', phone: '883-8766' },
+		{ id: 6, name: 'Las Rambles', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', phone: '332-9340' },
+		{ id: 7, name: 'Andalucia', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', phone: '239-2322' },
+		{ id: 8,  name: 'Rafaelet', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', phone: '883-9980' },
+		{ id: 9, name: 'Calais Marais', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', phone: '883-8766' },
+		{ id: 10, name: 'Tatayaki', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', phone: '332-9340' }
     ];
 	const reviews = [
 		{ id: 0, author: 'Giovanni Max', body: 'Muy buen lugar!' },
@@ -19,16 +26,14 @@ export class InMemoryDataService implements InMemoryDbService {
 		{ id: 4, name: 'Turistico' }
 	];
 	const subcategories = [
-		{ id: 0, name: 'Asiatico' },
-		{ id: 1, name: 'Mejicano' },
-		{ id: 2, name: 'Peruano' },
-		{ id: 3, name: 'Japones' }
-	];
-	const distances = [
-		{ id: 0, name: 'Asiatico' },
-		{ id: 1, name: 'Mejicano' },
-		{ id: 2, name: 'Peruano' },
-		{ id: 3, name: 'Japones' }
+		{ id: 0, name: 'Asiatico', parentId: 0 },
+		{ id: 1, name: 'Mejicano', parentId: 0 },
+		{ id: 2, name: 'Peruano', parentId: 0 },
+		{ id: 3, name: 'Japones', parentId: 0 },
+		{ id: 0, name: 'Mediterraneo', parentId: 0 },
+		{ id: 1, name: 'Chino', parentId: 0 },
+		{ id: 2, name: 'Etiope', parentId: 0 },
+		{ id: 3, name: 'Steakhouse', parentId: 0 }
 	];
 	const countries = [
 		{ id: 0, name: 'Guatemala' },
@@ -48,6 +53,12 @@ export class InMemoryDataService implements InMemoryDbService {
 		{ id: 2, title: 'Sobre Sipi', body: 'Nullam libero orci, imperdiet quis elementum a, gravida vitae augue. Pellentesque ex nisi, dapibus eget accumsan blandit, varius at mi. Praesent quis blandit ligula, vitae gravida felis. Aenean aliquam, lorem ut bibendum blandit, tellus massa aliquam tortor, ac cursus justo metus eget ex. Cras ultricies libero vitae tincidunt mattis. Nunc eu justo elit. Etiam nec tortor ac justo malesuada molestie.' },
 
 	];
-	return { places, reviews, categories, subcategories, distances, countries };
+	const distances = [
+		{ id: 0, value: 5, label:'Menos de' },
+		{ id: 1, value: 10, label:'Entre' },
+		{ id: 2, value: 15, label:'Entre' },
+		{ id: 3, value: 20, label:'Mas de' }
+	];
+	return { places, reviews, categories, subcategories, countries, pages, distances };
   }
 }

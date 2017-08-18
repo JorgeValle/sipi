@@ -5,6 +5,8 @@ import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 
+import { Distance } from '../distances/distance';
+import { DistanceService } from '../distances/distance.service';
 
 import { Subcategory } from '../categories/subcategory';
 import { SubcategoryService } from '../categories/subcategory.service';
@@ -13,7 +15,7 @@ import { SubcategoryService } from '../categories/subcategory.service';
 	selector: 'filter-restaurant-form',
 	templateUrl: './filter-restaurant-form.component.html',
 	styleUrls: [ './filter-restaurant-form.component.css' ],
-	providers: [SubcategoryService]
+	providers: [SubcategoryService, DistanceService]
 })
 
 // component classes manage the html templates
@@ -27,20 +29,36 @@ export class FilterRestaurantFormComponent implements OnInit{
 	subcategories: Subcategory[];
 	subcategory: Subcategory;
 	
+	distances: Distance[];
+	
 	constructor(
 		private subcategoryService: SubcategoryService,
+		private distanceService: DistanceService,
 		private route: ActivatedRoute,
 		private location: Location
 	) {}
 	
+	// to populate the list of checkboxes
 	getSubcategories(): void {
 		this.subcategoryService
 		.getSubcategories()
 		.then(subcategories => this.subcategories = subcategories);
 	}
 	
+	// to populate the distance sliders
+	getDistances(): void {
+		this.distanceService
+		.getDistances()
+		.then(distances => this.distances = distances);
+	}
+	
+	applyFilter(): void {
+		console.log("Filter has been applied");
+	}
+	
 	ngOnInit(): void {
 		this.getSubcategories();
+		this.getDistances();
 	}
 	
 

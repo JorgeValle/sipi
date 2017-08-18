@@ -7,6 +7,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+// importing a service
+import { DistanceService } from './distances/distance.service';
 
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -119,7 +121,7 @@ const appRoutes: Routes = [
 	],
 	// creators of services that this module contributes to the global collection of services; they become accessible in all parts of the app
 	// register app-wide services in the root AppModule [providers]
-	providers: [],
+	providers: [DistanceService],
 	// launch the app by bootstrapping the root module
 	bootstrap: [AppComponent]
 })
