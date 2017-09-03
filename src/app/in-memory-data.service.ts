@@ -2,17 +2,17 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const places = [
-		{ id: 0,  name: 'Rafael', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', phone: '883-9980' },
-		{ id: 1, name: 'Cala', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', phone: '883-8766' },
-		{ id: 2, name: 'Drago Dorado', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', phone: '332-9340' },
-		{ id: 3, name: 'Chez Francois', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', phone: '239-2322' },
-		{ id: 4,  name: 'Otro Restaurante', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', phone: '883-9980' },
-		{ id: 5, name: 'Moja Majo', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', phone: '883-8766' },
-		{ id: 6, name: 'Las Rambles', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', phone: '332-9340' },
-		{ id: 7, name: 'Andalucia', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', phone: '239-2322' },
-		{ id: 8,  name: 'Rafaelet', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', phone: '883-9980' },
-		{ id: 9, name: 'Calais Marais', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', phone: '883-8766' },
-		{ id: 10, name: 'Tatayaki', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', phone: '332-9340' }
+		{ id: 0,  name: 'Rafael', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', city: 'San Salvador', country: 'El Salvador', phone: '883-9980' },
+		{ id: 1, name: 'Cala', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'Antigua', country: 'Guatemala', phone: '883-8766' },
+		{ id: 2, name: 'Drago Dorado', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', city: 'San Salvador', country: 'El Salvador', phone: '332-9340' },
+		{ id: 3, name: 'Chez Francois', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', city: 'Santa Tecla', country: 'El Salvador', phone: '239-2322' },
+		{ id: 4,  name: 'Otro Restaurante', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', city: 'Managua', country: 'Nicaragua', phone: '883-9980' },
+		{ id: 5, name: 'Moja Majo', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'Havana', country: 'Cuba', phone: '883-8766' },
+		{ id: 6, name: 'Las Rambles', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', city: 'San Jose', country: 'Costa Rica', phone: '332-9340' },
+		{ id: 7, name: 'Andalucia', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', city: 'San Salvador', country: 'El Salvador', phone: '239-2322' },
+		{ id: 8,  name: 'Rafaelet', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', city: 'Santa Rosa', country: 'El Salvador', phone: '883-9980' },
+		{ id: 9, name: 'Calais Marais', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'San Salvador', country: 'El Salvador', phone: '883-8766' },
+		{ id: 10, name: 'Tatayaki', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', city: 'Santo Domingo', country: 'Republica Dominicana', phone: '332-9340' }
     ];
 	const reviews = [
 		{ id: 0, author: 'Giovanni Max', body: 'Muy buen lugar!' },
@@ -47,6 +47,74 @@ export class InMemoryDataService implements InMemoryDbService {
 		{ id: 8, name: 'Cuba' },
 		{ id: 9, name: 'Haiti' }
 	];
+	const cities = [
+		// guatemala
+		{ id: 0, name: 'Ciudad de Guatemala', countryId: 0 },
+		{ id: 1, name: 'Antigua Guatemala', countryId: 0 },
+		{ id: 2, name: 'Quetzaltenango', countryId: 0 },
+		{ id: 3, name: 'Villa Nueva', countryId: 0 },
+		{ id: 4, name: 'Chichicastenango', countryId: 0 },
+		{ id: 5, name: 'Flores', countryId: 0 },
+		{ id: 6, name: 'Cobán', countryId: 0 },
+		// belize
+		{ id: 7, name: 'Belize City', countryId: 1 },
+		{ id: 8, name: 'San Pedro Town', countryId: 1 },
+		{ id: 9, name: 'Belmopan', countryId: 1 },
+		{ id: 10, name: 'San Ignacio', countryId: 1 },
+		// el salvador
+		{ id: 11, name: 'San Salvador', countryId: 2 },
+		{ id: 12, name: 'Santa Tecla', countryId: 2 },
+		{ id: 13, name: 'Soyapango', countryId: 2 },
+		{ id: 14, name: 'San Miguel', countryId: 2 },
+		{ id: 15, name: 'Santa Ana', countryId: 2 },
+		{ id: 16, name: 'Sonsonate', countryId: 2 },
+		{ id: 17, name: 'Suchitoto', countryId: 2 },
+		{ id: 18, name: 'Apaneca', countryId: 2 },
+		{ id: 19, name: 'Concepcion de Ataco', countryId: 2 },
+		{ id: 20, name: 'La Palma', countryId: 2 },
+		// honduras
+		{ id: 21, name: 'Tegucigalpa', countryId: 3 },
+		{ id: 22, name: 'San Pedro Sula', countryId: 3 },
+		{ id: 23, name: 'La Ceiba', countryId: 3 },
+		{ id: 24, name: 'Comayagua', countryId: 3 },
+		{ id: 25, name: 'El Progreso', countryId: 3 },
+		{ id: 26, name: 'Puerto Cortės', countryId: 3 },
+		// nicaragua
+		{ id: 27, name: 'Managua', countryId: 4 },
+		{ id: 28, name: 'Granada', countryId: 4 },
+		{ id: 29, name: 'Léon', countryId: 4 },
+		{ id: 30, name: 'Masaya', countryId: 4 },
+		{ id: 31, name: 'Chinandega', countryId: 4 },
+		// costa rica
+		{ id: 32, name: 'Havana', countryId: 8 },
+		{ id: 33, name: 'Santiago de Cuba', countryId: 8 },
+		{ id: 34, name: 'Cienfuegos', countryId: 8 },
+		{ id: 35, name: 'Santa Clara', countryId: 8 },
+		{ id: 36, name: 'Trinidad', countryId: 8 },
+		// panama
+		{ id: 32, name: 'Havana', countryId: 8 },
+		{ id: 33, name: 'Santiago de Cuba', countryId: 8 },
+		{ id: 34, name: 'Cienfuegos', countryId: 8 },
+		{ id: 35, name: 'Santa Clara', countryId: 8 },
+		{ id: 36, name: 'Trinidad', countryId: 8 },
+		// republica dominicana
+		{ id: 32, name: 'Havana', countryId: 8 },
+		{ id: 33, name: 'Santiago de Cuba', countryId: 8 },
+		{ id: 34, name: 'Cienfuegos', countryId: 8 },
+		{ id: 35, name: 'Santa Clara', countryId: 8 },
+		{ id: 36, name: 'Trinidad', countryId: 8 },
+		// cuba
+		{ id: 32, name: 'Havana', countryId: 8 },
+		{ id: 33, name: 'Santiago de Cuba', countryId: 8 },
+		{ id: 34, name: 'Cienfuegos', countryId: 8 },
+		{ id: 35, name: 'Santa Clara', countryId: 8 },
+		{ id: 36, name: 'Trinidad', countryId: 8 },
+		// haiti
+		{ id: 37, name: 'Port-au-Prince', countryId: 9 },
+		{ id: 38, name: 'Carrefour', countryId: 9 },
+		{ id: 39, name: 'Delmas', countryId: 9 },
+		{ id: 40, name: 'Petionville', countryId: 9 },
+	];
 	const pages = [
 		{ id: 0, title: 'Terminos de Uso', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lorem eu nulla consequat egestas. Praesent odio nulla, facilisis in volutpat eget, vestibulum nec ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In elit ex, pulvinar at lobortis non, rutrum a velit. Duis eu neque auctor, blandit ipsum facilisis, finibus quam. Pellentesque condimentum vestibulum auctor. Nullam vel sapien dolor. Maecenas ultricies, arcu sed mattis tincidunt, massa dolor vestibulum magna, non feugiat arcu sapien sit amet nisi. In volutpat enim vitae augue tincidunt, sit amet lacinia justo tempus. Suspendisse maximus porta fermentum. Sed eu dolor sit amet leo suscipit hendrerit quis sed enim. Vestibulum eget nunc malesuada lacus rhoncus condimentum sit amet ac lorem. Phasellus quis mi eu sem tempus consectetur. Curabitur vulputate tempor massa, vitae pulvinar odio mollis id. Nullam magna lectus, porttitor ut fermentum sit amet, porttitor sodales mi. Praesent diam lectus, pharetra at varius ac, aliquam at ante.' },
 		{ id: 1, title: 'Sobre Sipi', body: 'Morbi laoreet sollicitudin mattis. Curabitur feugiat metus quis placerat pharetra. Ut porttitor, velit vel efficitur tempus, mi eros posuere enim, in pellentesque nulla orci eu turpis. Cras elit nisl, dignissim nec est in, feugiat venenatis enim. Proin neque elit, sagittis eget odio et, gravida bibendum nisi. Vestibulum sodales, nisi mollis scelerisque dictum, libero est accumsan velit, vitae aliquet ex odio vel tellus. Nunc tortor eros, convallis vitae maximus quis, pretium in nulla. Aliquam elementum accumsan ipsum dapibus congue. Morbi ut varius nisi. Etiam commodo tristique ipsum, ac efficitur dolor convallis nec. Integer non purus dapibus, pulvinar neque vitae, molestie diam. Pellentesque auctor, tortor in tempus tempor, nisi ex posuere nunc, in vehicula ex libero nec velit. Pellentesque sit amet fringilla orci, eu tincidunt est. Integer nulla orci, efficitur eu tincidunt vel, posuere sit amet dui.' },
@@ -59,6 +127,6 @@ export class InMemoryDataService implements InMemoryDbService {
 		{ id: 2, value: 15, label:'Entre' },
 		{ id: 3, value: 20, label:'Mas de' }
 	];
-	return { places, reviews, categories, subcategories, countries, pages, distances };
+	return { places, reviews, categories, subcategories, countries, cities, pages, distances };
   }
 }

@@ -48,12 +48,32 @@
 				<input type="text" placeholder="Lugar" required="required">
 			</div>
 			<div class="field error">
-				<label>Telefono</label>
-				<input type="number" placeholder="Telefono">
+				<label>Direccion</label>
+				<input type="number" placeholder="Telefono" required="required">
 			</div>
 			<div class="field">
-				<label>Last name</label>
-				<input type="text" placeholder="Last Name">
+				<label>Pais</label>
+				<select class="ui search dropdown">
+					<option value="">Seleccione el Pais</option>
+					<option value="AF">Afghanistan</option>
+					<option value="AX">Åland Islands</option>
+					<option value="AL">Albania</option>
+					<option value="DZ">Algeria</option>
+					<option value="AS">American Samoa</option>
+					<option value="AD">Andorra</option>
+				</select>
+			</div>
+			<div class="field">
+				<label>Ciudad</label>
+				<select class="ui search dropdown">
+					<option value="">Seleccione la Ciudad</option>
+					<option value="AF">Afghanistan</option>
+					<option value="AX">Åland Islands</option>
+					<option value="AL">Albania</option>
+					<option value="DZ">Algeria</option>
+					<option value="AS">American Samoa</option>
+					<option value="AD">Andorra</option>
+				</select>
 			</div>
 		</div>
 	</div>
@@ -84,6 +104,7 @@
 			</div>
 		</div>
 	</div>
+	<div id="map"></div>
 	<button class="ui red button">Retroceder</button>
 	<button class="ui blue button" (click)="updatePlace()">Avanzar</button>
 </form>
@@ -525,4 +546,4 @@ Justen Kitsune
 </div>
 </div>
 <div class="ui button" tabindex="0">Submit Order</div>
-</form>
+</form> 

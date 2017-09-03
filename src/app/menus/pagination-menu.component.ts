@@ -21,6 +21,10 @@ import { Location }                 from '@angular/common';
 // components should be lean
 export class PaginationMenuComponent {
 	
+	changePage():void {
+		console.log("The page has been changed");
+	
+	}
 
 
 }

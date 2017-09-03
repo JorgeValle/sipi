@@ -1,8 +1,9 @@
-<breadcrumb-menu></breadcrumb-menu>
+<h1>Los 10 mejores restaurantes en Antigua</h1>
 
 <filter-restaurant-form></filter-restaurant-form>
 
 <!-- html templates with angularized markup -->
+
 <div class="ui four cards">
 	<div *ngFor="let place of places" class="card">
 		<div class="content">
@@ -10,11 +11,12 @@
 				<img class="ui fluid image" src="http://www.goodfood.com.au/content/dam/images/g/r/f/g/6/8/image.related.wideLandscape.640x360.guxqme.gonbdl.png/1500598211481.jpg">
 			</div>
 			<div class="header">
-				<a href="#">{{place.name}}</a>
+				<h2><a href="/lugar/{{place.id}}">{{place.name}}</a></h2>
 			</div>
 			<span *ngFor="let subcategory of place['subcategories'];">{{subcategory}}</span>
 			<div class="description">
 				<address>{{place.address}} <br>
+				{{place.city}}, {{place.country}} <br>
 				{{place.phone}}
 				</address>
 			</div>
@@ -32,4 +34,4 @@
 	</div>
 </div>
 
-<review-list></review-list>
+<pagination-menu></pagination-menu>
