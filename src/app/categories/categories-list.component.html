@@ -1,17 +1,7 @@
 <!-- html templates with angularized markup -->
-<nav class="ui secondary vertical pointing menu">
-	<a class="item" *ngFor="let category of categories">
-		<i class="gamepad icon"></i>
-		{{category.name}}
-	</a>
-	<a class="item active">
-		<i class="gamepad icon"></i>
-		Vida Nocturna
-	</a>	
+<nav class="ui labeled three icon menu">
+  <a class="item" *ngFor="let category of categories" href="categoria/{{category.slug}}">
+    <i class="{{category.iconId}} icon"></i>
+    {{category.name}}
+  </a>
 </nav>
-<div class="ui vertical labeled icon menu">
-	<a class="item" *ngFor="let category of categories">
-		<i class="gamepad icon"></i>
-		{{category.name}}
-	</a>
-</div>

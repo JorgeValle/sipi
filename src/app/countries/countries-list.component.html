@@ -1,0 +1,12 @@
+<!-- html templates with angularized markup -->
+<section class="ui container">
+  <hr>
+  <!-- desktop nav -->
+  <div class="ui horizontal bulleted list">
+    <a class="item" *ngFor="let country of countries" href="{{country.slug}}">{{country.name}}</a>
+  </div>
+  <!-- mobile nav -->
+  <select class="ui dropdown fluid">
+    <option *ngFor="let country of countries" value="">{{country.name}}</option>
+  </select>
+</section>

@@ -18,35 +18,50 @@ export class InMemoryDataService implements InMemoryDbService {
 		{ id: 0, author: 'Giovanni Max', body: 'Muy buen lugar!' },
 		{ id: 1, author: 'Mario Valle', body: 'Este lugar es muy bueno pero lastima que el vencindario es muy peligroso. La vez pasada me robaron x, y y z.' }
 	];
-	const categories = [
-		{ id: 0, name: 'Restaurantes' },
-		{ id: 1, name: 'Gubernamental' },
-		{ id: 2, name: 'Automovil' },
-		{ id: 3, name: 'Comercio' },
-		{ id: 4, name: 'Turistico' }
-	];
-	const subcategories = [
-		{ id: 0, name: 'Asiatico', parentId: 0 },
-		{ id: 1, name: 'Mejicano', parentId: 0 },
-		{ id: 2, name: 'Peruano', parentId: 0 },
-		{ id: 3, name: 'Japones', parentId: 0 },
-		{ id: 0, name: 'Mediterraneo', parentId: 0 },
-		{ id: 1, name: 'Chino', parentId: 0 },
-		{ id: 2, name: 'Etiope', parentId: 0 },
-		{ id: 3, name: 'Steakhouse', parentId: 0 }
-	];
-	const countries = [
-		{ id: 0, name: 'Guatemala' },
-		{ id: 1, name: 'Belize' },
-		{ id: 2, name: 'El Salvador' },
-		{ id: 3, name: 'Honduras' },
-		{ id: 4, name: 'Nicaragua' },
-		{ id: 5, name: 'Costa Rica' },
-		{ id: 6, name: 'Panama' },
-		{ id: 7, name: 'Republica Dominicana' },
-		{ id: 8, name: 'Cuba' },
-		{ id: 9, name: 'Haiti' }
-	];
+const categories = [
+  { id: 0, name: 'Restaurantes', slug: 'restaurantes', iconId: 'food' },
+  { id: 1, name: 'Compras', slug: 'compras', iconId: 'shopping bag' },
+  { id: 2, name: 'Publico', slug: 'publico', iconId: 'university' },
+  { id: 3, name: 'Salud', slug: 'salud', iconId: 'first aid' },
+  { id: 4, name: 'Educacion', slug: 'educacion', iconId: 'student' },
+  { id: 5, name: 'Casa y Hogar', slug: 'hogar', iconId: 'home' },
+  { id: 6, name: 'Electronicos y Electrodomesticos', slug: 'electronicos', iconId: 'tv' },
+  { id: 7, name: 'Ropa y Moda', slug: 'ropa', iconId: '' },
+  { id: 8, name: 'Vida Nocturna', slug: 'nocturna', iconId: 'cocktail' },
+  { id: 9, name: 'Atletico', slug: 'atletico', iconId: 'soccer' },
+  { id: 10, name: 'Eventos y Bodas', slug: 'eventos', iconId: 'birthday' },
+  { id: 11, name: 'Belleza y Spa', slug: 'belleza', iconId: '' },
+  { id: 12, name: 'Automotriz', slug: 'automotriz', iconId: 'car' },
+  { id: 13, name: 'Construccion', slug: 'construccion', iconId: '' },
+  { id: 14, name: 'Telecomunicaciones', slug: 'telecomunicaciones', iconId: 'mobile' },
+  { id: 15, name: 'Servicios Financieros', slug: 'financieros', iconId: 'money' },
+  { id: 16, name: 'Seguridad', slug: 'seguridad', iconId: 'protect' },
+  { id: 17, name: 'Arte', slug: 'arte', iconId: 'paint brush' },
+  { id: 18, name: 'Mascotas', slug: 'mascotas', iconId: 'paw' },
+  { id: 19, name: 'Turistico', slug: 'turistico', iconId: 'sun' },
+];
+const subcategories = [
+  { id: 0, name: 'Asiatico', parentId: 0 },
+  { id: 1, name: 'Mejicano', parentId: 0 },
+  { id: 2, name: 'Peruano', parentId: 0 },
+  { id: 3, name: 'Japones', parentId: 0 },
+  { id: 0, name: 'Mediterraneo', parentId: 0 },
+  { id: 1, name: 'Chino', parentId: 0 },
+  { id: 2, name: 'Etiope', parentId: 0 },
+  { id: 3, name: 'Steakhouse', parentId: 0 }
+];
+const countries = [
+  { id: 0, name: 'Guatemala', slug: 'gt' },
+  { id: 1, name: 'Belize', slug: 'bl' },
+  { id: 2, name: 'El Salvador', slug: 'es' },
+  { id: 3, name: 'Honduras', slug: 'hn' },
+  { id: 4, name: 'Nicaragua', slug: 'ni' },
+  { id: 5, name: 'Costa Rica', slug: 'cr' },
+  { id: 6, name: 'Panama', slug: 'pa' },
+  { id: 7, name: 'Republica Dominicana', slug: 'rd' },
+  { id: 8, name: 'Cuba', slug: 'cu' },
+  { id: 9, name: 'Haiti', slug: 'ha' }
+];
 	const cities = [
 		// guatemala
 		{ id: 0, name: 'Ciudad de Guatemala', countryId: 0 },

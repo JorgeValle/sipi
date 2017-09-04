@@ -21,6 +21,7 @@ import { UserDetailComponent } from './users/user-detail.component';
 
 // pages
 import { HomePageComponent } from './pages/home-page.component';
+import { PageDetailComponent } from './pages/page-detail.component';
 
 // places
 import { PlaceListComponent }      from './places/place-list.component';
@@ -33,6 +34,9 @@ import { ReviewListComponent } from './reviews/review-list.component';
 // categories
 import { CategoriesListComponent } from './categories/categories-list.component';
 
+// countries
+import { CountriesListComponent } from './countries/countries-list.component';
+
 // menus
 import { MainMenuComponent } from './menus/main-menu.component';
 import { UserMenuComponent } from './menus/user-menu.component';
@@ -40,6 +44,7 @@ import { PaginationMenuComponent } from './menus/pagination-menu.component';
 import { BreadcrumbMenuComponent } from './menus/breadcrumb-menu.component';
 
 // forms
+import { ReviewPlaceFormComponent } from './forms/review-place-form.component';
 import { AddPlaceFormComponent } from './forms/add-place-form.component';
 import { FilterRestaurantFormComponent } from './forms/filter-restaurant-form.component';
 import { SignUpFormComponent } from './forms/sign-up-form.component';
@@ -47,7 +52,9 @@ import { SignInFormComponent } from './forms/sign-in-form.component';
 import { SearchFormComponent } from './forms/search-form.component';
 
 // buttons
-import { RegisterButtonComponent } from './buttons/register-button.component';
+import { SignUpButtonComponent } from './buttons/sign-up-button.component';
+import { LogInButtonComponent } from './buttons/log-in-button.component';
+import { ReviewButtonComponent } from './buttons/review-button.component';
 
 // progress bar
 import { ProgressBarComponent } from './progress-bars/progress-bar.component';
@@ -60,14 +67,16 @@ import { AppComponent } from './app.component';
 
 // the router logs activity in the browser's history journal so the back and forward buttons work as well
 const appRoutes: Routes = [
-	// first match wins strategy
-	{ path: '', component: HomePageComponent },
-	{ path: 'usuario', component: UserDetailComponent },
-	{ path: 'lugar/:id', component: PlaceDetailComponent },
-	{ path: 'categoria', component: PlaceListComponent },
-	{ path: 'registro', component: SignUpFormComponent },
-	{ path: 'inicio', component: SignInFormComponent },
-	{ path: 'agregar-lugar', component: AddPlaceFormComponent }
+  // first match wins strategy
+  { path: '', component: HomePageComponent },
+  { path: 'usuario', component: UserDetailComponent },
+  { path: 'lugar/:id', component: PlaceDetailComponent },
+  { path: 'categoria/:id', component: PlaceListComponent },
+  { path: 'registro', component: SignUpFormComponent },
+  { path: 'inicio', component: SignInFormComponent },
+  { path: 'agregar-lugar', component: AddPlaceFormComponent },
+  { path: ':pagina', component: PageDetailComponent },
+  
 	// { path: 'hero/:id',      component: HeroDetailComponent },
 	// {
 	// path: 'heroes',
@@ -95,15 +104,24 @@ const appRoutes: Routes = [
 		MainMenuComponent,
 		UserMenuComponent,
 		PaginationMenuComponent,
-		RegisterButtonComponent,
+		// buttons
+		SignUpButtonComponent,
+		ReviewButtonComponent,
+		LogInButtonComponent,
+		// forms
 		AddPlaceFormComponent,
+		ReviewPlaceFormComponent,
 		FilterRestaurantFormComponent,
+		// countries
+		CountriesListComponent,
 		SignUpFormComponent,
 		SignInFormComponent,
 		SearchFormComponent,
 		BreadcrumbMenuComponent,
 		ProgressBarComponent,
-		HomePageComponent,
+  // pages
+  HomePageComponent,
+  PageDetailComponent,
 		LeaderboardAdComponent,
 		LargeRectangleAdComponent
 	],

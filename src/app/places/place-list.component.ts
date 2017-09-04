@@ -41,5 +41,6 @@ export class PlaceListComponent implements OnInit {
 	
 	ngOnInit(): void {
 		this.getPlaces();
+
 	}
 }

@@ -1,61 +1,38 @@
 <main-menu></main-menu>
 
+<categories-list></categories-list>
+
 <!-- renders the component corresponding to the route -->
 <main class="ui main container">
 	<router-outlet></router-outlet>
-	<hr>
-	<section class="ui horizontal bulleted list">
-		<a class="item" href="#">Guatemala</a>
-		<a class="item" href="#">Belize</a>
-		<a class="item" href="#">El Salvador</a>
-		<a class="item" href="#">Honduras</a>
-		<a class="item" href="#">Nicaragua</a>
-		<a class="item" href="#">Costa Rica</a>
-		<a class="item" href="#">Panama</a>
-		<a class="item" href="#">Cuba</a>
-		<a class="item" href="#">Republica Dominicana</a>
-		<a class="item" href="#">Haiti</a>
-	</section>
 </main>
 
+<countries-list></countries-list>
 
 <footer class="ui inverted vertical footer segment">
-	<div class="ui container">
-		<div class="ui stackable inverted divided equal height stackable grid">
-			<div class="three wide column">
-				<h4 class="ui inverted header">Sobre Sipi</h4>
-				<div class="ui inverted link list">
-					<a href="#" class="item">Terminos de Uso</a>
-					<a href="#" class="item">Contacto</a>
-				</div>
-			</div>
-			<div class="three wide column">
-				<h4 class="ui inverted header">Servicios</h4>
-				<div class="ui inverted link list">
-					<a href="#" class="item">Publicidad</a>
-					<a href="#" class="item">Otro Servicio</a>
-				</div>
-			</div>
-			<div class="seven wide column">
-				<h4 class="ui inverted header">Sipi, la Guia Urbana</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempus purus eu orci finibus consectetur. Phasellus pretium viverra pulvinar. Sed commodo porta nisi, sed pellentesque arcu ultrices ac.</p>
-				<ul>
-					<li><a href="#">Guatemala</a></li>
-					<li><a href="#">Belize</a></li>
-					<li><a href="#">El Salvador</a></li>
-					<li><a href="#">Honduras</a></li>
-					<li><a href="#">Nicaragua</a></li>
-					<li><a href="#">Costa Rica</a></li>
-					<li><a href="#">Panama</a></li>
-					<li><a href="#">Cuba</a></li>
-					<li><a href="#">Republica Dominicana</a></li>
-					<li><a href="#">Haiti</a></li>
-				</ul>
-				
-			</div>
-			<div class="threw wide column">
-				<img class="logo" src="assets/images/sipi-logo.png">
-			</div>
+  <div class="ui container">
+    <div class="ui stackable inverted divided equal height stackable grid">
+      <div class="three wide column">
+        <h4 class="ui inverted header">Sobre Sipi</h4>
+        <div class="ui inverted link list">
+          <a href="terminos-uso" class="item">Terminos de Uso</a>
+          <a href="contacto" class="item">Contacto</a>
 		</div>
+	  </div>
+	  <div class="three wide column">
+	    <h4 class="ui inverted header">Servicios</h4>
+		<div class="ui inverted link list">
+		  <a href="publicidad" class="item">Publicidad</a>
+		  <a href="#" class="item">Otro Servicio</a>
+		</div>
+	  </div>
+	  <div class="seven wide column">
+	    <h4 class="ui inverted header">Sipi, la Guia Urbana</h4>
+	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempus purus eu orci finibus consectetur. Phasellus pretium viverra pulvinar. Sed commodo porta nisi, sed pellentesque arcu ultrices ac.</p>				
+	  </div>
+	  <div class="threw wide column">
+	    <img class="logo" src="assets/images/sipi-logo.png">
+	  </div>
 	</div>
+  </div>
 </footer>

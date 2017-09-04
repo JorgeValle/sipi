@@ -7,10 +7,10 @@ import { Location }                 from '@angular/common';
 
 
 @Component({
-	selector: 'register-button',
-	templateUrl: './register-button.component.html',
-	styleUrls: [ './register-button.component.css' ],
-	//providers: [PlaceService]
+  selector: 'log-in-button',
+  templateUrl: './log-in-button.component.html',
+  styleUrls: [ './log-in-button.component.css' ],
+  //providers: [PlaceService]
 })
 
 // component classes manage the html templates
@@ -19,12 +19,10 @@ import { Location }                 from '@angular/common';
 // components are big consumers of services
 // components jobs is to enbale the user experience, nothing more
 // components should be lean
-export class RegisterButtonComponent {
-	
-	logTheThing(): void {
-		console.log("Wont work");
-	};
+export class LogInButtonComponent {
   
-	
-
+  showLogInModal(): void {
+    console.log("Show log in modal");
+  };
+  
 }

@@ -1,0 +1,1 @@
+<button class="ui primary button" (click)="logTheThing()">Registrarse</button>
