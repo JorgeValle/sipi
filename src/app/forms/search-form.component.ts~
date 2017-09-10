@@ -27,7 +27,7 @@ export class SearchFormComponent {
 
   runSearch(f: NgForm) {
     console.log('Search was executed with values: ' + f.value);
-    console.log('Search form is valid: ' + f.valid);  // false
+    console.log('Search for is valid: ' + f.valid);  // false
   }
 
   protected dataService: CompleterData;

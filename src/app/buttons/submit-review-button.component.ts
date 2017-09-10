@@ -5,15 +5,12 @@ import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 
-import { Review } from '../reviews/review';
-import { SubcategoryService } from '../categories/subcategory.service';
-
 
 @Component({
-  selector: 'review-place-form',
-  templateUrl: './review-place-form.component.html',
-  styleUrls: [ './review-place-form.component.css' ],
-  //providers: [SubcategoryService]
+  selector: 'submit-review-button',
+  templateUrl: './submit-review-button.component.html',
+  styleUrls: [ './submit-review-button.component.css' ],
+  //providers: [PlaceService]
 })
 
 // component classes manage the html templates
@@ -22,8 +19,10 @@ import { SubcategoryService } from '../categories/subcategory.service';
 // components are big consumers of services
 // components jobs is to enbale the user experience, nothing more
 // components should be lean
-export class ReviewPlaceFormComponent {
-	
-	
-
+export class SubmitReviewButtonComponent {
+  
+  submitReview(): void {
+    console.log("Review has been posted");
+  };
+  
 }

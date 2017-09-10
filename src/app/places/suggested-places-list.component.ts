@@ -10,17 +10,17 @@ import { PlaceService } from './place.service';
 
 @Component({
 	// this selector is the html tag
-	selector: 'related-places-list',
+	selector: 'suggested-places-list',
 	// which template to render
-	templateUrl: './related-places-list.component.html',
-	styleUrls: [ './related-places-list.component.css' ],
+	templateUrl: './suggested-places-list.component.html',
+	styleUrls: [ './suggested-places-list.component.css' ],
 	providers: [PlaceService]
 })
 
 // component classes manage the html templates
 // a component controls a patch of screen called a view
 // the class is where we define what the component does to support the view
-export class RelatedPlacesListComponent implements OnInit {
+export class SuggestedPlacesListComponent implements OnInit {
 	
 	places: Place[];
 	place: Place;

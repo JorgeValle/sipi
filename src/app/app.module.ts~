@@ -137,8 +137,6 @@ const appRoutes: Routes = [
 		HttpModule,
 		InMemoryWebApiModule.forRoot(InMemoryDataService),
 		AppRoutingModule,
-		// autocomplete
-		Ng2CompleterModule,
 		RouterModule.forRoot(
 			appRoutes,
 			{ enableTracing: true } // <-- debugging purposes only

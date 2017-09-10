@@ -1,4 +1,4 @@
-<form class="ui input" #f="ngForm" (ngSubmit)="runSearch(f)" novalidate>
+<form class="ui input" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
   <!-- <input type="text" placeholder="Tipo, por ejemplo Restaurantes, Centros Comerciales"> -->
   <ng2-completer name="place" type="text" placeholder="restaurantes, La Gastroteca" ngModel required #place="ngModel" [datasource]="places"></ng2-completer>
   <!--<input type="text" placeholder="Lugar, por ejemplo San Salvador, Cotui">-->
