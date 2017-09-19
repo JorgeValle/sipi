@@ -13,7 +13,6 @@ import { CompleterService, CompleterData } from "ng2-completer";
 @Component({
   selector: 'search-form',
   templateUrl: './search-form.component.html',
-  styleUrls: [ './search-form.component.css' ],
   //providers: [PlaceService]
 })
 

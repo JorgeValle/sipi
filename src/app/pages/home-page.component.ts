@@ -9,7 +9,6 @@ import { Location }                 from '@angular/common';
 @Component({
 	selector: 'home-page',
 	templateUrl: './home-page.component.html',
-	styleUrls: [ './home-page.component.css' ],
 	//providers: [PlaceService]
 })
 

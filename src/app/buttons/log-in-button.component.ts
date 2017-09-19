@@ -9,7 +9,6 @@ import { Location }                 from '@angular/common';
 @Component({
   selector: 'log-in-button',
   templateUrl: './log-in-button.component.html',
-  styleUrls: [ './log-in-button.component.css' ],
   //providers: [PlaceService]
 })
 

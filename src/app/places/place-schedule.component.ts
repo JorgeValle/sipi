@@ -5,21 +5,23 @@ import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 
+import { Place }        from './place';
+import { PlaceService } from './place.service';
 
 @Component({
-	selector: 'sign-in-form',
-	templateUrl: './sign-in-form.component.html',
-	//providers: [PlaceService]
+	// this selector is the html tag
+	selector: 'place-schedule',
+	// which template to render
+	templateUrl: './place-schedule.component.html',
+	//providers: [PlaceSchedule]
 })
 
 // component classes manage the html templates
 // a component controls a patch of screen called a view
 // the class is where we define what the component does to support the view
-// components are big consumers of services
-// components jobs is to enbale the user experience, nothing more
-// components should be lean
-export class SignInFormComponent {
+export class PlaceScheduleComponent {
 	
-
-
+	places: Place[];
+	place: Place;
+	
 }

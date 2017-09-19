@@ -9,7 +9,6 @@ import { Location }                 from '@angular/common';
 @Component({
 	selector: 'breadcrumb-menu',
 	templateUrl: './breadcrumb-menu.component.html',
-	styleUrls: [ './breadcrumb-menu.component.css' ],
 	//providers: [PlaceService]
 })
 

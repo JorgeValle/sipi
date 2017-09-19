@@ -13,7 +13,6 @@ import { PlaceService } from './place.service';
 	selector: 'suggested-places-list',
 	// which template to render
 	templateUrl: './suggested-places-list.component.html',
-	styleUrls: [ './suggested-places-list.component.css' ],
 	providers: [PlaceService]
 })
 

@@ -9,7 +9,6 @@ import { Location }                 from '@angular/common';
 @Component({
 	selector: 'page-detail',
 	templateUrl: './page-detail.component.html',
-	styleUrls: [ './page-detail.component.css' ],
 	//providers: [PlaceService]
 })
 

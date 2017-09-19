@@ -12,7 +12,6 @@ import { SubcategoryService } from '../categories/subcategory.service';
 @Component({
   selector: 'review-place-form',
   templateUrl: './review-place-form.component.html',
-  styleUrls: [ './review-place-form.component.css' ],
   //providers: [SubcategoryService]
 })
 

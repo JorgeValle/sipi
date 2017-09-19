@@ -9,7 +9,6 @@ import { Location }                 from '@angular/common';
 @Component({
   selector: 'submit-review-button',
   templateUrl: './submit-review-button.component.html',
-  styleUrls: [ './submit-review-button.component.css' ],
   //providers: [PlaceService]
 })
 

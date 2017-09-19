@@ -1,43 +1,62 @@
-<!-- html templates with angularized markup -->
-<div class="ui grid">
-  <div class="twelve wide column">
-	
-  <leaderboard-ad></leaderboard-ad>
-	
-  <breadcrumb-menu></breadcrumb-menu>
-
-  <div *ngIf="place">
-    <h1 class="ui header">{{place.name}}</h1><a class="ui teal tag label">Confirmado</a>
-    <div class="ui star rating" data-rating="3"></div>
-    <span><a href="#">Asiatico</a>,&nbsp;<a href="#">Mediterraneo</a>,&nbsp;<a href="#">Vegetariano</a></span>
-    <p>This example shows how to use lazy loaded images, a sticky menu, and a simple text container</p>
-    <span><i class="photo icon"></i>&nbsp;<a href="#">Ver Fotos</a></span>
-
-	<!-- google map -->
-    <div id="map"></div>
-
-    <address>
-      <i class="marker icon"></i>&nbsp;{{place.address}}<br>
-      {{place.city}}, {{place.country}}
-      <i class="call icon"></i>&nbsp;{{place.phone}}<br>
-    </address>
-
-    <span><i class="map outline icon"></i>&nbsp;<a href="#">Obtener Direcciones</a></span>
-
-    <h2>Comentarios</h2>
-
-    <review-list></review-list>
-
-    <review-place-form></review-place-form>
-
-    <suggested-places-list></suggested-places-list>
-  </div>
-	
-	<div class="four wide column">
-		<img class="ui small image" src="https://media-cdn.tripadvisor.com/media/photo-s/06/c5/b8/36/delicious-food-from-xix.jpg">
-		<img class="ui small image" src="http://all4desktop.com/data_images/original/4244780-food.jpg">
-		<img class="ui small image" src="https://deliciousdawn.files.wordpress.com/2010/04/img_3956.jpg">	
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-xs-12 col-sm-12 col-md-8">	
+      <breadcrumb-menu></breadcrumb-menu>
+      
+      <div *ngIf="place">
+        <h1>{{place.name}}</h1>
+	<span class="badge badge-pill badge-primary">Confirmado</span>
+	<div>
+          <i class="material-icons">grade</i>
+	  <i class="material-icons">grade</i>
+	  <i class="material-icons">grade</i>
 	</div>
-	
-</div>
+        
+	<!--
+	<div>
+          <span class="badge badge-pill badge-primary">Confirmado</span>
+	</div>
+	-->
+
+	<div>
+          <span><a href="#">Asiatico</a>,&nbsp;<a href="#">Mediterraneo</a>,&nbsp;<a href="#">Vegetariano</a></span>
+	</div>
+
+        <!-- google map 
+        <div id="map"></div>
+	-->
+
+        <address>
+          {{place.address}}<br>
+	  {{place.city}}, {{place.country}}<br>
+        </address>
+
+	<i class="material-icons">web</i><a href="{{place.website}}">{{place.website}}</a><br/>
+	<span><i class="material-icons">phone</i> {{place.phone}}</span>
+
+	<h2>Horario</h2>
+
+        <place-schedule></place-schedule>
+	   
+
+
+        <span><a href="#">Obtener Direcciones</a></span>
+
+	<!--
+        <h2>Resenas</h2>
+
+        <review-list></review-list>
+
+        <review-place-form></review-place-form>
+
+        <suggested-places-list></suggested-places-list>
+        -->
+
+      </div><!-- ngIf="place" -->
+
+    </div>
+    <div class="col-md-4">
+      Secondary content here
+    </div>
+  </div>
 </div>

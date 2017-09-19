@@ -8,8 +8,7 @@ import { Location }                 from '@angular/common';
 
 @Component({
 	selector: 'main-menu',
-	templateUrl: './main-menu.component.html',
-	styleUrls: [ './main-menu.component.css' ],
+	templateUrl: './main-menu.component.html'
 	//providers: [PlaceService]
 })
 

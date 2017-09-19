@@ -5,14 +5,16 @@ import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 
+import { Distance } from '../distances/distance';
+import { DistanceService } from '../distances/distance.service';
+
 import { Subcategory } from '../categories/subcategory';
 import { SubcategoryService } from '../categories/subcategory.service';
 
-
 @Component({
-	selector: 'add-place-form',
-	templateUrl: './add-place-form.component.html',
-	providers: [SubcategoryService]
+	selector: 'filter-places-form',
+	templateUrl: './filter-places-form.component.html',
+	providers: [SubcategoryService, DistanceService]
 })
 
 // component classes manage the html templates
@@ -21,29 +23,41 @@ import { SubcategoryService } from '../categories/subcategory.service';
 // components are big consumers of services
 // components jobs is to enbale the user experience, nothing more
 // components should be lean
-export class AddPlaceFormComponent implements OnInit {
+export class FilterPlacesFormComponent implements OnInit{
 	
 	subcategories: Subcategory[];
 	subcategory: Subcategory;
 	
+	distances: Distance[];
+	
 	constructor(
 		private subcategoryService: SubcategoryService,
+		private distanceService: DistanceService,
 		private route: ActivatedRoute,
 		private location: Location
 	) {}
 	
+	// to populate the list of checkboxes
 	getSubcategories(): void {
 		this.subcategoryService
 		.getSubcategories()
 		.then(subcategories => this.subcategories = subcategories);
 	}
 	
-	updatePlace() {
-		console.log("API request to save this place");
+	// to populate the distance sliders
+	getDistances(): void {
+		this.distanceService
+		.getDistances()
+		.then(distances => this.distances = distances);
+	}
+	
+	applyFilter(): void {
+		console.log("Filter has been applied");
 	}
 	
 	ngOnInit(): void {
 		this.getSubcategories();
+		this.getDistances();
 	}
 	
 

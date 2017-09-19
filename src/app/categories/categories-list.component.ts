@@ -13,7 +13,6 @@ import { CategoryService } from './category.service';
 	selector: 'categories-list',
 	// which template to render
 	templateUrl: './categories-list.component.html',
-	styleUrls: [ './categories-list.component.css' ],
 	providers: [CategoryService]
 })
 

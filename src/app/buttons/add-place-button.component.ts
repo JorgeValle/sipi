@@ -9,7 +9,6 @@ import { Location }                 from '@angular/common';
 @Component({
   selector: 'sign-up-button',
   templateUrl: './sign-up-button.component.html',
-  styleUrls: [ './sign-up-button.component.css' ],
   //providers: [PlaceService]
 })
 

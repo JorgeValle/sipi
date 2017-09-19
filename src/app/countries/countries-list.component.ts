@@ -13,7 +13,6 @@ import { CountryService } from './country.service';
   selector: 'countries-list',
   // which template to render
   templateUrl: './countries-list.component.html',
-  styleUrls: [ './countries-list.component.css' ],
   providers: [CountryService]
 })
 

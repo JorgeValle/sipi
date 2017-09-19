@@ -9,7 +9,6 @@ import { Location }                 from '@angular/common';
 @Component({
 	selector: 'pagination-menu',
 	templateUrl: './pagination-menu.component.html',
-	styleUrls: [ './pagination-menu.component.css' ],
 	//providers: [PlaceService]
 })
 

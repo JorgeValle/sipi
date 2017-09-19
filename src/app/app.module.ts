@@ -26,6 +26,7 @@ import { PageDetailComponent } from './pages/page-detail.component';
 // places
 import { PlaceListComponent }      from './places/place-list.component';
 import { PlaceDetailComponent }  from './places/place-detail.component';
+import { PlaceScheduleComponent }  from './places/place-schedule.component';
 import { SuggestedPlacesListComponent } from './places/suggested-places-list.component';
 
 // reviews
@@ -39,6 +40,7 @@ import { CountriesListComponent } from './countries/countries-list.component';
 
 // menus
 import { MainMenuComponent } from './menus/main-menu.component';
+import { MainMenuBComponent } from './menus/main-menu-b.component';
 import { UserMenuComponent } from './menus/user-menu.component';
 import { PaginationMenuComponent } from './menus/pagination-menu.component';
 import { BreadcrumbMenuComponent } from './menus/breadcrumb-menu.component';
@@ -46,7 +48,7 @@ import { BreadcrumbMenuComponent } from './menus/breadcrumb-menu.component';
 // forms
 import { ReviewPlaceFormComponent } from './forms/review-place-form.component';
 import { AddPlaceFormComponent } from './forms/add-place-form.component';
-import { FilterRestaurantFormComponent } from './forms/filter-restaurant-form.component';
+import { FilterPlacesFormComponent } from './forms/filter-places-form.component';
 import { SignUpFormComponent } from './forms/sign-up-form.component';
 import { SignInFormComponent } from './forms/sign-in-form.component';
 import { SearchFormComponent } from './forms/search-form.component';
@@ -75,7 +77,7 @@ const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'usuario', component: UserDetailComponent },
   { path: 'lugar/:id', component: PlaceDetailComponent },
-  { path: 'categoria/:id', component: PlaceListComponent },
+  { path: 'busqueda', component: PlaceListComponent },
   { path: 'registro', component: SignUpFormComponent },
   { path: 'inicio', component: SignInFormComponent },
   { path: 'agregar-lugar', component: AddPlaceFormComponent },
@@ -100,12 +102,15 @@ const appRoutes: Routes = [
 	declarations: [
 		AppComponent,
 		UserDetailComponent,
-		PlaceDetailComponent,
-		PlaceListComponent,
+  // places
+  PlaceDetailComponent,
+  PlaceListComponent,
+  PlaceScheduleComponent,
 		SuggestedPlacesListComponent,
 		ReviewListComponent,
 		CategoriesListComponent,
 		MainMenuComponent,
+		MainMenuBComponent,
 		UserMenuComponent,
 		PaginationMenuComponent,
 		// buttons
@@ -116,7 +121,7 @@ const appRoutes: Routes = [
 		// forms
 		AddPlaceFormComponent,
 		ReviewPlaceFormComponent,
-		FilterRestaurantFormComponent,
+		FilterPlacesFormComponent,
 		// countries
 		CountriesListComponent,
 		SignUpFormComponent,

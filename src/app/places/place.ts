@@ -4,6 +4,12 @@ export class Place {
   address: string;
   city: string;
   country: string;
+  schedule: {
+    monday: {
+      open: number;
+      close: number;
+    }
+  };
   lat: number;
   lng: number;
   imageFileName: string;

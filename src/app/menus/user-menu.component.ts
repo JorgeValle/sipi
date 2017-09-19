@@ -9,7 +9,6 @@ import { Location }                 from '@angular/common';
 @Component({
 	selector: 'user-menu',
 	templateUrl: './user-menu.component.html',
-	styleUrls: [ './user-menu.component.css' ],
 	//providers: [PlaceService]
 })
 

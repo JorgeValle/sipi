@@ -1,0 +1,55 @@
+body {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+footer {
+  color: #fff; 
+}
+.outer-container {
+  width: 100%;
+}
+
+.brand-white {
+  color: #fff;
+}
+
+.brand-red {
+  background-color: #dc3545;
+}
+
+.brand-grey {
+  background-color: #868e96;
+}
+
+.brand-light-grey {
+  background-color: #efefef;
+}
+
+.brand-light-blue {
+  background-color: #16A2B8;
+}
+
+/* targets the ng2completer input */
+.completer-input {
+  display: block;
+  width: 100%;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #495057;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.material-icons.md-14 { font-size: 14px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }

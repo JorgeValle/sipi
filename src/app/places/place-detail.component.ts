@@ -11,7 +11,6 @@ import { PlaceService } from './place.service';
 @Component({
 	selector: 'place-detail',
 	templateUrl: './place-detail.component.html',
-	styleUrls: [ './place-detail.component.css' ],
 	providers: [PlaceService]
 })
 

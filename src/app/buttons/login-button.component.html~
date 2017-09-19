@@ -1,1 +1,0 @@
-<button class="ui primary button" (click)="loginModal()">Acceder</button>
