@@ -7,8 +7,15 @@ h1 {
 }
 
 footer {
-  color: #fff; 
+  /*color: #fff;*/
+  border-top: 2px solid #868e96;	
 }
+
+header {
+  border-top: 3px solid #16A2B8;
+  border-bottom: 1px solid #f5f5f5;
+}
+
 .outer-container {
   width: 100%;
 }
@@ -29,6 +36,10 @@ footer {
   background-color: #efefef;
 }
 
+.brand-lightest-grey {
+  background-color: #fafafa;
+}
+
 .brand-light-blue {
   background-color: #16A2B8;
 }
@@ -36,7 +47,7 @@ footer {
 /* targets the ng2completer input */
 .completer-input {
   display: block;
-  width: 100%;
+  /*width: 100%; */
   padding: .5rem .75rem;
   font-size: 1rem;
   line-height: 1.25;
@@ -53,3 +64,12 @@ footer {
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
+
+.progress {
+  border-radius: 0px;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+}
