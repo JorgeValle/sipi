@@ -1,6 +1,7 @@
-<filter-places-form></filter-places-form>
-<progress-bar></progress-bar>
+<!-- renders main navigation, one of two versions -->
+<main-menu-b></main-menu-b>
 
+<filter-places-form></filter-places-form>
 
 <div class="container">
   <div class="row mt-3">
@@ -20,9 +21,9 @@
 	</div>
 	-->
         <div class="card-body">
-          <h3 class="card-title">
-            <a href="/lugar/{{place.id}}">{{place.name}}</a>
-          </h3>
+          <h2 class="card-title h4">
+            <a routerLink="/lugar/{{place.id}}">{{place.name}}</a>
+          </h2>
           <div>
             <i class="material-icons">grade</i>
 	    <i class="material-icons">grade</i>
@@ -39,6 +40,7 @@
 	    {{place.phone}}
 	  </address>
 	</div>
+	<small class="text-muted">18 personas blah blah</small>
 	<!--
         <div class="card-footer text-muted">
           2 days ago

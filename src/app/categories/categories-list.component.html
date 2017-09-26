@@ -1,19 +1,13 @@
 <!-- html templates with angularized markup -->
-<div class="ui grid container">
-  <nav class="doubling eight column row">
-    <div class="column" *ngFor="let category of categories">
-	  <i class="{{category.iconId}} icon"></i>
-	  <a class="item" href="categoria/{{category.slug}}">{{category.name}}</a>
-	</div>
+<div class="container">
+  <nav class="card-columns">
+    <div class="card" *ngFor="let category of categories">
+      <!--
+      <i class="material-icons md-14">{{category.iconId}}</i>
+      -->
+      <div class="card-body">
+        <a class="item" href="categoria/{{category.slug}}">{{category.name}}</a>
+      </div>
+    </div>
   </nav>
 </div>
-<!--
-<div class="ui container">
-  <nav class="ui labeled three icon menu">
-    <a class="item" *ngFor="let category of categories" href="categoria/{{category.slug}}">
-      <i class="{{category.iconId}} icon"></i>
-      {{category.name}}
-    </a>
-  </nav>
-</div>
--->

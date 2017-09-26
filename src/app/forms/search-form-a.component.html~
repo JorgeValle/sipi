@@ -1,0 +1,17 @@
+<form #f="ngForm" (ngSubmit)="runSearch(f)" class="row mt-5 mb-5" novalidate>
+  <div class="col-12 col-sm-12 col-md-5">
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">Que?</span>
+      <ng2-completer name="place" type="text" placeholder="que? ejemplo: restaurantes, La Gastroteca" ngModel required #place="ngModel" [datasource]="places"></ng2-completer>
+    </div>
+  </div>
+  <div class="col-12 col-sm-12 col-md-5">
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">Que?</span>
+      <ng2-completer name="location" type="text" placeholder="adonde? ejemplo: San Salvador, Antigua, Cuba" ngModel #location="ngModel" [datasource]="locations"></ng2-completer>
+    </div>
+  </div>
+  <div class="col-12 col-sm-12 col-md-2">
+    <button type="submit" class="btn btn-primary" routerLink="/busqueda"><i class="material-icons md-14">search</i>&nbsp;Encontrar</button>
+  </div>
+</form>

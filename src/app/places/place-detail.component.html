@@ -1,3 +1,6 @@
+<!-- renders main navigation, one of two versions -->
+<main-menu-b></main-menu-b>
+
 <div class="container">
   
   <!--
@@ -10,9 +13,16 @@
 
   <div class="row mt-5">
     <div class="col-xs-12 col-sm-12 col-md-8">	
-      <breadcrumb-menu></breadcrumb-menu>
       
+      <info-message></info-message>
+      <error-message></error-message>
+      <success-message></success-message>
+
+
       <div *ngIf="place">
+
+	<breadcrumb-menu country="{{place.country}}" city="{{place.city}}"></breadcrumb-menu>
+
         <h1>{{place.name}}</h1>
 	<span class="badge badge-pill badge-primary">Confirmado</span>
 	<span class="badge badge-pill badge-primary">?Es este su negocio?</span>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sipi Guia Urbana</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/assets/css/sipi.css" rel="stylesheet">
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+		<!--
+		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+		-->
+		<!--
+	        <script src="/assets/semantic/dist/semantic.js"></script>
+		-->
+	</head>
+	<body>
+	  <app-root></app-root>
+	</body>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPZIW0HTQfO3qT3T8Lb96mZPYU2FtDGZs&callback=initMap"></script>
+			<script>
+		  function initMap() {
+			var uluru = {lat: 12.1150, lng: -86.2362};
+			var map = new google.maps.Map(document.getElementById('map'), {
+			  zoom: 4,
+			  center: uluru
+			});
+			var marker = new google.maps.Marker({
+			  position: uluru,
+			  map: map
+			});
+		  }
+		</script>
+		<style>
+		  #map {
+			height: 400px;
+			width: 100%;
+		   }
+		</style>
+</html>

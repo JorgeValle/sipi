@@ -6,13 +6,14 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 import { NgForm } from "@angular/forms";
 import { CompleterService, CompleterData } from "ng2-completer";
+import { RouterModule, Routes } from '@angular/router';
 
 
 
 
 @Component({
-  selector: 'search-form',
-  templateUrl: './search-form.component.html',
+  selector: 'search-form-b',
+  templateUrl: './search-form-b.component.html',
   //providers: [PlaceService]
 })
 
@@ -22,7 +23,7 @@ import { CompleterService, CompleterData } from "ng2-completer";
 // components are big consumers of services
 // components jobs is to enbale the user experience, nothing more
 // components should be lean
-export class SearchFormComponent {
+export class SearchFormBComponent {
 
   runSearch(f: NgForm) {
     console.log('Search was executed with values: ' + f.value);

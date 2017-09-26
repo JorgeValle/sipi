@@ -1,0 +1,28 @@
+<header class="brand-lightest-grey">
+  <div class="container mt-1">
+    <nav class="row">
+      <div class="col-12 col-sm-1">
+        <a class="navbar-brand" routerLink="/">
+          <img src="/assets/svgs/sipi-logo.svg" width="50" height="50" alt="">
+        </a>
+      </div>
+      <div class="col-4 col-sm-2">
+        <sign-up-button></sign-up-button>
+      </div>
+      <div class="col-4 col-sm-2">
+        <log-in-button></log-in-button>
+      </div>
+      <div class="col-4 col-sm-2">
+        <review-button></review-button>
+      </div>
+      <!--
+      <img src="//dltxjt69z9a4k.cloudfront.net/images/jorge-bw-700.jpg" alt="profile" class="img-thumbnail" width="50">
+      -->
+      <a class="nav-item nav-link" href="#">Jorge</a>
+      <search-form-b></search-form-b>
+    </nav>
+  </div>
+</header>
+<!--
+<progress-bar></progress-bar>
+-->

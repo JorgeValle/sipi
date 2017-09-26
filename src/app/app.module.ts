@@ -39,7 +39,7 @@ import { CategoriesListComponent } from './categories/categories-list.component'
 import { CountriesListComponent } from './countries/countries-list.component';
 
 // menus
-import { MainMenuComponent } from './menus/main-menu.component';
+import { MainMenuAComponent } from './menus/main-menu-a.component';
 import { MainMenuBComponent } from './menus/main-menu-b.component';
 import { UserMenuComponent } from './menus/user-menu.component';
 import { PaginationMenuComponent } from './menus/pagination-menu.component';
@@ -51,13 +51,19 @@ import { AddPlaceFormComponent } from './forms/add-place-form.component';
 import { FilterPlacesFormComponent } from './forms/filter-places-form.component';
 import { SignUpFormComponent } from './forms/sign-up-form.component';
 import { SignInFormComponent } from './forms/sign-in-form.component';
-import { SearchFormComponent } from './forms/search-form.component';
+import { SearchFormAComponent } from './forms/search-form-a.component';
+import { SearchFormBComponent } from './forms/search-form-b.component';
 
 // buttons
 import { SignUpButtonComponent } from './buttons/sign-up-button.component';
 import { LogInButtonComponent } from './buttons/log-in-button.component';
 import { ReviewButtonComponent } from './buttons/review-button.component';
 import { SubmitReviewButtonComponent } from './buttons/submit-review-button.component';
+
+// messages
+import { SuccessMessageComponent } from './messages/success-message.component';
+import { ErrorMessageComponent } from './messages/error-message.component';
+import { InfoMessageComponent } from './messages/info-message.component';
 
 // progress bar
 import { ProgressBarComponent } from './progress-bars/progress-bar.component';
@@ -102,6 +108,10 @@ const appRoutes: Routes = [
 	declarations: [
 		AppComponent,
 		UserDetailComponent,
+  // messages
+  SuccessMessageComponent,
+  ErrorMessageComponent,
+  InfoMessageComponent,
   // places
   PlaceDetailComponent,
   PlaceListComponent,
@@ -109,7 +119,7 @@ const appRoutes: Routes = [
 		SuggestedPlacesListComponent,
 		ReviewListComponent,
 		CategoriesListComponent,
-		MainMenuComponent,
+		MainMenuAComponent,
 		MainMenuBComponent,
 		UserMenuComponent,
 		PaginationMenuComponent,
@@ -118,15 +128,17 @@ const appRoutes: Routes = [
 		ReviewButtonComponent,
 		LogInButtonComponent,
 		SubmitReviewButtonComponent,
-		// forms
-		AddPlaceFormComponent,
-		ReviewPlaceFormComponent,
-		FilterPlacesFormComponent,
-		// countries
-		CountriesListComponent,
-		SignUpFormComponent,
-		SignInFormComponent,
-		SearchFormComponent,
+  // forms
+  AddPlaceFormComponent,
+  ReviewPlaceFormComponent,
+  FilterPlacesFormComponent,
+  SignUpFormComponent,
+  SignInFormComponent,
+  SearchFormAComponent,
+  SearchFormBComponent,
+  // countries
+  CountriesListComponent,
+
 		BreadcrumbMenuComponent,
 		ProgressBarComponent,
   // pages

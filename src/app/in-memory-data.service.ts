@@ -62,31 +62,31 @@ const countries = [
   { id: 8, name: 'Cuba', slug: 'cu' },
   { id: 9, name: 'Haiti', slug: 'ha' }
 ];
-	const cities = [
-		// guatemala
-		{ id: 0, name: 'Ciudad de Guatemala', countryId: 0 },
-		{ id: 1, name: 'Antigua Guatemala', countryId: 0 },
-		{ id: 2, name: 'Quetzaltenango', countryId: 0 },
-		{ id: 3, name: 'Villa Nueva', countryId: 0 },
-		{ id: 4, name: 'Chichicastenango', countryId: 0 },
-		{ id: 5, name: 'Flores', countryId: 0 },
-		{ id: 6, name: 'Cobán', countryId: 0 },
-		// belize
-		{ id: 7, name: 'Belize City', countryId: 1 },
-		{ id: 8, name: 'San Pedro Town', countryId: 1 },
-		{ id: 9, name: 'Belmopan', countryId: 1 },
-		{ id: 10, name: 'San Ignacio', countryId: 1 },
-		// el salvador
-		{ id: 11, name: 'San Salvador', countryId: 2 },
-		{ id: 12, name: 'Santa Tecla', countryId: 2 },
-		{ id: 13, name: 'Soyapango', countryId: 2 },
-		{ id: 14, name: 'San Miguel', countryId: 2 },
-		{ id: 15, name: 'Santa Ana', countryId: 2 },
-		{ id: 16, name: 'Sonsonate', countryId: 2 },
-		{ id: 17, name: 'Suchitoto', countryId: 2 },
-		{ id: 18, name: 'Apaneca', countryId: 2 },
-		{ id: 19, name: 'Concepcion de Ataco', countryId: 2 },
-		{ id: 20, name: 'La Palma', countryId: 2 },
+const cities = [
+  // guatemala
+  { id: 0, name: 'Ciudad de Guatemala', countryId: 0 },
+  { id: 1, name: 'Antigua Guatemala', countryId: 0 },
+  { id: 2, name: 'Quetzaltenango', countryId: 0 },
+  { id: 3, name: 'Villa Nueva', countryId: 0 },
+  { id: 4, name: 'Chichicastenango', countryId: 0 },
+  { id: 5, name: 'Flores', countryId: 0 },
+  { id: 6, name: 'Cobán', countryId: 0 },
+  // belize
+  { id: 7, name: 'Belize City', countryId: 1 },
+  { id: 8, name: 'San Pedro Town', countryId: 1 },
+  { id: 9, name: 'Belmopan', countryId: 1 },
+  { id: 10, name: 'San Ignacio', countryId: 1 },
+  // el salvador
+  { id: 11, name: 'San Salvador', countryId: 2 },
+  { id: 12, name: 'Santa Tecla', countryId: 2 },
+  { id: 13, name: 'Soyapango', countryId: 2 },
+  { id: 14, name: 'San Miguel', countryId: 2 },
+  { id: 15, name: 'Santa Ana', countryId: 2 },
+  { id: 16, name: 'Sonsonate', countryId: 2 },
+  { id: 17, name: 'Suchitoto', countryId: 2 },
+  { id: 18, name: 'Apaneca', countryId: 2 },
+  { id: 19, name: 'Concepcion de Ataco', countryId: 2 },
+  { id: 20, name: 'La Palma', countryId: 2 },
 		// honduras
 		{ id: 21, name: 'Tegucigalpa', countryId: 3 },
 		{ id: 22, name: 'San Pedro Sula', countryId: 3 },
@@ -136,12 +136,13 @@ const countries = [
 		{ id: 2, title: 'Sobre Sipi', body: 'Nullam libero orci, imperdiet quis elementum a, gravida vitae augue. Pellentesque ex nisi, dapibus eget accumsan blandit, varius at mi. Praesent quis blandit ligula, vitae gravida felis. Aenean aliquam, lorem ut bibendum blandit, tellus massa aliquam tortor, ac cursus justo metus eget ex. Cras ultricies libero vitae tincidunt mattis. Nunc eu justo elit. Etiam nec tortor ac justo malesuada molestie.' },
 
 	];
-	const distances = [
-		{ id: 0, value: 5, label:'Menos de' },
-		{ id: 1, value: 10, label:'Entre' },
-		{ id: 2, value: 15, label:'Entre' },
-		{ id: 3, value: 20, label:'Mas de' }
-	];
-	return { places, reviews, categories, subcategories, countries, cities, pages, distances };
+const distances = [
+  { id: 0, value: 5, label:'Menos de' },
+  { id: 1, value: 10, label:'Entre' },
+  { id: 2, value: 15, label:'Entre' },
+  { id: 3, value: 20, label:'Mas de' }
+];
+
+return { places, reviews, categories, subcategories, countries, cities, pages, distances };
   }
 }

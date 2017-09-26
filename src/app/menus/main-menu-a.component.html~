@@ -1,0 +1,12 @@
+<header class="brand-lightest-grey">
+  <div class="container mt-1">
+    <nav class="row">
+      <sign-up-button class="col-5"></sign-up-button>
+      <log-in-button></log-in-button>
+      <review-button></review-button>
+    </nav>
+  </div>
+</header>
+<!--
+<progress-bar></progress-bar>
+-->

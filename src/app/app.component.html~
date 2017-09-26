@@ -1,41 +1,39 @@
-<!-- renders main navigation, one of two versions -->
-<main-menu-b></main-menu-b>
-
 <!-- renders the component corresponding to the route -->
-<main>
-  <router-outlet></router-outlet>
-</main>
+<router-outlet></router-outlet>
 
+<!--
 <countries-list></countries-list>
+-->
+
 
 <footer class="outer-container brand-light-grey">
   <div class="container pt-4 pb-4">
     <div class="row">
-      <div class="col-12 col-sm-3">
-        <h3 class="h5">Sipi, la guia urbana</h3>
-        <p class="lead">Lorem ipsum dolor sit amet, consectet ur adipiscing elit. </p>
-        <p>Aliquam tempus purus eu orci finibus consectetur. Phasellus pretium viverra pulvinar. Sed commodo porta nisi, sed pellentesque arcu ultrices ac.</p>
+      <div class="col-12 col-sm-3 col-md-2 border-right d-none d-sm-none d-md-block">
+        <img src="/assets/svgs/sipi-logo-grey.svg" width="50" height="50" alt="Sipi logo">
       </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <h3 class="h6">Sipi</h3>
+      <div class="col-12 col-sm-4 col-md-2 border-right">
+        <h3 class="h6 underline">Sipi</h3>
 	<ul class="list">
           <li><a href="#">Direccion</a></li>
           <li><a href="#">Contacto</a></li>
         </ul>
       </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <h3 class="h6">Servicios</h3>
+      <div class="col-12 col-sm-4 col-md-2 border-right">
+        <h3 class="h6 underline">Servicios</h3>
 	<ul class="list">
           <li><a href="#">Como te podemos ayudar?</a></li>
           <li><a href="#">Publicidad</a></li>
         </ul>
       </div>
-      <div class="col-12 col-sm-3">
-        <h3 class="h6">Contacto</h3>
+      <div class="col-12 col-sm-3 col-md-3">
+        <h3 class="h6 underline">Contacto</h3>
+	<ul class="list">
+          <li><a href="#">Como te podemos ayudar?</a></li>
+          <li><a href="#">Publicidad</a></li>
+        </ul>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
+      <div class="col-12 col-md-3">
         <small>Derechos Reservados &copy; 2017 <em>Servicios Integrales Pro Imagen S.A. de C.V</em></small>
       </div>
     </div>

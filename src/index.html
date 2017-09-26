@@ -1,9 +1,20 @@
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="utf-8">
-		<title>Sipi Guia Urbana</title>
-		<script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sipi Guia Urbana</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/assets/css/sipi.css" rel="stylesheet">
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPZIW0HTQfO3qT3T8Lb96mZPYU2FtDGZs&callback=initMap"></script>
+			<script>
 		  function initMap() {
 			var uluru = {lat: 12.1150, lng: -86.2362};
 			var map = new google.maps.Map(document.getElementById('map'), {
@@ -22,22 +33,10 @@
 			width: 100%;
 		   }
 		</style>
-		<!--<link rel="stylesheet" href="/assets/semantic/dist/semantic.css">-->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link href="/assets/css/sipi.css" rel="stylesheet">
-		<base href="/">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<style>
-
-		</style>
+				<!--
 		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-		<!--<script src="/assets/semantic/dist/semantic.js"></script>-->
-	</head>
-	<body>
-		<app-root></app-root>
-	</body>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPZIW0HTQfO3qT3T8Lb96mZPYU2FtDGZs&callback=initMap"></script>
+		-->
+		<!--
+	        <script src="/assets/semantic/dist/semantic.js"></script>
+		-->
 </html>

@@ -1,7 +1,7 @@
 import 'rxjs/add/operator/switchMap';
 
 // importing, through native JS, from Angular core or libraries
-import { Component, OnInit }        from '@angular/core';
+import { Component, OnInit, Input }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 
@@ -19,7 +19,8 @@ import { Location }                 from '@angular/common';
 // components jobs is to enbale the user experience, nothing more
 // components should be lean
 export class BreadcrumbMenuComponent {
-	
 
+  @Input() country: string;
+  @Input() city: string;
 
 }
