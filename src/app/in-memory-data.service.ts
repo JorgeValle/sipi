@@ -2,17 +2,17 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const places = [
-    { id: 0,  name: 'Rafael', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', city: 'San Salvador', country: 'El Salvador', phone: '883-9980', website: 'http://wwww.google.com' },
-      { id: 1, name: 'Cala', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'Antigua', country: 'Guatemala', phone: '883-8766', website: 'http://wwww.google.com' },
-      { id: 2, name: 'Drago Dorado', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', city: 'San Salvador', country: 'El Salvador', phone: '332-9340', website: 'http://wwww.google.com' },
-      { id: 3, name: 'Chez Francois', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', city: 'Santa Tecla', country: 'El Salvador', phone: '239-2322', website: 'http://wwww.google.com' },
-      { id: 4,  name: 'Otro Restaurante', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', city: 'Managua', country: 'Nicaragua', phone: '883-9980', website: 'http://wwww.google.com' },
-      { id: 5, name: 'Moja Majo', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'Havana', country: 'Cuba', phone: '883-8766', website: 'http://wwww.google.com' },
-      { id: 6, name: 'Las Rambles', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', city: 'San Jose', country: 'Costa Rica', phone: '332-9340', website: 'http://wwww.google.com' },
-      { id: 7, name: 'Andalucia', category: 'Restaurantes', subcategoies: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', city: 'San Salvador', country: 'El Salvador', phone: '239-2322', website: 'http://wwww.google.com' },
-      { id: 8,  name: 'Rafaelet', category: 'Restaurantes', subcategoies: ['Mariscos'], rating: 3, address: '1234 Calle Principal', city: 'Santa Rosa', country: 'El Salvador', phone: '883-9980', website: 'http://wwww.google.com' },
-      { id: 9, name: 'Calais Marais', category: 'Restaurantes', subcategoies: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'San Salvador', country: 'El Salvador', phone: '883-8766', website: 'http://wwww.google.com' },
-      { id: 10, name: 'Tatayaki', category: 'Restaurantes', subcategoies: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', city: 'Santo Domingo', country: 'Republica Dominicana', phone: '332-9340', website: 'http://wwww.google.com' }
+    { id: 0,  name: 'Rafael', category: 'Restaurantes', subcategories: ['Mariscos', 'Otra'], rating: 3, address: '1234 Calle Principal', city: 'San Salvador', country: 'El Salvador', phone: '883-9980', website: 'http://wwww.google.com' },
+      { id: 1, name: 'Cala', category: 'Restaurantes', subcategories: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'Antigua', country: 'Guatemala', phone: '883-8766', website: 'http://wwww.google.com' },
+      { id: 2, name: 'Drago Dorado', category: 'Restaurantes', subcategories: ['Asiatico', 'Tacos'], rating: 4, address: '17 Avenida Revolucion', city: 'San Salvador', country: 'El Salvador', phone: '332-9340', website: 'http://wwww.google.com' },
+      { id: 3, name: 'Chez Francois', category: 'Restaurantes', subcategories: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', city: 'Santa Tecla', country: 'El Salvador', phone: '239-2322', website: 'http://wwww.google.com' },
+      { id: 4,  name: 'Otro Restaurante', category: 'Restaurantes', subcategories: ['Mariscos'], rating: 3, address: '1234 Calle Principal', city: 'Managua', country: 'Nicaragua', phone: '883-9980', website: 'http://wwww.google.com' },
+      { id: 5, name: 'Moja Majo', category: 'Restaurantes', subcategories: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'Havana', country: 'Cuba', phone: '883-8766', website: 'http://wwww.google.com' },
+      { id: 6, name: 'Las Rambles', category: 'Restaurantes', subcategories: ['Asiatico', 'Americano'], rating: 4, address: '17 Avenida Revolucion', city: 'San Jose', country: 'Costa Rica', phone: '332-9340', website: 'http://wwww.google.com' },
+      { id: 7, name: 'Andalucia', category: 'Restaurantes', subcategories: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', city: 'San Salvador', country: 'El Salvador', phone: '239-2322', website: 'http://wwww.google.com' },
+      { id: 8,  name: 'Rafaelet', category: 'Restaurantes', subcategories: ['Mariscos'], rating: 3, address: '1234 Calle Principal', city: 'Santa Rosa', country: 'El Salvador', phone: '883-9980', website: 'http://wwww.google.com' },
+      { id: 9, name: 'Calais Marais', category: 'Restaurantes', subcategories: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'San Salvador', country: 'El Salvador', phone: '883-8766', website: 'http://wwww.google.com' },
+      { id: 10, name: 'Tatayaki', category: 'Restaurantes', subcategories: ['Asiatico'], rating: 4, address: '17 Avenida Revolucion', city: 'Santo Domingo', country: 'Republica Dominicana', phone: '332-9340', website: 'http://wwww.google.com' }
     ];
     const reviews = [
       { id: 0, author: 'Giovanni Max', body: 'Muy buen lugar!' },

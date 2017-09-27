@@ -4,7 +4,7 @@
 <filter-places-form></filter-places-form>
 
 <div class="container">
-  <div class="row mt-3">
+  <div class="row mt-3 mb-3">
     <div class="col-10">
       <h1 class="h3">Los 10 mejores restaurantes en Antigua</h1>
     </div>
@@ -12,8 +12,8 @@
 
   <div class="row">
     <div class="col-12 col-sm-12 col-md-8">
-      <div class="card" *ngFor="let place of places">
-	<!--      
+      <div class="card mb-4" *ngFor="let place of places">  
+	<!--
         <div class="card-header">
           <i class="material-icons">grade</i>
 	  <i class="material-icons">grade</i>
@@ -24,38 +24,38 @@
           <h2 class="card-title h4">
             <a routerLink="/lugar/{{place.id}}">{{place.name}}</a>
           </h2>
-          <div>
-            <i class="material-icons">grade</i>
-	    <i class="material-icons">grade</i>
-	    <i class="material-icons">grade</i>
-	  </div>
-	  <span class="card-subtitle mb-2 text-muted">
-	    <a href="#">Americano</a>,
-	    <a href="#">Tacos</a>,
-	    <a href="#">Sandwiches</a>
+	  <!--
+	  <i class="material-icons">view_comfy</i>
+	  -->
+	  <span class="card-subtitle mb-2 text-muted" *ngFor="let subcategory of place.subcategories">
+	    <a routerLink="#">{{subcategory}}</a>,&nbsp;
 	  </span>
 	  <address class="card-text">
 	    {{place.address}} <br>
 	    {{place.city}}, {{place.country}} <br>
-	    {{place.phone}}
+	    <i>{{place.phone}}</i>
 	  </address>
+	  <!--
+	  <small class="text-muted">18 personas blah blah</small>
+	  -->
 	</div>
-	<small class="text-muted">18 personas blah blah</small>
 	<!--
         <div class="card-footer text-muted">
           2 days ago
         </div>
 	-->
       </div><!-- /.card -->
+
+      <pagination-menu></pagination-menu>
+
     </div>
+
+
     <div class="col-12 col-sm-12 col-md-4">
       <div id="map"></div>
     </div>
 
 
   </div>
-
-  <pagination-menu></pagination-menu>
-
 
 </div>

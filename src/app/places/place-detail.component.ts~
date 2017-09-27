@@ -23,10 +23,10 @@ import { PlaceService } from './place.service';
 // components should be lean
 export class PlaceDetailComponent implements OnInit {
 	
-  place: Place;
+	place: Place;
 	
-  constructor(
-    private placeService: PlaceService,
+	constructor(
+		private placeService: PlaceService,
 		private route: ActivatedRoute,
 		private location: Location
 	) {}

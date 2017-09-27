@@ -21,7 +21,7 @@
 
       <div *ngIf="place">
 
-        <breadcrumb-menu city="{{place.city}}"></breadcrumb-menu>
+	<breadcrumb-menu country="{{place.country}}" city="{{place.city}}"></breadcrumb-menu>
 
         <h1>{{place.name}}</h1>
 	<span class="badge badge-pill badge-primary">Confirmado</span>

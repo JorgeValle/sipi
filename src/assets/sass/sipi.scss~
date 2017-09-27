@@ -61,7 +61,9 @@
 @import 'sipi/colors';
 @import 'sipi/type';
 @import 'sipi/header';
+@import 'sipi/filters';
 @import 'sipi/footer';
+@import 'sipi/homepage';
 @import 'sipi/main';
 @import 'sipi/formatting';
 
