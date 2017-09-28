@@ -25,14 +25,13 @@ import { SubcategoryService } from '../categories/subcategory.service';
 // components should be lean
 export class FilterPlacesFormComponent implements OnInit{
 
-/*
   public buttonEnabled;
 
   public enableButton = (person) => {  
     if (this.currentPerson === person) return;
     this.currentPerson = person;
   }
-  */
+
 	
 	subcategories: Subcategory[];
 	subcategory: Subcategory;

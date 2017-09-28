@@ -4,6 +4,7 @@ import 'rxjs/add/operator/switchMap';
 import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
+import { Title }                    from '@angular/platform-browser';
 
 import { Place }        from './place';
 import { PlaceService } from './place.service';
@@ -28,7 +29,8 @@ export class PlaceListComponent implements OnInit {
 	constructor(
 		private placeService: PlaceService,
 		private route: ActivatedRoute,
-		private location: Location
+		private location: Location,
+		private titleService: Title
 	) {}
 	
 	getPlaces(): void {
@@ -42,4 +44,9 @@ export class PlaceListComponent implements OnInit {
 		this.getPlaces();
 
 	}
+	
+ 
+  public setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
+  }
 }

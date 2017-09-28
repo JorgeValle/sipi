@@ -2,7 +2,7 @@
 // features are usually modules, cohesive blocks of code dedicated to an application domain
 
 // importing modules here allows access to these services from anywhere in the app
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -51,8 +51,8 @@ import { AddPlaceFormComponent } from './forms/add-place-form.component';
 import { FilterPlacesFormComponent } from './forms/filter-places-form.component';
 import { SignUpFormComponent } from './forms/sign-up-form.component';
 import { SignInFormComponent } from './forms/sign-in-form.component';
-import { SearchFormComponentA } from './forms/search-form-a.component';
-import { SearchFormComponentB } from './forms/search-form-b.component';
+import { SearchFormAComponent } from './forms/search-form-a.component';
+import { SearchFormBComponent } from './forms/search-form-b.component';
 
 // buttons
 import { SignUpButtonComponent } from './buttons/sign-up-button.component';
@@ -87,19 +87,7 @@ const appRoutes: Routes = [
   { path: 'registro', component: SignUpFormComponent },
   { path: 'inicio', component: SignInFormComponent },
   { path: 'agregar-lugar', component: AddPlaceFormComponent },
-  { path: ':pagina', component: PageDetailComponent },
-  
-	// { path: 'hero/:id',      component: HeroDetailComponent },
-	// {
-	// path: 'heroes',
-	// component: HeroListComponent,
-	// data: { title: 'Heroes List' }
-	// },
-	// { path: '',
-	// redirectTo: '/heroes',
-	// pathMatch: 'full'
-	// },
-	// { path: '**', component: PageNotFoundComponent }
+  { path: ':pagina', component: PageDetailComponent }
 ];
 
 // an NgModule, whether a root or feature, is a class with an @NgModule decorator
@@ -160,7 +148,11 @@ const appRoutes: Routes = [
 			appRoutes,
 			{ enableTracing: true } // <-- debugging purposes only
 		)
-	],
+		],
+		provider: [
+		  Title
+		
+		]
 	// creators of services that this module contributes to the global collection of services; they become accessible in all parts of the app
 	// register app-wide services in the root AppModule [providers]
 	providers: [DistanceService],

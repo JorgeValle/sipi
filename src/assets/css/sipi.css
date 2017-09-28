@@ -4655,6 +4655,8 @@ section .filters {
 
 .filters {
   background-color: #d8dbdd; }
+  .filters .light-grey {
+    background-color: #f3f4f5; }
 
 footer {
   background-color: #25282b;

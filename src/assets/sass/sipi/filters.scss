@@ -9,4 +9,9 @@ section {
 
 .filters {
   background-color: lighten($brand-grey, 30%);
+
+  .light-grey {
+    background-color: lighten($brand-grey, 40%);
+  }
+
 }

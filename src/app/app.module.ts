@@ -2,7 +2,7 @@
 // features are usually modules, cohesive blocks of code dedicated to an application domain
 
 // importing modules here allows access to these services from anywhere in the app
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -87,85 +87,75 @@ const appRoutes: Routes = [
   { path: 'registro', component: SignUpFormComponent },
   { path: 'inicio', component: SignInFormComponent },
   { path: 'agregar-lugar', component: AddPlaceFormComponent },
-  { path: ':pagina', component: PageDetailComponent },
-  
-	// { path: 'hero/:id',      component: HeroDetailComponent },
-	// {
-	// path: 'heroes',
-	// component: HeroListComponent,
-	// data: { title: 'Heroes List' }
-	// },
-	// { path: '',
-	// redirectTo: '/heroes',
-	// pathMatch: 'full'
-	// },
-	// { path: '**', component: PageNotFoundComponent }
+  { path: ':pagina', component: PageDetailComponent }
 ];
 
 // an NgModule, whether a root or feature, is a class with an @NgModule decorator
 @NgModule({
-	// the view classes that belong to this module
-	declarations: [
-		AppComponent,
-		UserDetailComponent,
-  // messages
-  SuccessMessageComponent,
-  ErrorMessageComponent,
-  InfoMessageComponent,
-  // places
-  PlaceDetailComponent,
-  PlaceListComponent,
-  PlaceScheduleComponent,
-		SuggestedPlacesListComponent,
-		ReviewListComponent,
-		CategoriesListComponent,
-		MainMenuAComponent,
-		MainMenuBComponent,
-		UserMenuComponent,
-		PaginationMenuComponent,
-		// buttons
-		SignUpButtonComponent,
-		ReviewButtonComponent,
-		LogInButtonComponent,
-		SubmitReviewButtonComponent,
-  // forms
-  AddPlaceFormComponent,
-  ReviewPlaceFormComponent,
-  FilterPlacesFormComponent,
-  SignUpFormComponent,
-  SignInFormComponent,
-  SearchFormAComponent,
-  SearchFormBComponent,
-  // countries
-  CountriesListComponent,
-
-		BreadcrumbMenuComponent,
-		ProgressBarComponent,
-  // pages
-  HomePageComponent,
-  PageDetailComponent,
-		LeaderboardAdComponent,
-		LargeRectangleAdComponent
-	],
-	// other modules whose exported classes are needed by component templates declared in this module
-	imports: [
-		BrowserModule,
-		FormsModule,
-		HttpModule,
-		InMemoryWebApiModule.forRoot(InMemoryDataService),
-		AppRoutingModule,
-		// autocomplete
-		Ng2CompleterModule,
-		RouterModule.forRoot(
-			appRoutes,
-			{ enableTracing: true } // <-- debugging purposes only
-		)
-	],
-	// creators of services that this module contributes to the global collection of services; they become accessible in all parts of the app
-	// register app-wide services in the root AppModule [providers]
-	providers: [DistanceService],
-	// launch the app by bootstrapping the root module
-	bootstrap: [AppComponent]
+  // the view classes that belong to this module
+  declarations: [
+    AppComponent,
+    UserDetailComponent,
+    // messages
+    SuccessMessageComponent,
+    ErrorMessageComponent,
+    InfoMessageComponent,
+    // places
+    PlaceDetailComponent,
+    PlaceListComponent,
+    PlaceScheduleComponent,
+    SuggestedPlacesListComponent,
+    ReviewListComponent,
+    CategoriesListComponent,
+    MainMenuAComponent,
+    MainMenuBComponent,
+    UserMenuComponent,
+    PaginationMenuComponent,
+    // buttons
+    SignUpButtonComponent,
+    ReviewButtonComponent,
+    LogInButtonComponent,
+    SubmitReviewButtonComponent,
+    // forms
+    AddPlaceFormComponent,
+    ReviewPlaceFormComponent,
+    FilterPlacesFormComponent,
+    SignUpFormComponent,
+    SignInFormComponent,
+    SearchFormAComponent,
+    SearchFormBComponent,
+    // countries
+    CountriesListComponent,
+    BreadcrumbMenuComponent,
+    ProgressBarComponent,
+    // pages
+    HomePageComponent,
+    PageDetailComponent,
+    LeaderboardAdComponent,
+    LargeRectangleAdComponent
+  ],
+  // other modules whose exported classes are needed by component templates declared in this module
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    AppRoutingModule,
+    // autocomplete
+    Ng2CompleterModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
+  ],
+  // creators of services that this module contributes to the global collection of services; they become accessible in all parts of the app
+  // register app-wide services in the root AppModule [providers]
+  providers: [
+    DistanceService,
+	Title
+  ],
+  // launch the app by bootstrapping the root module
+  bootstrap: [AppComponent]
 })
 
 // for illustrative purposes only, a root module has no reason to export anything because other components don't need to import the root module

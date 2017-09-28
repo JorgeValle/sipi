@@ -18,8 +18,12 @@
       <!--
       <img src="//dltxjt69z9a4k.cloudfront.net/images/jorge-bw-700.jpg" alt="profile" class="img-thumbnail" width="50">
       -->
-      <a class="nav-item nav-link" href="#">Jorge</a>
-      <search-form-b></search-form-b>
+      <div class="col-12 col-sm-1">
+        <a class="nav-item nav-link" href="#">Jorge</a>
+      </div>
+      <div class="col-12 col-sm-4">
+        <search-form-b></search-form-b>
+      </div>
     </nav>
   </div>
 </header>

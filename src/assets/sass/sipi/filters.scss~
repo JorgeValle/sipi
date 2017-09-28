@@ -7,7 +7,11 @@ section {
 
 }
 
-  .filters {
-    background-color: lighten($brand-grey, 20%);
+.filters {
+  background-color: lighten($brand-grey, 30%);
 
+  .light-grey {
+    background-color: lighten($brand-grey, 35%);
   }
+
+}

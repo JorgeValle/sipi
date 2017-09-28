@@ -1,6 +1,8 @@
 <!-- renders main navigation, one of two versions -->
 <main-menu-b></main-menu-b>
 
+<a (click)="setTitle( 'Good morning!' )">Set title</a>
+
 <filter-places-form></filter-places-form>
 
 <div class="container">
@@ -12,7 +14,7 @@
 
   <div class="row">
     <div class="col-12 col-sm-12 col-md-8">
-      <div class="card mb-4" *ngFor="let place of places">  
+      <div class="card bg-light mb-4" *ngFor="let place of places">  
 	<!--
         <div class="card-header">
           <i class="material-icons">grade</i>
