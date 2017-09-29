@@ -10,9 +10,9 @@ import { Place }        from './place';
 import { PlaceService } from './place.service';
 
 @Component({
-	selector: 'place-detail',
-	templateUrl: './place-detail.component.html',
-	providers: [PlaceService]
+  selector: 'place-detail',
+  templateUrl: './place-detail.component.html',
+  providers: [PlaceService]
 })
 
 // component classes manage the html templates
@@ -24,17 +24,28 @@ import { PlaceService } from './place.service';
 export class PlaceDetailComponent implements OnInit {
 	
   place: Place;
-	
+
   constructor(
     private placeService: PlaceService,
-		private route: ActivatedRoute,
-		private location: Location
-	) {}
+    private route: ActivatedRoute,
+    private location: Location,
+	private titleService: Title
+  ) {}
+
+  /**
+   * Sets the document title
+   */
+  setTitle(newTitle:string) {
+    this.titleService.setTitle(newTitle);	
+  }
+
+  ngOnInit(): void {
 	
-	ngOnInit(): void {
-		this.route.paramMap
-			.switchMap((params: ParamMap) => this.placeService.getPlace(+params.get('id')))
-			.subscribe(place => this.place = place);
-	}
+    this.setTitle('Un lugar | Sipi');  // set the document title	
+	
+    this.route.paramMap
+    .switchMap((params: ParamMap) => this.placeService.getPlace(+params.get('id')))
+    .subscribe(place => this.place = place);
+  }
 
 }

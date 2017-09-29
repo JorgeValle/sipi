@@ -4597,6 +4597,9 @@ a.text-dark:focus, a.text-dark:hover {
 /**
  * Sipi v.3.0.0-alpha
  */
+.enabled {
+  background-color: #218838; }
+
 /* Rules for sizing the icon. */
 .material-icons.md-18 {
   font-size: 18px; }
@@ -4682,7 +4685,7 @@ footer {
     padding-left: 0; }
 
 .homepage-image {
-  background-image: url("https://assets.bonappetit.com/photos/58e29a4f8f4c125ce35a1301/16:9/w_1200,c_limit/0417-web-pupusa-beauty.jpg");
+  background-color: grey;
   height: 600px; }
 
 @media (min-width: 992px) and (max-width: 1199px) {

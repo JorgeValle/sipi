@@ -1,13 +1,22 @@
+<ul class="nav nav-pills pull-right">
+        <li *ngFor="let x of nav;let i=index" 
+             class="presentation" 
+             (click)="isClicked=i"             
+             [class.active]="isClicked==i">    
+             <a href="#">{{x.menu}}</a>
+        </li>
+</ul>
+
 <section class="outer-container filters pt-3 pb-3">
   <form class="container">
     <div class="row">
       <div class="col-2">
-        <button class="btn btn-secondary btn-sm" [ngClass]="{ 'active': myString == ThisIsActiveString }" type="button">
+        <button class="btn btn-secondary btn-sm" (click)="enableButton(this)" [class.enabled]="this.enabled" type="button">
 	  <i class="material-icons md-18">schedule</i>&nbsp;Abiertos
 	</button>
       </div>
       <div class="col-2">
-        <button type="button" class="btn btn-secondary btn-sm"><i class="material-icons md-18">filter_list</i>&nbsp;Filtros</button>
+        <button class="btn btn-secondary btn-sm" (click)="enabled = !enabled" [class.enabled]="enabled" type="button"><i class="material-icons md-18">filter_list</i>&nbsp;Filtros</button>
       </div>
       <div class="col-2">
         <div class="btn-group" role="group" aria-label="Basic example">
