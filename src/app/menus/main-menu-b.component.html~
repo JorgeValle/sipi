@@ -15,13 +15,13 @@
       <div class="col-4 col-sm-2">
         <review-button></review-button>
       </div>
-      <!--
-      <img src="//dltxjt69z9a4k.cloudfront.net/images/jorge-bw-700.jpg" alt="profile" class="img-thumbnail" width="50">
-      -->
+
+      <img alt="[User's] profile image" height="50" src="//dltxjt69z9a4k.cloudfront.net/images/jorge-bw-700.jpg" width="30">
+
       <div class="col-12 col-sm-1">
         <a class="nav-item nav-link" href="#">Jorge</a>
       </div>
-      <div class="col-12 col-sm-4">
+      <div class="col-12">
         <search-form-b></search-form-b>
       </div>
     </nav>

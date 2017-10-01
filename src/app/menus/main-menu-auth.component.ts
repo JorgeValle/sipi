@@ -7,8 +7,8 @@ import { Location }                 from '@angular/common';
 
 
 @Component({
-	selector: 'main-menu-a',
-	templateUrl: './main-menu-a.component.html'
+	selector: 'main-menu-auth',
+	templateUrl: './main-menu-auth.component.html'
 	//providers: [PlaceService]
 })
 
@@ -18,7 +18,7 @@ import { Location }                 from '@angular/common';
 // components are big consumers of services
 // components jobs is to enbale the user experience, nothing more
 // components should be lean
-export class MainMenuAComponent {
+export class MainMenuAuthComponent {
 	
 
 

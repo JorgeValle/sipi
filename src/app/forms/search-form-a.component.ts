@@ -8,9 +8,6 @@ import { NgForm } from "@angular/forms";
 import { CompleterService, CompleterData } from "ng2-completer";
 import { RouterModule, Routes } from '@angular/router';
 
-
-
-
 @Component({
   selector: 'search-form-a',
   templateUrl: './search-form-a.component.html',

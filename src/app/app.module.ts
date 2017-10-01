@@ -41,6 +41,7 @@ import { CountriesListComponent } from './countries/countries-list.component';
 // menus
 import { MainMenuAComponent } from './menus/main-menu-a.component';
 import { MainMenuBComponent } from './menus/main-menu-b.component';
+import { MainMenuAuthComponent } from './menus/main-menu-auth.component';
 import { UserMenuComponent } from './menus/user-menu.component';
 import { PaginationMenuComponent } from './menus/pagination-menu.component';
 import { BreadcrumbMenuComponent } from './menus/breadcrumb-menu.component';
@@ -107,7 +108,9 @@ const appRoutes: Routes = [
     SuggestedPlacesListComponent,
     ReviewListComponent,
     CategoriesListComponent,
+	// menus
     MainMenuAComponent,
+	MainMenuAuthComponent,
     MainMenuBComponent,
     UserMenuComponent,
     PaginationMenuComponent,

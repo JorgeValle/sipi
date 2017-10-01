@@ -1,5 +1,5 @@
 <!-- renders main navigation, one of two versions -->
-<main-menu-b></main-menu-b>
+<main-menu-auth></main-menu-auth>
 
 <div class="container">
   
@@ -11,74 +11,50 @@
   </div>
   -->
 
-  <div class="row mt-5">
+  <div class="row mt-5 mb-5">
     <div class="col-xs-12 col-sm-12 col-md-8">	
       
-	  <!--
-      <info-message></info-message>
-      <error-message></error-message>
-      <success-message></success-message>
-	  -->
-
-
       <div *ngIf="place">
 
-	<breadcrumb-menu country="{{place.country}}" city="{{place.city}}"></breadcrumb-menu>
+	    <breadcrumb-menu country="{{place.country}}" city="{{place.city}}"></breadcrumb-menu>
 
         <h1>{{place.name}}</h1>
         <span class="badge badge-pill badge-primary">Confirmado</span>
         <span class="badge badge-pill badge-primary">?Es este su negocio?</span>
-	<div>
+		
+        <div>
           <i class="material-icons">grade</i>
-	  <i class="material-icons">grade</i>
-	  <i class="material-icons">grade</i>
-	</div>
-        
-	<!--
-	<div>
-          <span class="badge badge-pill badge-primary">Confirmado</span>
-	</div>
-	-->
+          <i class="material-icons">grade</i>
+          <i class="material-icons">grade</i>
+        </div>
 
-	<div>
+        <div>
           <span><a href="#">Asiatico</a>,&nbsp;<a href="#">Mediterraneo</a>,&nbsp;<a href="#">Vegetariano</a></span>
-	</div>
-
-        <!-- google map 
-        <div id="map"></div>
-	-->
+        </div>
 
         <address>
-          {{place.address}}<br>
-	  {{place.city}}, {{place.country}}<br>
+        {{place.address}}<br>
+        {{place.city}}, {{place.country}}<br>
         </address>
 
-	<i class="material-icons">web</i><a href="{{place.website}}">{{place.website}}</a><br/>
-	<span><i class="material-icons">phone</i> {{place.phone}}</span>
-
-	<h2 class="h5">Horario</h2>
-
+        <p>
+		  <i class="material-icons">web</i><a href="{{place.website}}">{{place.website}}</a><br/>
+          <span><i class="material-icons">phone</i> {{place.phone}}</span>
+		</p>
+		
+        <h2 class="h5">Horario</h2>
+		
         <place-schedule></place-schedule>
 	   
-
-
         <span><a href="#">Obtener Direcciones</a></span>
-
-	<!--
-        <h2>Resenas</h2>
-
-        <review-list></review-list>
-
-        <review-place-form></review-place-form>
-
-        <suggested-places-list></suggested-places-list>
-        -->
 
       </div><!-- ngIf="place" -->
 
     </div>
+	
     <div class="col-md-4">
       Secondary content here
-    </div>
+	</div>
+	
   </div>
 </div>
