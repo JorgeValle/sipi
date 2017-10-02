@@ -1,17 +1,16 @@
-<header class="brand-lightest-grey">
+<header class="brand-lightest-grey sticky-top navbar">
   <div class="container mt-2 mb-2">
-    <nav class="row">
-      <div class="col-4 col-sm-1 col-md-1">
-        <a class="navbar-brand" routerLink="/">
-          <img src="/assets/svgs/sipi-logo.svg" width="50" height="50" alt="">
-        </a>
-      </div>
-	  <div class="col-4 col-sm-1 col-md-1">
-	    <a href="#">Categorias</a>
-	  </div>
-	  <div class="col-4 col-sm-1 col-md-1">
-	    <a href="#">Lugares</a>
-	  </div>
+    <a class="navbar-brand" routerLink="/">
+      <img src="/assets/svgs/sipi-logo.svg" width="50" height="50" alt="">
+    </a>
+	<ul class="navbar-nav">
+	  <li class="nav-item">
+	    <a class="nav-link" routerLink="categorias">Categorias</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" routerLink="lugares">Lugares</a>
+	  </li>
+	</ul>
       <div class="col-12 col-sm-5 col-md-5">
         <search-form-b></search-form-b>
       </div>
@@ -21,10 +20,6 @@
       <div class="col-4 col-sm-1 col-md-1">
         <log-in-button></log-in-button>
       </div>
-      <div class="col-4 col-sm-1 col-md-1">
-        <review-button></review-button>
-      </div>
-    </nav>
   </div>
 </header>
 <!--

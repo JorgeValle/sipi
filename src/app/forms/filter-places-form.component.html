@@ -1,47 +1,52 @@
-<ul class="nav nav-pills pull-right">
-        <li *ngFor="let x of nav;let i=index" 
-             class="presentation" 
-             (click)="isClicked=i"             
-             [class.active]="isClicked==i">    
-             <a href="#">{{x.menu}}</a>
-        </li>
-</ul>
-
 <section class="outer-container filters pt-3 pb-3">
   <form class="container">
     <div class="row">
       <div class="col-2">
-        <button class="btn btn-secondary btn-sm" (click)="enableButton(this)" [class.enabled]="this.enabled" type="button">
-	  <i class="material-icons md-18">schedule</i>&nbsp;Abiertos
-	</button>
-      </div>
-      <div class="col-2">
-        <button class="btn btn-secondary btn-sm" (click)="enabled = !enabled" [class.enabled]="enabled" type="button"><i class="material-icons md-18">filter_list</i>&nbsp;Filtros</button>
-      </div>
-      <div class="col-2">
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-secondary">$</button>
-          <button type="button" class="btn btn-secondary">$$</button>
-          <button type="button" class="btn btn-secondary">$$$</button>
+        <div aria-label="Basic example" class="btn-group" role="group">
+          <button type="button" class="btn btn-secondary btn-sm">$</button>
+          <button type="button" class="btn btn-secondary btn-sm">$$</button>
+          <button type="button" class="btn btn-secondary btn-sm">$$$</button>
         </div>
       </div>
+      <div class="col-2">
+        <button aria-controls="collapseExample" class="btn btn-secondary btn-sm" (click)="enabled = !enabled" [class.btn-success]="enabled" data-toggle="collapse" data-target="#collapse-filters, #collapse-filter" type="button">
+		  <i class="material-icons md-18">filter_list</i>&nbsp;Filtros
+		</button>
+      </div>
+      <div class="col-2">
+        <button class="btn btn-secondary btn-sm" type="button">
+	      <i class="material-icons md-18">schedule</i>&nbsp;Abiertos
+	    </button>
+      </div>
+      <div class="col-2">
+        <button class="btn btn-secondary btn-sm" type="button">
+	      <i class="material-icons md-18">schedule</i>&nbsp;Con Ofertas
+	    </button>
+      </div>
+      <div class="col-2">
+        <button class="btn btn-secondary btn-sm" type="button">
+	      <i class="material-icons md-18">schedule</i>&nbsp;Happy Hour
+	    </button>
+      </div>
     </div>
+	
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-6">
-	<h4 class="h6">Distancia</h4>
+	  <div class="col-12">
+	    <hr>
+	  </div>
+      <div class="col-4 collapse" id="collapse-filters">
+	    <h4 class="h6">Distancia</h4>
         <div class="form-check-inline" *ngFor="let distance of distances">
           <label class="form-check-label">
-	    <input class="form-check-input" type="checkbox" value="">
-	    {{distance.label}}
+	        <input class="form-check-input" type="checkbox" value="{{distance.label}}">{{distance.label}}
           </label>
-	</div>
+	    </div>
       </div>
-      <div class="col-12 col-sm-12 col-md-6">
+      <div class="col-8 collapse" id="collapse-filter">
         <h4 class="h6">Categorias</h4>
         <div class="form-check-inline" *ngFor="let subcategory of subcategories">
           <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="">
-	    {{subcategory.name}}
+            <input class="form-check-input" type="checkbox" value="{{subcategory.name}}">{{subcategory.name}}
           </label>
         </div>
       </div>

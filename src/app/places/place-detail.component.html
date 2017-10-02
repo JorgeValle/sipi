@@ -1,7 +1,7 @@
 <!-- renders main navigation, one of two versions -->
 <main-menu-auth></main-menu-auth>
 
-<div class="container">
+<main class="container">
   
   <!--
   <div class="row mt-3 mb-3">
@@ -38,8 +38,8 @@
         </address>
 
         <p>
-		  <i class="material-icons">web</i><a href="{{place.website}}">{{place.website}}</a><br/>
-          <span><i class="material-icons">phone</i> {{place.phone}}</span>
+          <span><i class="material-icons">phone</i>&nbsp;{{place.phone}}</span><br/>
+		  <i class="material-icons">web</i><a href="{{place.website}}">&nbsp;{{place.website}}</a>
 		</p>
 		
         <h2 class="h5">Horario</h2>
@@ -52,9 +52,30 @@
 
     </div>
 	
-    <div class="col-md-4">
-      Secondary content here
+    <div class="col-12 col-md-4">
+	  <div class="row">
+	    <div class="col-12">
+	      <h3 class="h4">Sipi sugerencias</h3>
+		  
+		  <!--
+          <div class="card mb-4">  
+            <div class="card-body">
+              <h2 class="card-title h4">
+                <a routerLink="#">Un Lugar Relacionado</a>
+              </h2>
+			  <span class="card-subtitle mb-2 text-muted">
+			    <a routerLink="#">Categoria 1</a>,&nbsp;
+			  </span>
+			  <small class="text-muted">18 personas blah blah</small>
+	        </div>
+          </div><!-- /.card -->
+		  
+		  
+		  
+		  
+	    </div>
+	  </div>
 	</div>
 	
   </div>
-</div>
+</main>

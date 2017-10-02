@@ -54,6 +54,8 @@
 @import 'bootstrap/alert';
 @import 'bootstrap/list-group';
 @import 'bootstrap/utilities';
+@import 'bootstrap/navbar';
+@import 'bootstrap/transitions';
 
 /**
  * Sipi v.3.0.0-alpha
@@ -62,6 +64,7 @@
 @import 'sipi/icons';
 @import 'sipi/type';
 @import 'sipi/header';
+@import 'sipi/cards';
 @import 'sipi/filters';
 @import 'sipi/footer';
 @import 'sipi/homepage';

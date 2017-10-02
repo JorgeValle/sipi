@@ -1,11 +1,12 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const places = [
-    { id: 0,  name: 'Rafael', category: 'Restaurantes', subcategories: ['Mariscos', 'Otra'], rating: 3, address: '1234 Calle Principal', city: 'San Salvador', country: 'El Salvador', phone: '883-9980', website: 'http://wwww.google.com' },
-      { id: 1, name: 'Cala', category: 'Restaurantes', subcategories: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'Antigua', country: 'Guatemala', phone: '883-8766', website: 'http://wwww.google.com' },
-      { id: 2, name: 'Drago Dorado', category: 'Restaurantes', subcategories: ['Asiatico', 'Tacos'], rating: 4, address: '17 Avenida Revolucion', city: 'San Salvador', country: 'El Salvador', phone: '332-9340', website: 'http://wwww.google.com' },
-      { id: 3, name: 'Chez Francois', category: 'Restaurantes', subcategories: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', city: 'Santa Tecla', country: 'El Salvador', phone: '239-2322', website: 'http://wwww.google.com' },
+    
+const places = [
+  { id: 0,  name: 'Rafael', category: 'Restaurantes', subcategories: ['Mariscos', 'Otra'], rating: 3, address: '1234 Calle Principal', city: 'San Salvador', country: 'El Salvador', phone: '883-9980', website: 'http://wwww.google.com' },
+  { id: 1, name: 'Cala', category: 'Restaurantes', subcategories: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'Antigua', country: 'Guatemala', phone: '883-8766', website: 'http://wwww.google.com' },
+  { id: 2, name: 'Drago Dorado', category: 'Restaurantes', subcategories: ['Asiatico', 'Tacos'], rating: 4, address: '17 Avenida Revolucion', city: 'San Salvador', country: 'El Salvador', phone: '332-9340', website: 'http://wwww.google.com' },
+  { id: 3, name: 'Chez Francois', category: 'Restaurantes', subcategories: ['Frances'], rating: 5, address: '99 Calle Circumvalacion', city: 'Santa Tecla', country: 'El Salvador', phone: '239-2322', website: 'http://wwww.google.com' },
       { id: 4,  name: 'Otro Restaurante', category: 'Restaurantes', subcategories: ['Mariscos'], rating: 3, address: '1234 Calle Principal', city: 'Managua', country: 'Nicaragua', phone: '883-9980', website: 'http://wwww.google.com' },
       { id: 5, name: 'Moja Majo', category: 'Restaurantes', subcategories: ['Americano'], rating: 3, address: '534 Calle Segunda', city: 'Havana', country: 'Cuba', phone: '883-8766', website: 'http://wwww.google.com' },
       { id: 6, name: 'Las Rambles', category: 'Restaurantes', subcategories: ['Asiatico', 'Americano'], rating: 4, address: '17 Avenida Revolucion', city: 'San Jose', country: 'Costa Rica', phone: '332-9340', website: 'http://wwww.google.com' },
@@ -87,55 +88,54 @@ const cities = [
   { id: 18, name: 'Apaneca', countryId: 2 },
   { id: 19, name: 'Concepcion de Ataco', countryId: 2 },
   { id: 20, name: 'La Palma', countryId: 2 },
-		// honduras
-		{ id: 21, name: 'Tegucigalpa', countryId: 3 },
-		{ id: 22, name: 'San Pedro Sula', countryId: 3 },
-		{ id: 23, name: 'La Ceiba', countryId: 3 },
-		{ id: 24, name: 'Comayagua', countryId: 3 },
-		{ id: 25, name: 'El Progreso', countryId: 3 },
-		{ id: 26, name: 'Puerto Cortės', countryId: 3 },
-		// nicaragua
-		{ id: 27, name: 'Managua', countryId: 4 },
-		{ id: 28, name: 'Granada', countryId: 4 },
-		{ id: 29, name: 'Léon', countryId: 4 },
-		{ id: 30, name: 'Masaya', countryId: 4 },
-		{ id: 31, name: 'Chinandega', countryId: 4 },
-		// costa rica
-		{ id: 32, name: 'Havana', countryId: 8 },
-		{ id: 33, name: 'Santiago de Cuba', countryId: 8 },
-		{ id: 34, name: 'Cienfuegos', countryId: 8 },
-		{ id: 35, name: 'Santa Clara', countryId: 8 },
-		{ id: 36, name: 'Trinidad', countryId: 8 },
-		// panama
-		{ id: 32, name: 'Havana', countryId: 8 },
-		{ id: 33, name: 'Santiago de Cuba', countryId: 8 },
-		{ id: 34, name: 'Cienfuegos', countryId: 8 },
-		{ id: 35, name: 'Santa Clara', countryId: 8 },
-		{ id: 36, name: 'Trinidad', countryId: 8 },
-		// republica dominicana
-		{ id: 32, name: 'Havana', countryId: 8 },
-		{ id: 33, name: 'Santiago de Cuba', countryId: 8 },
-		{ id: 34, name: 'Cienfuegos', countryId: 8 },
-		{ id: 35, name: 'Santa Clara', countryId: 8 },
-		{ id: 36, name: 'Trinidad', countryId: 8 },
-		// cuba
-		{ id: 32, name: 'Havana', countryId: 8 },
-		{ id: 33, name: 'Santiago de Cuba', countryId: 8 },
-		{ id: 34, name: 'Cienfuegos', countryId: 8 },
-		{ id: 35, name: 'Santa Clara', countryId: 8 },
-		{ id: 36, name: 'Trinidad', countryId: 8 },
-		// haiti
-		{ id: 37, name: 'Port-au-Prince', countryId: 9 },
-		{ id: 38, name: 'Carrefour', countryId: 9 },
-		{ id: 39, name: 'Delmas', countryId: 9 },
-		{ id: 40, name: 'Petionville', countryId: 9 },
-	];
-	const pages = [
-		{ id: 0, title: 'Terminos de Uso', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lorem eu nulla consequat egestas. Praesent odio nulla, facilisis in volutpat eget, vestibulum nec ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In elit ex, pulvinar at lobortis non, rutrum a velit. Duis eu neque auctor, blandit ipsum facilisis, finibus quam. Pellentesque condimentum vestibulum auctor. Nullam vel sapien dolor. Maecenas ultricies, arcu sed mattis tincidunt, massa dolor vestibulum magna, non feugiat arcu sapien sit amet nisi. In volutpat enim vitae augue tincidunt, sit amet lacinia justo tempus. Suspendisse maximus porta fermentum. Sed eu dolor sit amet leo suscipit hendrerit quis sed enim. Vestibulum eget nunc malesuada lacus rhoncus condimentum sit amet ac lorem. Phasellus quis mi eu sem tempus consectetur. Curabitur vulputate tempor massa, vitae pulvinar odio mollis id. Nullam magna lectus, porttitor ut fermentum sit amet, porttitor sodales mi. Praesent diam lectus, pharetra at varius ac, aliquam at ante.' },
-		{ id: 1, title: 'Sobre Sipi', body: 'Morbi laoreet sollicitudin mattis. Curabitur feugiat metus quis placerat pharetra. Ut porttitor, velit vel efficitur tempus, mi eros posuere enim, in pellentesque nulla orci eu turpis. Cras elit nisl, dignissim nec est in, feugiat venenatis enim. Proin neque elit, sagittis eget odio et, gravida bibendum nisi. Vestibulum sodales, nisi mollis scelerisque dictum, libero est accumsan velit, vitae aliquet ex odio vel tellus. Nunc tortor eros, convallis vitae maximus quis, pretium in nulla. Aliquam elementum accumsan ipsum dapibus congue. Morbi ut varius nisi. Etiam commodo tristique ipsum, ac efficitur dolor convallis nec. Integer non purus dapibus, pulvinar neque vitae, molestie diam. Pellentesque auctor, tortor in tempus tempor, nisi ex posuere nunc, in vehicula ex libero nec velit. Pellentesque sit amet fringilla orci, eu tincidunt est. Integer nulla orci, efficitur eu tincidunt vel, posuere sit amet dui.' },
-		{ id: 2, title: 'Sobre Sipi', body: 'Nullam libero orci, imperdiet quis elementum a, gravida vitae augue. Pellentesque ex nisi, dapibus eget accumsan blandit, varius at mi. Praesent quis blandit ligula, vitae gravida felis. Aenean aliquam, lorem ut bibendum blandit, tellus massa aliquam tortor, ac cursus justo metus eget ex. Cras ultricies libero vitae tincidunt mattis. Nunc eu justo elit. Etiam nec tortor ac justo malesuada molestie.' },
-
-	];
+  // honduras
+  { id: 21, name: 'Tegucigalpa', countryId: 3 },
+  { id: 22, name: 'San Pedro Sula', countryId: 3 },
+  { id: 23, name: 'La Ceiba', countryId: 3 },
+  { id: 24, name: 'Comayagua', countryId: 3 },
+  { id: 25, name: 'El Progreso', countryId: 3 },
+  { id: 26, name: 'Puerto Cortės', countryId: 3 },
+  // nicaragua
+  { id: 27, name: 'Managua', countryId: 4 },
+  { id: 28, name: 'Granada', countryId: 4 },
+  { id: 29, name: 'Léon', countryId: 4 },
+  { id: 30, name: 'Masaya', countryId: 4 },
+  { id: 31, name: 'Chinandega', countryId: 4 },
+  // costa rica
+  { id: 32, name: 'Havana', countryId: 8 },
+  { id: 33, name: 'Santiago de Cuba', countryId: 8 },
+  { id: 34, name: 'Cienfuegos', countryId: 8 },
+  { id: 35, name: 'Santa Clara', countryId: 8 },
+  { id: 36, name: 'Trinidad', countryId: 8 },
+  // panama
+  { id: 32, name: 'Havana', countryId: 8 },
+  { id: 33, name: 'Santiago de Cuba', countryId: 8 },
+  { id: 34, name: 'Cienfuegos', countryId: 8 },
+  { id: 35, name: 'Santa Clara', countryId: 8 },
+  { id: 36, name: 'Trinidad', countryId: 8 },
+  // republica dominicana
+  { id: 32, name: 'Havana', countryId: 8 },
+  { id: 33, name: 'Santiago de Cuba', countryId: 8 },
+  { id: 34, name: 'Cienfuegos', countryId: 8 },
+  { id: 35, name: 'Santa Clara', countryId: 8 },
+  { id: 36, name: 'Trinidad', countryId: 8 },
+  // cuba
+  { id: 32, name: 'Havana', countryId: 8 },
+  { id: 33, name: 'Santiago de Cuba', countryId: 8 },
+  { id: 34, name: 'Cienfuegos', countryId: 8 },
+  { id: 35, name: 'Santa Clara', countryId: 8 },
+  { id: 36, name: 'Trinidad', countryId: 8 },
+  // haiti
+  { id: 37, name: 'Port-au-Prince', countryId: 9 },
+  { id: 38, name: 'Carrefour', countryId: 9 },
+  { id: 39, name: 'Delmas', countryId: 9 },
+  { id: 40, name: 'Petionville', countryId: 9 },
+];
+const pages = [
+  { id: 0, title: 'Terminos de Uso', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id lorem eu nulla consequat egestas. Praesent odio nulla, facilisis in volutpat eget, vestibulum nec ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In elit ex, pulvinar at lobortis non, rutrum a velit. Duis eu neque auctor, blandit ipsum facilisis, finibus quam. Pellentesque condimentum vestibulum auctor. Nullam vel sapien dolor. Maecenas ultricies, arcu sed mattis tincidunt, massa dolor vestibulum magna, non feugiat arcu sapien sit amet nisi. In volutpat enim vitae augue tincidunt, sit amet lacinia justo tempus. Suspendisse maximus porta fermentum. Sed eu dolor sit amet leo suscipit hendrerit quis sed enim. Vestibulum eget nunc malesuada lacus rhoncus condimentum sit amet ac lorem. Phasellus quis mi eu sem tempus consectetur. Curabitur vulputate tempor massa, vitae pulvinar odio mollis id. Nullam magna lectus, porttitor ut fermentum sit amet, porttitor sodales mi. Praesent diam lectus, pharetra at varius ac, aliquam at ante.' },
+  { id: 1, title: 'Sobre Sipi', body: 'Morbi laoreet sollicitudin mattis. Curabitur feugiat metus quis placerat pharetra. Ut porttitor, velit vel efficitur tempus, mi eros posuere enim, in pellentesque nulla orci eu turpis. Cras elit nisl, dignissim nec est in, feugiat venenatis enim. Proin neque elit, sagittis eget odio et, gravida bibendum nisi. Vestibulum sodales, nisi mollis scelerisque dictum, libero est accumsan velit, vitae aliquet ex odio vel tellus. Nunc tortor eros, convallis vitae maximus quis, pretium in nulla. Aliquam elementum accumsan ipsum dapibus congue. Morbi ut varius nisi. Etiam commodo tristique ipsum, ac efficitur dolor convallis nec. Integer non purus dapibus, pulvinar neque vitae, molestie diam. Pellentesque auctor, tortor in tempus tempor, nisi ex posuere nunc, in vehicula ex libero nec velit. Pellentesque sit amet fringilla orci, eu tincidunt est. Integer nulla orci, efficitur eu tincidunt vel, posuere sit amet dui.' },
+  { id: 2, title: 'Sobre Sipi', body: 'Nullam libero orci, imperdiet quis elementum a, gravida vitae augue. Pellentesque ex nisi, dapibus eget accumsan blandit, varius at mi. Praesent quis blandit ligula, vitae gravida felis. Aenean aliquam, lorem ut bibendum blandit, tellus massa aliquam tortor, ac cursus justo metus eget ex. Cras ultricies libero vitae tincidunt mattis. Nunc eu justo elit. Etiam nec tortor ac justo malesuada molestie.' },
+];
 const distances = [
   { id: 0, value: 5, label:'Menos de' },
   { id: 1, value: 10, label:'Entre' },

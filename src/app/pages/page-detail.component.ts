@@ -9,7 +9,7 @@ import { Location }                 from '@angular/common';
 @Component({
 	selector: 'page-detail',
 	templateUrl: './page-detail.component.html',
-	//providers: [PlaceService]
+	providers: [PageService]
 })
 
 // component classes manage the html templates
@@ -18,8 +18,40 @@ import { Location }                 from '@angular/common';
 // components are big consumers of services
 // components jobs is to enbale the user experience, nothing more
 // components should be lean
-export class PageDetailComponent {
+export class PageDetailComponent implements OnInit {
 	
+  page: Page;
 
+  // constructors for services
+  constructor(
+    private pageService: PageService,
+    private route: ActivatedRoute,
+    private location: Location,
+    private titleService: Title
+  ) {}
+
+  getPage(): void {
+    this.placeService
+    .getPlaces()
+    // when the promise resolves...
+    .then(places => this.places = places);
+  }
+	
+  /**
+   * Sets the document title
+   */
+  setTitle(newTitle:string) {
+    this.titleService.setTitle(newTitle);	
+  }
+	
+  /**
+   * OnInit()
+   */
+  ngOnInit(): void {
+		
+    this.setTitle('Los 10 mejores restaurantes en San Salvador | Sipi');  // set the document title
+    this.getPlaces();
+		
+  }
 
 }

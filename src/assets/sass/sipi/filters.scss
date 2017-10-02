@@ -1,17 +1,65 @@
 section {
 
   .filters {
-    background-color: lighten($brand-grey, 20%);
+    background-color: lighten($brand-grey, 25%);
 
   }
 
 }
 
 .filters {
-  background-color: lighten($brand-grey, 30%);
+  background-color: lighten($brand-grey, 40%);
 
   .light-grey {
     background-color: lighten($brand-grey, 40%);
   }
 
+}
+
+.ribbon-2 {
+ position: absolute;
+ background: #060c24;
+ width: 110px; 
+ margin:0 20px;
+ display:block;
+ float:right;
+ z-index:1;
+ top:0;
+ right:10px;
+ 
+ @include box-shadow(0 8px 8px rgba(0,0,0,0.5) inset);
+  &:after {
+    content: "";
+    border-width: 50px 55px 12px;
+    border-color: #060c24 #060c24 transparent;
+    border-style: solid;
+    position: absolute;
+    width:0px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    @include transform(rotate(0.05deg)); 
+  }
+
+  ul {
+    margin:0;
+    padding:40px 0 0 0;
+    position:relative;
+    z-index:10;
+    text-align:center;
+    li {
+      display:inline;
+      font-size:11px;
+      color:#F56550;
+      a {
+        color:#F56550;
+        font-size:12px;
+        text-decoration:none;
+        &:hover {
+          color:lighten(#F56550, 30%);
+        }
+      }
+    }
+  }
 }
