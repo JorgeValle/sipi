@@ -88,7 +88,7 @@ const appRoutes: Routes = [
   { path: 'registro', component: SignUpFormComponent },
   { path: 'inicio', component: SignInFormComponent },
   { path: 'agregar-lugar', component: AddPlaceFormComponent },
-  { path: ':pagina', component: PageDetailComponent }
+  { path: 'sobre/:id', component: PageDetailComponent }
 ];
 
 // an NgModule, whether a root or feature, is a class with an @NgModule decorator

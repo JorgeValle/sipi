@@ -4,7 +4,10 @@ import 'rxjs/add/operator/switchMap';
 import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
+import { Title }                    from '@angular/platform-browser';
 
+import { Page }        from './page';
+import { PageService } from './page.service';
 
 @Component({
 	selector: 'page-detail',
@@ -30,15 +33,9 @@ export class PageDetailComponent implements OnInit {
     private titleService: Title
   ) {}
 
-  getPage(): void {
-    this.placeService
-    .getPlaces()
-    // when the promise resolves...
-    .then(places => this.places = places);
-  }
-	
+
   /**
-   * Sets the document title
+   * sets the document title
    */
   setTitle(newTitle:string) {
     this.titleService.setTitle(newTitle);	
@@ -49,9 +46,12 @@ export class PageDetailComponent implements OnInit {
    */
   ngOnInit(): void {
 		
-    this.setTitle('Los 10 mejores restaurantes en San Salvador | Sipi');  // set the document title
-    this.getPlaces();
+    this.setTitle('Una pagina | Sipi');  // set the document title
+	
+    this.route.paramMap
+    .switchMap((params: ParamMap) => this.pageService.getPage(params.get('id')))
+    .subscribe(page => this.page = page);
 		
   }
-
+  
 }
