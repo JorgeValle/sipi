@@ -5,6 +5,7 @@ import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 import { Title }                    from '@angular/platform-browser';
+import { Pipe, PipeTransform }      from '@angular/core';
 
 import { Place }        from './place';
 import { PlaceService } from './place.service';
@@ -15,6 +16,11 @@ import { PlaceService } from './place.service';
   // which template to render
   templateUrl: './place-list.component.html',
   providers: [PlaceService]
+})
+
+@Pipe({
+    name: 'placefilter',
+    pure: false
 })
 
 // component classes manage the html templates
@@ -46,6 +52,8 @@ export class PlaceListComponent implements OnInit {
   setTitle(newTitle:string) {
     this.titleService.setTitle(newTitle);	
   }
+  
+  filterargs = {title: 'hello'};
   
   /**
    * OnInit()

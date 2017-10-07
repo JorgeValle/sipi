@@ -12,7 +12,7 @@
 
   <div class="row">
     <div class="col-12 col-sm-12 col-md-8">
-      <div class="card mb-4" *ngFor="let place of places">  
+      <div class="card mb-4" *ngFor="let place of places; let i=index; trackBy: trackById">  
 	<!--
         <div class="card-header">
           <i class="material-icons">grade</i>
@@ -21,6 +21,7 @@
 	</div>
 	-->
         <div class="card-body">
+		  <span>Card number: {{i}}</span>
           <h2 class="card-title h4">
             <a routerLink="/lugar/{{place.id}}">{{place.name}}</a>
           </h2>
@@ -46,7 +47,7 @@
 	-->
       </div><!-- /.card -->
 
-      <pagination-menu></pagination-menu>
+      <pagination-menu *ngIf="places.length > 10"></pagination-menu>
 
     </div>
 
