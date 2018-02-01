@@ -1,0 +1,49 @@
+<form [formGroup]="updatedPlace" (ngSubmit)="onSubmit(place)" novalidate>
+  <div class="form-group">
+    <label for="name-input">Nombre</label>
+    <input aria-describedby="name-help" class="form-control" formControlName="name" id="name-input" name="name" placeholder="El nombre del lugar" type="text">
+    <small id="name-help" class="form-text text-muted">Media vez lo has puesto, no lo podras cambiar.</small>
+  </div>
+  <div class="form-group">
+    <label for="category-input">Categoria</label>
+    <select aria-described-by="category-help" class="form-control" formControlName="category" id="category-input" name="category">
+      <option value="Restaurantes">Restaurantes</option>
+      <option value="Compras">Compras</option>
+      <option value="Publico">Publico</option>
+    </select>
+    <small id="category-help" class="form-text text-muted">Lo podes cambiar despues, si es necesario.</small>
+  </div>
+  <div class="form-group">
+    <label for="subcategory-input">Subcategorias</label>
+    <select aria-described-by="" class="form-control" formControlName="subcategory" id="subcategory-input" name="subcategory">
+      <option value="">Mariscos</option>
+      <option value="">Japones</option>
+      <option value=""></option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="street-input">Calle</label>
+    <input aria-describedby="street-help" class="form-control" formControlName="street" id="street-input" name="street" placeholder="La direccion de calle" type="text">
+    <small id="phone-help" class="form-text text-muted">Media vez lo has puesto, no lo podras cambiar.</small>
+  </div>
+  <div class="form-group">
+    <label for="country-input">Pais</label>
+    <select aria-described-by="" class="form-control" formControlName="country" id="country-input" name="country">
+      <option value="">El Salvador</option>
+      <option value="">Guatemala</option>
+      <option value=""></option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="phone-input">Telefono</label>
+    <input aria-describedby="phone-help" class="form-control" formControlName="phone" id="phone-input" name="phone" placeholder="El telefono del lugar" type="number">
+    <small id="phone-help" class="form-text text-muted">Media vez lo has puesto, no lo podras cambiar.</small>
+  </div>
+  <div class="form-group">
+    <label for="website-input">Sitio Web</label>
+    <input aria-describedby="website-help" class="form-control" formControlName="website" id="website-input" name="website" placeholder="El sitio web del lugar" type="text">
+    <small id="phone-help" class="form-text text-muted">Media vez lo has puesto, no lo podras cambiar.</small>
+  </div>
+  <!-- <single-marker-map [place]="place"></single-marker-map> -->
+  <button type="submit" class="btn btn-primary">Actualizar lugar</button>
+</form>

@@ -2,8 +2,8 @@ header {
 
   background-color: $brand-white;
 
-  border-top: 3px solid #16A2B8;
-  border-bottom: 1px solid #f5f5f5;
+  // border-top: 3px solid $brand-celeste;
+  border-bottom: 1px solid lighten($brand-grey, 25%);
 
   ul {
     list-style:none;

@@ -1,0 +1,103 @@
+<div class="row" *ngIf="user">
+  <div class="d-none d-sm-block col-sm-5 col-md-5 col-lg-3">
+    <div class="card">
+      <img alt="Foto de {{user.firstName}}" class="card-img-top" [src]="user.imageFileName" />
+      <upload-user-photo-form></upload-user-photo-form>
+      <!-- <div class="card-body">
+        <div class="row no-gutters">
+          <div class="col oro">
+            <h5>4</h5>
+          </div>
+          <div class="col plata">
+            <h5>3</h5>
+          </div>
+          <div class="col bronce">
+            <h5>12</h5>
+          </div>
+        </div>
+      </div> -->
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngIf="user.currentCity">
+          <i class="material-icons md-18 align-top">location_on</i>
+          {{user.currentCity}},&nbsp;{{user.currentCountry}}
+        </li>
+        <li class="list-group-item">
+          <i class="material-icons md-18 align-top muted">visibility</i>&nbsp;
+          Visto hace 3 horas
+        </li>
+        <li class="list-group-item">
+          <i class="material-icons md-18 align-top muted">perm_contact_calendar</i>&nbsp;
+          {{user.createdDate | ago}}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-7 col-md-7 col-lg-6">
+    <h1 class="h2">{{user.firstName}}&nbsp;{{user.lastName}}</h1>
+    <blockquote>{{user.bio}}</blockquote>
+    <!-- <h4>Nivel 1</h4>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div> -->
+    <hr>
+    <h3>Medallas</h3>
+    <p>Estas son la medallas que este usuario ha recibido. Integer cursus semper sem eu interdum.</p>
+    <!-- <a href="#">Ver todas</a> -->
+    <div class="row">
+      <div class="col">
+        <i class="material-icons align-top muted" style="font-size: 72px;">lens</i>
+      </div>
+      <div class="col">
+      Medalla 2
+      </div>
+      <div class="col">
+      Medalla 3
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 mt-2 mb-2 d-block d-sm-block d-md-block d-lg-none d-xl-none">
+    <hr>
+  </div>
+
+  <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+    <div class="row">
+      <div class="col-12 mb-2">
+        <h3>Actividad Reciente</h3>
+        <user-activity-list [user]="user"></user-activity-list>
+        <!-- <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Oro</h5>
+              <small>3 days ago</small>
+            </div>
+            <span *ngFor="let medal of user.medals">
+              <i class="material-icons {{medal.level | lowercase}}">lens</i>&nbsp;{{medal.name}}<br/>
+            </span>
+            <small>Donec id elit non mi porta.</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Plata</h5>
+              <small class="text-muted">3 days ago</small>
+            </div>
+            <span *ngFor="let medal of user.medals">
+              <i class="material-icons {{medal.level | lowercase}}">lens</i>&nbsp;{{medal.name}}<br/>
+            </span>
+            <small>Donec id elit non mi porta.</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Bronce</h5>
+              <small class="text-muted">3 days ago</small>
+            </div>
+            <span *ngFor="let medal of user.medals">
+              <i class="material-icons {{medal.level | lowercase}}">lens</i>&nbsp;{{medal.name}}<br/>
+            </span>
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

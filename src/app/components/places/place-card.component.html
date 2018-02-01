@@ -1,0 +1,35 @@
+<div class="card-body">
+  <div class="row">
+    <div class="col-4 col-sm-2">
+      <img alt="Foto de {{place.name}}" class="card-img-left img-fluid" *ngIf="place.img" [src]="place.img.src">
+    </div>
+    <div class="col-8 col-sm-6">
+      <h2 class="card-title h4">
+        <a routerLink="/lugar/{{place.id}}">{{place.name}}</a>
+      </h2>
+      <div *ngIf="place.rating">
+        <i class="material-icons stars" *ngFor="let i of Arr(place.rating).fill(1)">grade</i>
+        <small>
+          <a routerLink="/lugar/{{place.id}}">34 comentarios</a>
+        </small>
+      </div>
+      <span *ngIf="place.price">{{place.price}}&nbsp;|&nbsp;</span>
+      <span class="card-subtitle mb-2 text-muted" *ngFor="let subcategory of place.category.subcats">
+        <a routerLink="/busqueda" [queryParams]="{categoria: subcategory | lowercase}">{{subcategory}}</a>,&nbsp;
+      </span>
+    </div>
+    <div class="col-12 col-sm-4" *ngIf="place.address">
+      <address class="card-text">
+        {{place.address.street}} <br>
+        {{place.address.city}}, {{place.address.country}} <br>
+        <i class="material-icons align-top">phone</i>
+        <a href="tel:{{place.phone}}">&nbsp;{{place.phone}}</a>
+      </address>
+    </div>
+    <div class="col-12 mt-3">
+      <q>
+        Buenisimos postres, y la comida principal estaba muy buena. Recomendado sin duda.
+      </q>
+    </div>
+  </div>
+</div>

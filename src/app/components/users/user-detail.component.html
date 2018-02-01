@@ -1,0 +1,50 @@
+<main-menu-auth *ngIf="user" [user]="user"></main-menu-auth>
+
+<main class="container mt-5 mb-5" *ngIf="user">
+
+  <div class="row">
+    <div class="col-12 mb-5">
+      <ul class="nav nav-tabs" id="user-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">
+            <i class="material-icons md-18 align-top">account_circle</i>
+            <span class="d-none d-sm-none d-md-inline d-lg-inline d-xl-inline">&nbsp;Perfil</span>
+            <span class="badge badge-danger">{{user.notifications.unseen}}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="places-tab" data-toggle="tab" href="#places" role="tab" aria-controls="places" aria-selected="false">
+            <i class="material-icons md-18 align-top">store</i>
+            <span class="d-none d-sm-none d-md-inline d-lg-inline d-xl-inline">&nbsp;Lugares</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="edit-tab" data-toggle="tab" href="#edit" role="tab" aria-controls="edit" aria-selected="false">
+            <i class="material-icons md-18 align-top">create</i>
+            <span class="d-none d-sm-none d-md-inline d-lg-inline d-xl-inline">&nbsp;Editar</span>
+          </a>
+        </li>
+        <li class="nav-item justify-content-end">
+            <a class="nav-link grey" routerLink="" (click)="signOut()" id="sign-out-tab" role="tab" aria-selected="false">
+              <i class="material-icons md-18 align-top">exit_to_app</i>
+              <span class="d-none d-sm-none d-md-inline d-lg-inline d-xl-inline">&nbsp;Cerrar Sesion</span>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+    <div class="col-12">
+      <div class="tab-content" id="user-tab-content">
+        <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <user-detail-profile [user]="user"></user-detail-profile>
+        </div>
+        <div class="tab-pane fade" id="places" role="tabpanel" aria-labelledby="places-tab">
+          <user-detail-places [user]="user"></user-detail-places>
+        </div>
+        <div class="tab-pane fade" id="edit" role="tabpanel" aria-labelledby="edit-tab">
+          <user-detail-settings [user]="user"></user-detail-settings>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

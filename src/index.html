@@ -8,38 +8,35 @@
     <link href="favicon.ico" rel="icon" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPZIW0HTQfO3qT3T8Lb96mZPYU2FtDGZs"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="/assets/js/bootstrap.bundle.js"></script>
     <title>Sipi Guia Urbana</title>
   </head>
   <body>
     <app-root></app-root>
   </body>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPZIW0HTQfO3qT3T8Lb96mZPYU2FtDGZs&callback=initMap"></script>
-			<script>
-		  function initMap() {
-			var uluru = {lat: 12.1150, lng: -86.2362};
-			var map = new google.maps.Map(document.getElementById('map'), {
-			  zoom: 4,
-			  center: uluru
-			});
-			var marker = new google.maps.Marker({
-			  position: uluru,
-			  map: map
-			});
-		  }
-		</script>
-		<style>
-		  #map {
-			height: 400px;
-			width: 100%;
-		   }
-		</style>
-				<!--
-		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-		-->
-		<!--
-	        <script src="/assets/semantic/dist/semantic.js"></script>
-		-->
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPZIW0HTQfO3qT3T8Lb96mZPYU2FtDGZs"></script> -->
+  <script>
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+    return t;
+  }(document, "script", "twitter-wjs"));
+  </script>
+
+  <script>
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
+  });
+  </script>
 </html>

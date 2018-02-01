@@ -1,0 +1,117 @@
+<!-- <breadcrumb-menu country="{{place.address.country}}" city="{{place.address.city}}" subcategories="{{place.category.subcats}}"></breadcrumb-menu> -->
+<div class="row">
+  <div class="col-10 col-sm-8">
+    <h1>{{place.name}}</h1>
+    <button>Editar</button>
+    <span class="badge badge-pill badge-primary">Confirmado</span>   
+    <div>
+      <i class="material-icons stars">grade</i>
+      <i class="material-icons stars">grade</i>
+      <i class="material-icons stars">grade</i>
+      <span class="text-muted"><a href="#comentarios">31 resenas</a></span>
+    </div>
+    <span class="text-muted" *ngFor="let subcategory of place.category.subcats">
+      <a routerLink="/busqueda" [queryParams]="{categoria: subcategory | lowercase, lugar: place.country | lowercase}">{{subcategory}}</a>,&nbsp;
+    </span>
+  </div><!-- /col -->
+
+  <div class="col-1 col-sm-2">
+    <p>Favorite button</p>
+    <!-- <button (ngClick)="showAlert()">
+      <i class="material-icons stars">favorite_border</i> Guardar
+    </button> -->
+  </div>
+
+  <div class="col-1 col-sm-2">
+    <p>Share modal</p>
+    <!-- <share-modal></share-modal> -->
+  </div>
+
+</div><!-- /.row -->
+
+<div class="row">
+  <div class="col-6">
+    <address>
+    {{place.address.street}}<br>
+    {{place.address.city}}, {{place.address.country}}<br>
+    </address>
+    <p>
+      <i class="material-icons align-top">phone</i>&nbsp;{{place.phone}}
+      <br/>
+      <i class="material-icons align-top">web</i><a href="{{place.website}}">&nbsp;{{place.website}}</a>
+    </p>
+  </div>
+
+  <div class="col-12">
+    <hr>
+  </div>
+
+  <!-- <div class="col-12">
+    <h2 class="h5">Amenidades</h2>
+    <div class="row">
+      <div class="col">
+        <ul class="list-group">
+          <li class="list-group-item border-0">
+            <i class="material-icons align-top">accessible</i>&nbsp;<span>Accesible</span>
+          </li>
+          <li class="list-group-item border-0">
+            <i class="material-icons align-top">card_membership</i>&nbsp;<span>Ofrece Membresia</span>
+          </li>
+          <li class="list-group-item border-0">
+            <i class="material-icons align-top">credit_card</i>&nbsp;<span>Tarjeta de Credito</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul class="list-group">
+          <li class="list-group-item border-0">
+            <i class="material-icons align-top">wifi</i>&nbsp;<span>WiFi Disponible</span>
+          </li>
+          <li class="list-group-item border-0">
+            <i class="material-icons align-top">smoke_free</i>&nbsp;<span>Fumar Prohibido</span>
+          </li>
+          <li class="list-group-item border-0">
+            <i class="material-icons align-top">child_friendly</i>&nbsp;<span>Bueno para Ninos</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12">
+        <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <i class="material-icons align-top">add</i>Ver Todas
+        </a>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <hr>
+  </div>
+
+  <div class="col-12" id="horario">
+    <h2 class="h5">Horario</h2>
+    <place-schedule></place-schedule>  
+  </div>
+  
+  <div class="col-12">
+    <hr>
+  </div>
+
+  <div class="col-12">
+    <h2 class="h5">Modulo Opcional</h2>
+    <p>Contenido del modulo</p>
+  </div>
+  
+  <div class="col-12">
+    <hr>
+  </div> -->
+
+  <div class="col-12" id="comentarios">
+    <h2 class="h5">Comentarios</h2>
+    <review-list></review-list> 
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<!-- renders main navigation, one of two versions -->
+<main-menu-auth></main-menu-auth>
+
+<main class="container mt-5 mb-5">
+
+  <div class="row mb-5">
+    <div class="col-12">
+      <ul class="nav nav-tabs" id="place-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="list-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="true">
+            <i class="material-icons md-18 align-top">subject</i>
+            <span class="d-none d-sm-none d-md-inline d-lg-inline d-xl-inline">&nbsp;Informacion</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="map-tab" data-toggle="tab" href="#map" role="tab" aria-controls="map" aria-selected="false">
+            <i class="material-icons md-18 align-top">public</i>
+            <span class="d-none d-sm-none d-md-inline d-lg-inline d-xl-inline">&nbsp;Mapa</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="map-tab" data-toggle="tab" href="#edit" role="tab" aria-controls="edit" aria-selected="false">
+            <i class="material-icons md-18 align-top">create</i>
+            <span class="d-none d-sm-none d-md-inline d-lg-inline d-xl-inline">&nbsp;Editar</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="row" *ngIf="place">
+    <div class="col-12">
+      <div class="tab-content" id="place-tab-content">
+        <div class="tab-pane fade show active" id="info">
+          <place-detail-profile [place]="place"></place-detail-profile>
+        </div><!-- info section -->
+      
+        <div class="tab-pane fade" id="map">
+          <p>Mapa</p>
+          <!-- <single-marker-map [place]="place"></single-marker-map> -->
+        </div>
+
+        <div class="tab-pane fade" id="edit">
+          <div class="row">
+            <div class="col-8">
+              <h3>Actualizar lugar</h3>
+              <p>Tus cambios seran registrados, y la comunidad los verificara.</p>
+              <edit-place-form [place]="place"></edit-place-form>
+            </div>
+            <div class="col-4">
+              <h4>Agregar modulos</h4>
+              <p>Podes agregar modulos a este lugar, como sucursales, horarios y mini mapa.</p>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <h5>Basico</h5>
+                  <p>Todo perfil tiene la informacion basica, como nombre, direccion y telefono.</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>Horario</h5>
+                  <p>Te permite anadir un horario al perfil.</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>Sucursales</h5>
+                  <p>Si el perfil es parte de un grupo de sucursales, anadi este modulo.</p>
+                </li>
+                <li class="list-group-item">
+                  <h5>Amenidades</h5>
+                  <p>Una lista dinamica de amenidades que ofrece el lugar, como wi-fi, acceso con silla de ruedas y mas.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>

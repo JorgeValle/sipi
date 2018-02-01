@@ -1,0 +1,20 @@
+<success-alert [message]="successAlert"></success-alert>
+<error-alert [message]="errorAlert"></error-alert>
+
+<form [formGroup]="place" (ngSubmit)="onSubmit(place)" novalidate>
+  <div class="form-group">
+    <label for="name-input">Nombre</label>
+    <input aria-describedby="name-help" class="form-control" formControlName="name" id="name-input" name="name" placeholder="El nombre del lugar" type="text">
+    <small id="name-help" class="form-text text-muted">Media vez lo has puesto, no lo podras cambiar.</small>
+  </div>
+  <div class="form-group">
+    <label for="category-input">Categoria</label>
+    <select aria-described-by="category-help" class="form-control" formControlName="category" id="category-input" name="category">
+      <option value="Restaurantes">Restaurantes</option>
+      <option value="Compras">Compras</option>
+      <option value="Publico">Publico</option>
+    </select>
+    <small id="category-help" class="form-text text-muted">Lo podes cambiar despues, si es necesario.</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Crear lugar</button>
+</form>

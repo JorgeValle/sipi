@@ -1,0 +1,9 @@
+<form [formGroup]="request" (ngSubmit)="onSubmit(request._value)">
+  <div class="form-check">
+    <label class="form-check-label">
+      <input formControlName="status" type="checkbox" class="form-check-input" value="Requested Deletion">
+      Si, en efecto quiero borarr mi perfil, de acuerdo con las <a routerLink="condiciones-de-uso">condiciones de uso.</a>
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Borrar Perfil</button>
+</form>

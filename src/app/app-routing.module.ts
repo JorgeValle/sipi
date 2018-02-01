@@ -1,8 +1,8 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PlaceDetailComponent }	from './places/place-detail.component';
-import { PlaceListComponent }  from './places/place-list.component';
+import { PlaceDetailComponent }	from './components/places/place-detail.component';
+import { PlaceListComponent }  from './components/places/place-list.component';
 
 
 

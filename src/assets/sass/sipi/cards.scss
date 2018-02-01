@@ -1,3 +1,11 @@
-.card {
-  border-left: 3px solid $brand-grey;
+.card-header .dark {
+  background: darken($brand-grey, 40%);
 }
+
+.unseen {
+  background-color: lighten($brand-grey, 40%);
+}
+
+// .card {
+//   box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// }

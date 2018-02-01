@@ -1,0 +1,19 @@
+<!-- html templates with angularized markup -->
+<div class="container">
+  <nav class="row">
+    <div class="col-12 col-sm-3" *ngFor="let category of categories">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-header">
+            <i class="material-icons md-18 align-top white">{{category.iconId}}</i>
+          </div>
+          <h3 class="card-title h5">
+            <a routerLink="/busqueda" [queryParams]="{categoria: category.name}">{{category.name}}</a>
+          </h3>
+          <p class="card-text">{{category.summary}}</p>
+          <p class="card-text"><small class="text-muted">{{category.listings}} lugares</small></p>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

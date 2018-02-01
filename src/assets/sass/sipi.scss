@@ -55,19 +55,33 @@
 @import 'bootstrap/list-group';
 @import 'bootstrap/utilities';
 @import 'bootstrap/navbar';
+@import 'bootstrap/nav';
+@import 'bootstrap/modal';
 @import 'bootstrap/transitions';
+@import 'bootstrap/tooltip';
+@import 'bootstrap/popover';
+@import 'bootstrap/progress';
+@import 'bootstrap/jumbotron';
 
 /**
  * Sipi v.3.0.0-alpha
  */
 @import 'sipi/colors';
-@import 'sipi/icons';
 @import 'sipi/type';
-@import 'sipi/header';
+
+@import 'sipi/alerts';
+@import 'sipi/quotes';
 @import 'sipi/cards';
 @import 'sipi/filters';
 @import 'sipi/footer';
-@import 'sipi/homepage';
-@import 'sipi/main';
 @import 'sipi/formatting';
-
+@import 'sipi/forms';
+@import 'sipi/header';
+@import 'sipi/homepage';
+@import 'sipi/icons';
+@import 'sipi/main';
+@import 'sipi/maps';
+@import 'sipi/medals';
+@import 'sipi/modals';
+@import 'sipi/ratings';
+@import 'sipi/tabs';
