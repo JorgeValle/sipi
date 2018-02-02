@@ -56,7 +56,8 @@ export class AuthService {
     };
 
     return this.http.post(
-      `http://localhost:4100/api/auth/signup`,
+      // `http://localhost:4100/api/auth/signup`,
+      `https://sipi-antares.herokuapp.com/api/auth/signup`,
       newUser
     )
     .map((res:Response) => res.json());    
@@ -78,7 +79,8 @@ export class AuthService {
     };
 
     return this.http.post(
-      `http://localhost:4100/api/auth/login`,
+      // `http://localhost:4100/api/auth/login`,
+      `https://sipi-antares.herokuapp.com/api/auth/login`,
       userData
     )
     .map((res:Response) => res.json());    

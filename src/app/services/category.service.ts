@@ -23,7 +23,8 @@ export class CategoryService {
    */
   getCategories() {
     
-    return this.http.get(`http://localhost:4100/api/retrieve/categories`)
+    // return this.http.get(`http://localhost:4100/api/retrieve/categories`)
+    return this.http.get(`https://sipi-antares.herokuapp.com/api/retrieve/categories`)
     .map((res:Response) => res.json());
   }
 
