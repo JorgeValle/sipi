@@ -2,18 +2,12 @@
   <div class="container">
     <nav class="row mt-2 mb-2">
       <div class="col-2 col-sm-4 col-md-1">
-        <a class="navbar-brand" routerLink="/">
+        <a class="navbar-brand" href="/">
           <img alt="El logo de Sipi" src="/assets/svgs/sipi-logo.svg" height="50" width="50">
         </a>
       </div>
       <div class="d-none d-sm-none d-md-inline d-lg-inline d-xl-inline col-md-7">
         <search-form-a class="nav-link"></search-form-a>
-      </div>
-      <div class="col-6 col-sm-4 col-md-2">
-        <a class="nav-item nav-link" routerLink="/ciudades" routerLinkActive="active">
-          <i class="material-icons md-18 align-top">location_city</i>
-          <span>&nbsp;Ciudades</span>
-        </a>
       </div>
       <div class="col-4 col-sm-4 col-md-2">
         <a class="nav-item nav-link" href="/usuario/{{user.id}}">
