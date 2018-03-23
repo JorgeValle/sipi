@@ -24,8 +24,8 @@ export class PlaceService {
    */
   getPlaces() {
     return this.http.get(
-      // `http://localhost:4100/api/retrieve/places`
-      `https://sipi-antares.herokuapp.com/api/retrieve/places`
+      `http://localhost:4100/api/retrieve/places`
+      // `https://sipi-antares.herokuapp.com/api/retrieve/places`
     )
     .map((res:Response) => res.json());
   }
@@ -37,8 +37,8 @@ export class PlaceService {
    */
   getPlacesByOwner(ownerId) {
     return this.http.get(
-      // `http://localhost:4100/api/retrieve/places/${ownerId}`
-      `https://sipi-antares.herokuapp.com/api/retrieve/places/${ownerId}`
+      `http://localhost:4100/api/retrieve/places/${ownerId}`
+      // `https://sipi-antares.herokuapp.com/api/retrieve/places/${ownerId}`
     )
     .map((res:Response) => res.json());
   }
@@ -54,7 +54,8 @@ export class PlaceService {
    */
   searchPlaces(term?, location?) {
     return this.http.get(
-      `http://localhost:4100/api/retrieve/places/search?q=${term}&l=${location}&s=rating`
+      // `http://localhost:4100/api/retrieve/places/search?q=${term}&l=${location}&s=rating`
+      `http://localhost:4100/api/retrieve/places`
     )
     .map((res:Response) => res.json());
   }

@@ -5,7 +5,7 @@ import { Location }                                               from '@angular
 import { HttpClient, HttpErrorResponse, HttpHeaders }             from '@angular/common/http';
 import { FormControl, FormBuilder, FormGroup }                    from "@angular/forms";
 import { DomSanitizer, SafeHtml }                                 from "@angular/platform-browser";
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Http, Response, Headers, RequestOptions }                from '@angular/http';
 
 // Sipi custom
 import { PlaceService }    from '../../services/place.service';

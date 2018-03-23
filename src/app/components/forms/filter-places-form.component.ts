@@ -90,9 +90,9 @@ export class FilterPlacesFormComponent implements OnInit{
    * On Init
    */
   ngOnInit(): void {
-    this.getSubcategories();
-    this.getDistances();
-    this.populateFilterOptions(1);
+    // this.getSubcategories();
+    // this.getDistances();
+    // this.populateFilterOptions(1);
   }
 
   /**

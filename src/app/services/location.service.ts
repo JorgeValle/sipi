@@ -32,8 +32,8 @@ export class LocationService {
         drIp = '66.98.0.40',
         cubaIp = '152.206.0.0';
 
-        return this.http.get(`http://freegeoip.net/json/${costaRicaIp}`)
-        .map((res:Response) => res.json())
+    return this.http.get(`http://freegeoip.net/json/${costaRicaIp}`)
+    .map((res:Response) => res.json())
 
   }
 
