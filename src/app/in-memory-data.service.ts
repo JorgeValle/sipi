@@ -1454,7 +1454,7 @@ export class InMemoryDataService implements InMemoryDbService {
     ]
 
     return {
-      places,
+      // places,
       reviews,
       categories,
       subcategories,

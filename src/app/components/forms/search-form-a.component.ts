@@ -153,25 +153,25 @@ export class SearchFormAComponent implements OnInit {
       location: ""
     });
 
-    this.locationService
-    .getLocation()
-    .subscribe(
-      data => {
-        console.log(data);
+    // this.locationService
+    // .getLocation()
+    // .subscribe(
+    //   data => {
+    //     console.log(data);
 
-        let userLocation;
-        if (data.city_name != undefined) {
-          userLocation = data.city_name;
-        } else {
-          userLocation = data.country_name;
-        }
+    //     let userLocation;
+    //     if (data.city_name != undefined) {
+    //       userLocation = data.city_name;
+    //     } else {
+    //       userLocation = data.country_name;
+    //     }
 
-        this.search = this.builder.group({
-          term : "",
-          location: userLocation
-        });
-      }
-    )
+    //     this.search = this.builder.group({
+    //       term : "",
+    //       location: userLocation
+    //     });
+    //   }
+    // )
 
     this.placeService
     .searchPlaces(this.search.value['term'], this.search.value['location'])

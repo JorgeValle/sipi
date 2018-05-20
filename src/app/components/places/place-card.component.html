@@ -1,11 +1,11 @@
 <div class="card-body">
   <div class="row">
     <div class="col-4 col-sm-2">
-      <img alt="Foto de {{place.native.name}}" class="card-img-left img-fluid" *ngIf="place.img" [src]="place.img.src">
+      <!-- <img alt="Foto de {{place.content.name}}" class="card-img-left img-fluid" *ngIf="place.img" [src]="place.img.src"> -->
     </div>
     <div class="col-8 col-sm-6">
       <h2 class="card-title h4">
-        <a routerLink="/lugar/{{place.system.id}}">{{place.native.name}}</a>
+        <a routerLink="/lugar/{{place.system.id}}">{{place.content.name}}</a>
       </h2>
       <div *ngIf="place.rating">
         <i class="material-icons stars" *ngFor="let i of Arr(place.rating).fill(1)">grade</i>
@@ -20,10 +20,10 @@
     </div>
     <div class="col-12 col-sm-4" *ngIf="place.address">
       <address class="card-text">
-        {{place.address.street}} <br>
+        {{place.address.number}} {{place.address.street}} <br>
         {{place.address.city}}, {{place.address.country}} <br>
         <i class="material-icons align-top">phone</i>
-        <a href="tel:{{place.phone}}">&nbsp;{{place.native.phone}}</a>
+        <a href="tel:{{place.phone}}">&nbsp;{{place.contact.phone}}</a>
       </address>
     </div>
   </div>

@@ -41,36 +41,36 @@ export class SignUpFormComponent implements OnInit {
     });
   }
 
-  /**
-   * The main on submit function
-   */
-  onSubmit(signUpData): void {
+  // /**
+  //  * The main on submit function
+  //  */
+  // onSubmit(signUpData): void {
     
-    console.log(signUpData);
+  //   console.log(signUpData);
 
-    /**
-     * Create the place, through service
-     * @param
-     * @param
-     */
-    this.authService
-    .signup(signUpData)
-    .subscribe(
-      data => {  
-        console.log('New user was created');
-        },
+  //   /**
+  //    * Create the place, through service
+  //    * @param
+  //    * @param
+  //    */
+  //   this.authService
+  //   .signup(signUpData)
+  //   .subscribe(
+  //     data => {  
+  //       console.log('New user was created');
+  //       },
       
-        (err: HttpErrorResponse) => {
+  //       (err: HttpErrorResponse) => {
   
-          if (err.error instanceof Error) {
-            console.log('Something went wrong', err.error.message);
-          } else {
-            console.log(`Backend returned code ${err.status}, body was: ${err.error}`);
-          }
-        }
-    );
+  //         if (err.error instanceof Error) {
+  //           console.log('Something went wrong', err.error.message);
+  //         } else {
+  //           console.log(`Backend returned code ${err.status}, body was: ${err.error}`);
+  //         }
+  //       }
+  //   );
 
-  }
+  // }
 
   /**
    * Signs up user using the Facebook API

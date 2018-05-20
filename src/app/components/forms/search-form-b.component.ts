@@ -21,8 +21,6 @@ import { CompleterService, CompleterData }                from "ng2-completer";
 
 export class SearchFormBComponent implements OnInit {
 
-
-
   constructor(
     private locationService: LocationService,
     private builder: FormBuilder,
@@ -45,7 +43,6 @@ export class SearchFormBComponent implements OnInit {
     .getLocation()
     .subscribe(
       data => {
-        console.log(data);
 
         let userLocation;
         if (data.city_name != undefined) {

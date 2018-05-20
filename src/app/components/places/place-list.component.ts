@@ -22,24 +22,24 @@ import 'rxjs/add/operator/switchMap';
     PlaceFilterPipe,
     PriceFilterPipe
   ],
-  animations: [
-    trigger('fadeIn', [
-      transition(':enter', [
-        style({ opacity: '0' }),
-        animate('3s ease-out', style({ opacity: '1' })),
-      ]),
-    ]),
-    trigger('animating', [
-      state('inactive', style({
-        opacity: '0.8'
-      })),
-      state('active', style({
-        opacity: '1'
-      })),
-      transition('inactive => active', animate('1000ms ease-in')),
-      transition('active => inactive', animate('1000ms ease-out'))
-    ]),
-  ],
+  // animations: [
+  //   trigger('fadeIn', [
+  //     transition(':enter', [
+  //       style({ opacity: '0' }),
+  //       animate('3s ease-out', style({ opacity: '1' })),
+  //     ]),
+  //   ]),
+  //   trigger('animating', [
+  //     state('inactive', style({
+  //       opacity: '0.8'
+  //     })),
+  //     state('active', style({
+  //       opacity: '1'
+  //     })),
+  //     transition('inactive => active', animate('1000ms ease-in')),
+  //     transition('active => inactive', animate('1000ms ease-out'))
+  //   ]),
+  // ],
 })
 
 @Pipe({
@@ -82,10 +82,12 @@ export class PlaceListComponent implements OnInit {
   searchPlaces(term?, location?): void {
 
     this.placeService
-    .searchPlaces(term, location)
+    // .searchPlaces(term, location)
+    .getPlaces()
     .subscribe(
       data => {
         this.places = data;
+        // console.log(data);
         this.state = 'active';
       }
     );
@@ -102,7 +104,7 @@ export class PlaceListComponent implements OnInit {
 
       this.city = params['ubicacion'];
       this.category = params['categoria'];
-      this.searchPlaces(this.category, this.city);
+      this.searchPlaces();
 
     });
 

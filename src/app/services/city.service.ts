@@ -23,7 +23,7 @@ export class CityService {
    */
   getCitiesByCountry(countryId) {
     // return this.http.get(`http://localhost:4100/api/retrieve/cities/${countryId}`)
-    return this.http.get(`https://sipi-antares.herokuapp.com/api/retrieve/cities/${countryId}`)
+    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/cities/${countryId}`)
     .map((res:Response) => res.json());
   }
 

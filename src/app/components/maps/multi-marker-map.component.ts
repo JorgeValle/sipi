@@ -78,7 +78,7 @@ export class MultiMarkerMapComponent implements OnInit {
        */
       marker.addListener('click', () => {
 
-        this.firstPlace.emit(currentPlace.name);
+        this.firstPlace.emit(currentPlace.content.name);
 
       });
 

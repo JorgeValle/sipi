@@ -1,105 +1,61 @@
-
-// Angular core
-import { Injectable }              from '@angular/core';
-import { Headers, Http, Response } from '@angular/http';
-
-// Sipi custom
-import { WindowService } from '../services/window.service';
-
-// Third party
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/map';
+import { Injectable } from '@angular/core';
+import { Router }     from '@angular/router';
+import { filter }     from 'rxjs/operators';
+import * as auth0     from 'auth0-js';
 
 @Injectable()
 export class AuthService {
 
-  private window;
+  auth0 = new auth0.WebAuth({
+    clientID: '9n2ZNXJhg0ms2vJANpyqs5iP9TDClbOM',
+    domain: 'sipi.auth0.com',
+    responseType: 'token id_token',
+    audience: 'https://sipi.auth0.com/userinfo',
+    redirectUri: 'http://localhost:4200', // sets the callback here
+    scope: 'openid'
+  });
 
-  constructor(
-    private http: Http,
-    private windowService: WindowService
-  ) {
-    this.window = windowService.nativeWindow;
+  constructor(public router: Router) {}
+
+  public login(): void {
+    this.auth0.authorize();
   }
 
-
-  /**
-   * Deletes the token, logging the user out
-   */
-  logout(): void {
-    window.localStorage.removeItem('sipiToken');
+  public handleAuthentication(): void {
+    this.auth0.parseHash((err, authResult) => {
+      if (authResult && authResult.accessToken && authResult.idToken) {
+        window.location.hash = '';
+        this.setSession(authResult);
+        this.router.navigate(['/home']);
+      } else if (err) {
+        this.router.navigate(['/home']);
+        console.log(err);
+      }
+    });
   }
 
-  /**
-   * returns current user
-   */
-  getCurrentUser() {
-
+  private setSession(authResult): void {
+    // Set the time that the Access Token will expire at
+    const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+    localStorage.setItem('access_token', authResult.accessToken);
+    localStorage.setItem('id_token', authResult.idToken);
+    localStorage.setItem('expires_at', expiresAt);
   }
 
-  /**
-   * Registers a new user
-   * @async
-   * @param
-   * @param
-   * @returns
-   */
-  signup(user) {
-
-    // the user we are about to create
-    const newUser = {
-      firstName: user.firstName,
-      lastName: user.lastName,
-      password: user.password,
-      email: user.email,
-      consent: user.consent
-    };
-
-    return this.http.post(
-      // `http://localhost:4100/api/auth/signup`,
-      `https://sipi-antares.herokuapp.com/api/auth/signup`,
-      newUser
-    )
-    .map((res:Response) => res.json());    
+  public logout(): void {
+    // Remove tokens and expiry time from localStorage
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('expires_at');
+    // Go back to the home route
+    this.router.navigate(['/']);
   }
 
-  /**
-   * Logs a user in
-   * @async
-   * @param
-   * @param
-   * @returns
-   */
-  login(user) {
-
-    // the user trying to sign in
-    const userData = {
-      email: user.email,
-      password: user.password
-    };
-
-    return this.http.post(
-      // `http://localhost:4100/api/auth/login`,
-      `https://sipi-antares.herokuapp.com/api/auth/login`,
-      userData
-    )
-    .map((res:Response) => res.json());    
+  public isAuthenticated(): boolean {
+    // Check whether the current time is past the
+    // Access Token's expiry time
+    const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
+    return new Date().getTime() < expiresAt;
   }
-
-  /**
-   * Gets token from local storage
-   * @returns
-   */
-  getToken() {
-    return window.localStorage['sipiToken'];
-  }
-
-  /**
-   * Saves token to local storage
-   * @returns
-   */
-  saveToken(token) {
-    window.localStorage['sipiToken'] = token;
-  };
 
 }

@@ -22,7 +22,7 @@ export class CountryService {
    * @returns {observable} - All the countries, indiscriminately
    */
   getCountries() {
-    return this.http.get(`http://localhost:4100/api/retrieve/countries`)
+    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/countries`)
     .map((res:Response) => res.json());
   }
 

@@ -53,10 +53,10 @@ export class PlaceDetailComponent implements OnInit {
       // console.log(this.place[0]);
 
       // SEO stuff
-      this.setTitle(`${this.place.name} | Sipi`);  // set the document title
+      this.setTitle(`${this.place.content.name} | Sipi`);  // set the document title
       this.meta.addTags([
         { name: 'robots', content: 'noindex' },
-        { name: 'description', content: `Informacion sobre el lugar ${this.place.name}, ubicado en ${this.place.address.city}` },
+        { name: 'description', content: `Informacion sobre el lugar ${this.place.content.name}, ubicado en ${this.place.address.city}` },
         { name: 'tags', content: `Sipi,${this.place.category.subcats},${this.place.address.city},${this.place.address.country}` }
       ]);
     });

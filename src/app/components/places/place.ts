@@ -1,7 +1,10 @@
 export class Place {
   id: number;
-  name: string;
+  content: {
+    name: string;
+  };
   address: {
+    number: string;
     street: string;
     city: string;
     country: string;

@@ -41,51 +41,55 @@ export class SignInFormComponent {
     });
   }
 
-  /**
-   * The main on submit function
-   */
-  onSubmit(signInData): void {
+  // /**
+  //  * The main on submit function
+  //  */
+  // onSubmit(signInData): void {
 
-    console.log(signInData);
+  //   console.log(signInData);
 
-    /**
-     * Create the place, through service
-     * @param
-     * @param
-     */
-    this.authService
-    .login(signInData)
-    .subscribe(
-      data => {
+  //   /**
+  //    * Create the place, through service
+  //    * @param
+  //    * @param
+  //    */
+  //   this.authService
+  //   .login(signInData)
+  //   .subscribe(
+  //     data => {
 
-        this.signedInUser = data;
+  //       this.signedInUser = data;
 
-        // login was successful
-        this.authService.saveToken(data.token);
-        this.router.navigate([`/usuario/${this.signedInUser.id}`]);
-        // this.successAlert = 'Bienvenido de regreso';
-        console.log('User was signed in');
+  //       // login was successful
+  //       this.authService.saveToken(data.token);
+  //       this.router.navigate([`/usuario/${this.signedInUser.id}`]);
+  //       // this.successAlert = 'Bienvenido de regreso';
+  //       console.log('User was signed in');
 
-        },
+  //       },
       
-        (err: HttpErrorResponse) => {
+  //       (err: HttpErrorResponse) => {
   
-          if (err.error instanceof Error) {
-            console.log('Something went wrong', err.error.message);
-          } else {
-            this.errorAlert = 'La combinación de usuario y contraseña esta incorrecta';
-            console.log(`Backend returned code ${err.status}, body was: ${err.error}`);
-          }
-        }
-    );
+  //         if (err.error instanceof Error) {
+  //           console.log('Something went wrong', err.error.message);
+  //         } else {
+  //           this.errorAlert = 'La combinación de usuario y contraseña esta incorrecta';
+  //           console.log(`Backend returned code ${err.status}, body was: ${err.error}`);
+  //         }
+  //       }
+  //   );
 
-  }
+  // }
 
-  /**
-   * Signs the user in using the Facebook API
-   */
-  signInFacebook(): void {
+  // /**
+  //  * Signs the user in using the Facebook API
+  //  */
+  // signInFacebook(): void {
     
+  // }
+
+  testClick(): void {
+    this.authService.login();
   }
   
 }
