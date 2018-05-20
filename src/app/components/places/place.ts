@@ -1,7 +1,10 @@
 export class Place {
-  id: number;
+  system:{
+    id: number;
+  };
   content: {
     name: string;
+    slug: string;
   };
   address: {
     number: string;
@@ -46,8 +49,11 @@ export class Place {
     }
   };
   status: string;
-  phone: number;
-  website: string;
+  contact: {
+    phone: number;
+    website: string;
+    email: string;
+  }
   rating: number;
   img: string;
   price: string;

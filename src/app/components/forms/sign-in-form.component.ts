@@ -81,12 +81,12 @@ export class SignInFormComponent {
 
   // }
 
-  // /**
-  //  * Signs the user in using the Facebook API
-  //  */
-  // signInFacebook(): void {
+  /**
+   * Signs the user in using the Facebook API
+   */
+  signInFacebook(): void {
     
-  // }
+  }
 
   testClick(): void {
     this.authService.login();

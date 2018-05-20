@@ -58,4 +58,12 @@ export class AuthService {
     return new Date().getTime() < expiresAt;
   }
 
+  public saveToken(): void {
+
+  }
+
+  public signup(): void {
+
+  }
+
 }
