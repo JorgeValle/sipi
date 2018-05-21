@@ -1,5 +1,5 @@
 // Angular core
-import { Component, OnInit }              from '@angular/core';
+import { Component, OnInit, OnDestroy }              from '@angular/core';
 import { ActivatedRoute, ParamMap }       from '@angular/router';
 import { Location }                       from '@angular/common';
 import { Meta, Title }                    from '@angular/platform-browser';
@@ -19,7 +19,7 @@ import 'rxjs/add/operator/switchMap';
   ]
 })
 
-export class PlaceDetailComponent implements OnInit {
+export class PlaceDetailComponent implements OnInit, OnDestroy {
 
   place: Place;
 
@@ -60,6 +60,13 @@ export class PlaceDetailComponent implements OnInit {
         { name: 'tags', content: `Sipi,${this.place.category.subcats},${this.place.address.city},${this.place.address.country}` }
       ]);
     });
+  }
+
+  /**
+   * On Destroy
+   */
+  ngOnDestroy(): void {
+    console.log('Place detail component was destroyed');
   }
 
   /**
