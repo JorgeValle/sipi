@@ -9,6 +9,7 @@ import { Place } from '../components/places/place';
 // Third party
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class PlaceService {
@@ -22,7 +23,7 @@ export class PlaceService {
    * @async
    * @returns {object} - All the places, indiscriminately
    */
-  getPlaces() {
+  getPlaces():  Observable<Place[]> {
     return this.http.get(
       // `http://localhost:4100/api/retrieve/places`
       `https://sipi-rest-api.herokuapp.com/retrieve/places`
@@ -54,7 +55,7 @@ export class PlaceService {
    */
   searchPlaces(term?, location?) {
     return this.http.get(
-      `https://sipi-rest-api.herokuapp.com/retrieve/places/search?q=${term}&l=${location}&s=rating`
+      `https://sipi-rest-api.herokuapp.com/retrieve/places/search?q=${term}&l=${location}`
       // `http://localhost:4100/api/retrieve/places`
     )
     .map((res:Response) => res.json());
@@ -66,11 +67,11 @@ export class PlaceService {
    * @param {number} id - The id of the place we want to fetch
    * @returns {object} - The returned, singular place from the endpoint
    */
-  getPlace(id: number) {
+  getPlace(id: number): Observable<Place> {
     return this.http.get(
       `https://sipi-rest-api.herokuapp.com/retrieve/place/${id}`
     )
-    .map((res:Response) => res.json())
+    .map((res:Response) => res.json());
   }
 
   /**

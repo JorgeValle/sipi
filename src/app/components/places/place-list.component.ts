@@ -13,6 +13,7 @@ import { PriceFilterPipe } from '../../pipes/price-filter.pipe';
 
 // Third party
 import 'rxjs/add/operator/switchMap';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'place-list',
@@ -51,7 +52,7 @@ export class PlaceListComponent implements OnInit {
   p;
   name: string;
   firstListing: Place;
-  places: Place[];
+  places$: Observable<Place[]>;
   place: Place;
   category;
   city;
@@ -81,16 +82,7 @@ export class PlaceListComponent implements OnInit {
    */
   searchPlaces(term?, location?): void {
 
-    this.placeService
-    // .searchPlaces(term, location)
-    .getPlaces()
-    .subscribe(
-      data => {
-        this.places = data;
-        // console.log(data);
-        this.state = 'active';
-      }
-    );
+    this.places$ = this.placeService.getPlaces();
 
   }
 

@@ -1,6 +1,6 @@
 <!-- <filter-places-form (priceChanged)="filterByPrice($event)" (pricePredicateChanged)="handlePricePredicateChanged($event)"></filter-places-form> -->
 
-<div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5" *ngIf="places$ | async as places">
 
   <div class="row d-block d-sm-block d-md-none d-lg-none d-xl-none mb-5">
     <div class="col-12">

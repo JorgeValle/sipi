@@ -53,7 +53,7 @@ export class Place {
     phone: number;
     website: string;
     email: string;
-  }
+  };
   rating: number;
   img: string;
   price: string;

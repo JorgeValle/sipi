@@ -10,6 +10,7 @@ import { PlaceService } from '../../services/place.service';
 
 // Third party
 import 'rxjs/add/operator/switchMap';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'place-detail',
@@ -21,7 +22,8 @@ import 'rxjs/add/operator/switchMap';
 
 export class PlaceDetailComponent implements OnInit, OnDestroy {
 
-  place: Place;
+  place$: Observable<Place>;
+  placeId;
 
   constructor(
     private placeService: PlaceService,
@@ -43,29 +45,29 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
    */
   ngOnInit(): void {
     
-    this.route.paramMap
-    .switchMap((params: ParamMap) => this.placeService.getPlace(+params.get('id')))
-    .subscribe(place => {
-      
-      this.place = place[0];
 
-      console.log('From place detail component');
-      // console.log(this.place[0]);
+    this.placeId = this.route.snapshot.paramMap.get('id');
 
-      // SEO stuff
-      this.setTitle(`${this.place.content.name} | Sipi`);  // set the document title
-      this.meta.addTags([
-        { name: 'robots', content: 'noindex' },
-        { name: 'description', content: `Informacion sobre el lugar ${this.place.content.name}, ubicado en ${this.place.address.city}` },
-        { name: 'tags', content: `Sipi,${this.place.category.subcats},${this.place.address.city},${this.place.address.country}` }
-      ]);
-    });
+    this.place$ = this.placeService.getPlace(this.placeId);
+
+
+    // console.info(this.placeService.getPlace(50));
+    // console.log(this.place[0]);
+
+    // SEO stuff
+    // this.setTitle(`${this.place$.content.name} | Sipi`);  // set the document title
+    // this.meta.addTags([
+    //   { name: 'robots', content: 'noindex' },
+    //   { name: 'description', content: `Informacion sobre el lugar ${this.place$.content.name}, ubicado en ${this.place$.address.city}` },
+    //   { name: 'tags', content: `Sipi,${this.place$.category.subcats},${this.place$.address.city},${this.place$.address.country}` }
+    // ]);
   }
 
   /**
    * On Destroy
    */
   ngOnDestroy(): void {
+    
     console.log('Place detail component was destroyed');
   }
 
