@@ -36,7 +36,7 @@ export class SingleMarkerMapComponent implements OnInit {
    */  
   ngOnInit(): void {
 
-    console.log(this.place);
+    console.log(`place is: ${this.place}`);
 
     let currentPlace = {
       lat: this.place.coordinates.lat,
@@ -56,8 +56,6 @@ export class SingleMarkerMapComponent implements OnInit {
    * Redo the map search
    */
   redoMapSearch(): void {
-    
-    
 
   }
 
