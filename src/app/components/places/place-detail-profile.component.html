@@ -3,9 +3,9 @@
 
 <div class="row">
   <div class="col-10 col-sm-8">
-    <h1>{{place.content.name}}</h1>
+    <h1 class="h2">{{place.content.name}}</h1>
     <span class="text-muted" *ngFor="let subcategory of place.category.subcats">
-      <a routerLink="/busqueda" [queryParams]="{categoria: subcategory | lowercase, lugar: place.country | lowercase}">{{subcategory}}</a>,&nbsp;
+      <a routerLink="/busqueda" [queryParams]="{categoria: subcategory | lowercase, lugar: place.address.country | lowercase}">{{subcategory}}</a>,&nbsp;
     </span>
   </div><!-- /col -->
 
@@ -21,4 +21,7 @@
       <a href="{{place.contact.website}}">&nbsp;{{place.contact.website}}</a>
     </p>
   </div>
+  <!-- <div class="col-6">
+    <single-marker-map [place]="place"></single-marker-map>
+  </div> -->
 </div>
