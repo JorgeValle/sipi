@@ -85,7 +85,8 @@ export class PlaceListComponent implements OnInit {
    */
   searchPlaces(term?, location?): void {
 
-    this.places$ = this.placeService.searchPlaces(term, location);
+    // this.places$ = this.placeService.searchPlaces(term, location);
+    this.places$ = this.placeService.getPlaces();
 
   }
 
@@ -99,7 +100,7 @@ export class PlaceListComponent implements OnInit {
 
       this.city = params['ubicacion'];
       this.category = params['categoria'];
-      this.searchPlaces(this.category, this.city);
+      this.searchPlaces();
 
     });
 
