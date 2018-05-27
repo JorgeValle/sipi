@@ -11,6 +11,10 @@ export class Place {
     street: string;
     city: string;
     country: string;
+    coordinates: {
+      lat: number;
+      lng: number;
+    };
   };
   category: {
     name: string;
@@ -33,10 +37,6 @@ export class Place {
       open: number;
       close: number;
     }
-  };
-  coordinates: {
-    lat: number;
-    lng: number;
   };
   imageFileName: string;
   comments: number;

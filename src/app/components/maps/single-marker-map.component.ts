@@ -39,12 +39,14 @@ export class SingleMarkerMapComponent implements OnInit {
     console.log(`place is: ${this.place}`);
 
     let currentPlace = {
-      lat: this.place.coordinates.lat,
-      lng: this.place.coordinates.lng
+      lat: this.place.address.coordinates.lat,
+      lng: this.place.address.coordinates.lng
     };
     let map = new google.maps.Map(document.getElementById('single-marker-map'), {
-      zoom: 15,
-      center: currentPlace
+      zoom: 17,
+      center: currentPlace,
+      streetViewControl: false,
+      mapTypeControl: false
     });
     let marker = new google.maps.Marker({
       position: currentPlace,

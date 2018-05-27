@@ -54,12 +54,15 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
     this.place$ = this.placeService.getPlace(this.placeId);
 
     // SEO stuff
-    // this.setTitle(`${this.place$.} | Sipi`);  // set the document title
-    // this.meta.addTags([
-    //   { name: 'robots', content: 'noindex' },
-    //   { name: 'description', content: `Informacion sobre el lugar ${this.place$}, ubicado en ${this.place$}` },
-    //   { name: 'tags', content: `Sipi,${this.place$.category.subcats},${this.place$},${this.place$}` }
-    // ]);
+
+    // if (this.place$) {
+    //   this.setTitle(`${this.place$} | Sipi`);  // set the document title
+    //   this.meta.addTags([
+    //     { name: 'robots', content: 'noindex' },
+    //     { name: 'description', content: `Informacion sobre el lugar ${this.place$}, ubicado en ${this.place$}` },
+    //     { name: 'tags', content: `Sipi,${this.place$},${this.place$},${this.place$}` }
+    //   ]);
+    // }
   }
 
   /**

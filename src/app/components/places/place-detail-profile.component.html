@@ -1,27 +1,41 @@
 <!-- <breadcrumb-menu country="{{place.address.country}}" city="{{place.address.city}}" subcategories="{{place.category.subcats}}"></breadcrumb-menu> -->
 
 
-<div class="row">
-  <div class="col-10 col-sm-8">
+<div class="row mb-4">
+  <div class="col-12">
     <h1 class="h2">{{place.content.name}}</h1>
     <span class="text-muted" *ngFor="let subcategory of place.category.subcats">
       <a routerLink="/busqueda" [queryParams]="{categoria: subcategory | lowercase, lugar: place.address.country | lowercase}">{{subcategory}}</a>,&nbsp;
     </span>
   </div><!-- /col -->
+</div>
 
-  <div class="col-6">
-    <address>
-    {{place.address.number}}, {{place.address.street}}<br>
-    {{place.address.city}}, {{place.address.country}}<br>
-    </address>
-    <p>
-      <i class="material-icons align-top">phone</i>&nbsp;{{place.contact.phone}}
-      <br/>
-      <i class="material-icons align-top">web</i>
-      <a href="{{place.contact.website}}">&nbsp;{{place.contact.website}}</a>
-    </p>
+<div class="row">
+  <div class="col-12 col-sm-6">
+    <div class="card">
+      <single-marker-map *ngIf="place.address.coordinates" class="card-img-top" [place]="place"></single-marker-map>
+      <div class="card-body">
+        <!-- <h5 class="card-title">Card title</h5> -->
+        <ul class="list-group">
+          <li class="list-group-item border-0">
+            <address class="card-text">
+              {{place.address.number}}, {{place.address.street}}<br>
+              {{place.address.city}}, {{place.address.country}}<br>
+            </address>
+          </li>
+          <li class="list-group-item border-0 pt-0 pb-0" *ngIf="place.contact.phone">
+              <i class="material-icons align-top">phone</i>&nbsp;{{place.contact.phone}}
+          </li>
+          <li class="list-group-item border-0 pt-0 pb-0" *ngIf="place.contact.website">
+              <i class="material-icons align-top">web</i>
+              <a href="{{place.contact.website}}">&nbsp;{{place.contact.website}}</a>
+          </li>
+          <li class="list-group-item border-0 pt-0 pb-0" *ngIf="place.contact.email">
+              <i class="material-icons align-top">email</i>
+              <a href="mailto:{{place.contact.email}}">&nbsp;{{place.contact.email}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <!-- <div class="col-6">
-    <single-marker-map [place]="place"></single-marker-map>
-  </div> -->
 </div>

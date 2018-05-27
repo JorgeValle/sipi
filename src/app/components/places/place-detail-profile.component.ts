@@ -43,18 +43,6 @@ export class PlaceDetailProfileComponent implements OnInit {
    */
   ngOnInit(): void {
     
-    this.route.paramMap
-    .switchMap((params: ParamMap) => this.placeService.getPlace(+params.get('id')))
-    .subscribe(place => {
-      this.place = place;
-      // SEO stuff
-      // this.setTitle(`${this.place.content.name} | Sipi`);  // set the document title
-      // this.meta.addTags([
-      //   { name: 'robots', content: 'noindex' },
-      //   { name: 'description', content: `Informacion sobre el lugar ${this.place.content.name}, ubicado en ${this.place.address.city}` },
-      //   { name: 'tags', content: `Sipi,${this.place.category.subcats},${this.place.address.city},${this.place.address.country}` }
-      // ]);
-    });
   }
 
   /**

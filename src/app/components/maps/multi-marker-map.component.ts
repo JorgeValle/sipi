@@ -69,7 +69,7 @@ export class MultiMarkerMapComponent implements OnInit {
       let currentPlace = allPlaces[i];
 
       let marker = new google.maps.Marker({
-        position: new google.maps.LatLng(currentPlace.coordinates.lat, currentPlace.coordinates.lng),
+        position: new google.maps.LatLng(currentPlace.address.coordinates.lat, currentPlace.address.coordinates.lng),
         map: map
       });
 
