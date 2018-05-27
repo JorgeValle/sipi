@@ -37,27 +37,30 @@ export class SearchFormAComponent implements OnInit {
 
   placeListFormatter = (data: any): SafeHtml => {
     
-    let placeHtml = `<img style="margin-right: 10px;" src="http://via.placeholder.com/20x20" height="20" width="20"><span><a href="/lugar/159">${data.name}</a></span>`;
+    let placeHtml = `<img style="margin-right: 10px;" src="http://via.placeholder.com/20x20" height="20" width="20"><span><a href="/lugar/159">${data.content.name}</a></span>`;
 
-    let categoryHtml = `<span>${data.name}</span>`;
+    let categoryHtml = `<span>${data.content.name}</span>`;
 
     if (data.category.name != undefined) {
+      // it's a place
       return this._sanitizer.bypassSecurityTrustHtml(placeHtml);
     } else {
+      // it's a category
       return this._sanitizer.bypassSecurityTrustHtml(categoryHtml);
     }
   }
 
   locationListFormatter = (data: any): SafeHtml => {
     
-    let cityHtml = `<span class="city">${data.name}</span>`;
+    let cityHtml = `<span class="city">${data.content.name}</span>`;
 
-    let countryHtml = `<span class="country">${data.name}</span>`;
+    let countryHtml = `<span class="country">${data.content.name}</span>`;
 
     if (data.countryId != undefined) {
       // it's a city
       return this._sanitizer.bypassSecurityTrustHtml(cityHtml);
     } else {
+      // it's a country
       return this._sanitizer.bypassSecurityTrustHtml(countryHtml);
     }
   }
@@ -66,7 +69,7 @@ export class SearchFormAComponent implements OnInit {
   locationObservable = (keyword: any): Observable<any[]> => {
     let url: string = 
       // 'https://maps.googleapis.com/maps/api/geocode/json?address='+keyword
-      `http://localhost:4100/api/retrieve/location/${keyword}`
+      `https://sipi-rest-api.herokuapp.com/retrieve/location/${keyword}`
     if (keyword) {
       return this.http.get(url)
       .map(res => {
@@ -82,7 +85,7 @@ export class SearchFormAComponent implements OnInit {
   placeObservable = (keyword: any): Observable<any[]> => {
     let url: string = 
       // 'https://maps.googleapis.com/maps/api/geocode/json?address='+keyword
-      `http://localhost:4100/api/retrieve/place/${keyword}`
+      `https://sipi-rest-api.herokuapp.com/retrieve/place/${keyword}`
     if (keyword) {
       return this.http.get(url)
       .map(res => {

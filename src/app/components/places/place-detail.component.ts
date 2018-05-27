@@ -50,16 +50,12 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
 
     this.place$ = this.placeService.getPlace(this.placeId);
 
-
-    // console.info(this.placeService.getPlace(50));
-    // console.log(this.place[0]);
-
     // SEO stuff
-    // this.setTitle(`${this.place$.content.name} | Sipi`);  // set the document title
+    // this.setTitle(`${this.place$.} | Sipi`);  // set the document title
     // this.meta.addTags([
     //   { name: 'robots', content: 'noindex' },
-    //   { name: 'description', content: `Informacion sobre el lugar ${this.place$.content.name}, ubicado en ${this.place$.address.city}` },
-    //   { name: 'tags', content: `Sipi,${this.place$.category.subcats},${this.place$.address.city},${this.place$.address.country}` }
+    //   { name: 'description', content: `Informacion sobre el lugar ${this.place$}, ubicado en ${this.place$}` },
+    //   { name: 'tags', content: `Sipi,${this.place$.category.subcats},${this.place$},${this.place$}` }
     // ]);
   }
 

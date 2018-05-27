@@ -1,5 +1,5 @@
 <!-- <main class="container mt-5 mb-5" *ngIf="place"> -->
-<main class="container mt-5 mb-5" *ngIf="place$ | async as place">
+<main class="container mt-5 mb-5" *ngIf="place$ | async as place; else loading">
 
   <div class="row mb-5">
     <div class="col-12">
@@ -21,10 +21,10 @@
           <place-detail-profile [place]="place"></place-detail-profile>
         </div><!-- info section -->
       
-        <div class="tab-pane fade" id="map">
+        <!-- <div class="tab-pane fade" id="map">
           <p>Mapa</p>
-          <!-- <single-marker-map [place]="place"></single-marker-map> -->
-        </div>
+          <single-marker-map [place]="place"></single-marker-map>
+        </div> -->
 
         <div class="tab-pane fade" id="edit">
           <div class="row">
@@ -61,6 +61,6 @@
     </div>
   </div>
 
-  <!-- <ng-template #loading>Loading User Data...</ng-template> -->
+  <ng-template #loading>Loading User Data...</ng-template>
 
 </main>
