@@ -101,6 +101,9 @@ import { ProgressBarComponent } from './components/progress-bars/progress-bar.co
 import { ReviewCardComponent } from './components/reviews/review-card.component';
 import { ReviewListComponent } from './components/reviews/review-list.component';
 
+// sitemap
+import { SitemapComponent } from './components/sitemap/sitemap.component';
+
 // services
 import { AlertService }          from './services/alert.service';
 import { CategoryService }       from './services/category.service';
@@ -188,6 +191,10 @@ const appRoutes: Routes = [
   {
     path: 'publicidad',
     component: AdvertisingPageComponent
+  },
+  {
+    path: 'sitemap.xml',
+    component: SitemapComponent
   },
   // all pages
   {
@@ -285,7 +292,9 @@ const appRoutes: Routes = [
     UserDetailComponent,
     UserDetailPlacesComponent,
     UserDetailProfileComponent,
-    UserDetailSettingsComponent
+    UserDetailSettingsComponent,
+    // sitemap
+    SitemapComponent
   ],
   // other modules whose exported classes are needed by component templates declared in this module
   imports: [
