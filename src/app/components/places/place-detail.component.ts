@@ -25,6 +25,9 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
   place$: Observable<Place>;
   placeId;
 
+  // used for tracking data loading state
+  loading: boolean;
+
   constructor(
     private placeService: PlaceService,
     private route: ActivatedRoute,

@@ -59,6 +59,9 @@ export class PlaceListComponent implements OnInit {
 
   price: string;
 
+  // used for tracking data loading state
+  loading: boolean;
+
   // used for sorting
   orderPredicate: any = 'hits';
   reverseOrder: boolean = true;
