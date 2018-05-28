@@ -54,7 +54,7 @@ export class PlaceListComponent implements OnInit {
   firstListing: Place;
   places$: Observable<Place[]>;
   place: Place;
-  category;
+  term;
   city;
 
   price: string;
@@ -85,9 +85,8 @@ export class PlaceListComponent implements OnInit {
    */
   searchPlaces(term?, location?): void {
 
-    // this.places$ = this.placeService.searchPlaces(term, location);
-    this.places$ = this.placeService.getPlaces();
-
+    this.places$ = this.placeService.searchPlaces(term, location);
+    
   }
 
   /**
@@ -95,14 +94,12 @@ export class PlaceListComponent implements OnInit {
    */
   ngOnInit(): void {
 
-    this.activatedRoute.queryParams
-    .subscribe((params: Params) => {
+    // getting term and location
+    let term = this.route.snapshot.queryParams['t'],
+        location = this.route.snapshot.queryParams['u'];
 
-      this.city = params['ubicacion'];
-      this.category = params['categoria'];
-      this.searchPlaces();
-
-    });
+    // run the search
+    this.searchPlaces(term, location);
 
   }
 

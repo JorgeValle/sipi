@@ -2,8 +2,6 @@
 
 <div class="container mt-5 mb-5" *ngIf="places$ | async as places; else loading">
 
-  <ng-template #loading>Loading User Data...</ng-template>
-
   <div class="row d-block d-sm-block d-md-none d-lg-none d-xl-none mb-5">
     <div class="col-12">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -26,6 +24,23 @@
 
       <!-- <sort-places-form (predicateChanged)="handlePredicateChanged($event)"></sort-places-form> -->
       <div class="border-top-0 border-left-0 border-right-0 card mb-4" *ngFor="let place of places | orderBy: orderPredicate: reverseOrder | paginate: { itemsPerPage: 10, currentPage: p }">
+        <ng-template #loading>
+            <div class="card-body">
+                <div class="row">
+                  <div class="col-8 col-sm-8">
+                    <h2 class="card-title h4">
+                      Temp
+                    </h2>
+                    <div>
+                      Temp
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-4">
+                    Temp
+                  </div>
+                </div>
+              </div>
+        </ng-template>
         <place-card [place]="place"></place-card>
       </div>
       <pagination-controls nextLabel="Proximo" (pageChange)="p = $event" previousLabel="Anterior"></pagination-controls>

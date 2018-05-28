@@ -55,7 +55,7 @@ export class PageDetailComponent implements OnInit {
     // .switchMap((params: ParamMap) => this.pageService.getPage(params.get('slug')))
     // .subscribe(page => this.page = page);
 
-    this.setTitle(`${this.page.title} | Sipi`);  // set the document title
+    // this.setTitle(`${this.page.title} | Sipi`);  // set the document title
     
   }
   

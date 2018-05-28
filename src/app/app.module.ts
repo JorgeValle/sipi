@@ -166,7 +166,7 @@ const appRoutes: Routes = [
     component: UserDetailComponent
   },
   {
-    path: 'busqueda',
+    path: 'lugares',
     component: PlaceListComponent
   },
   {

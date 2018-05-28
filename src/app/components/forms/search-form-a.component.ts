@@ -35,11 +35,14 @@ export class SearchFormAComponent implements OnInit {
     public http: Http
   ) {}
 
+  /**
+   *  Formats the place autosuggest, with HTML templates
+   */
   placeListFormatter = (data: any): SafeHtml => {
     
-    let placeHtml = `<img style="margin-right: 10px;" src="http://via.placeholder.com/20x20" height="20" width="20"><span><a href="/lugar/159">${data.content.name}</a></span>`;
-
-    let categoryHtml = `<span>${data.content.name}</span>`;
+    let placeHtml = `<img style="margin-right: 10px;" src="http://via.placeholder.com/20x20" height="20" width="20">
+                     <span><a href="/lugar/159">${data.content.name}</a></span>`,
+        categoryHtml = `<span>${data.content.name}</span>`;
 
     if (data.category.name != undefined) {
       // it's a place
@@ -50,11 +53,13 @@ export class SearchFormAComponent implements OnInit {
     }
   }
 
+  /**
+   * Formats the location autosuggest, with HTML templates
+   */
   locationListFormatter = (data: any): SafeHtml => {
     
-    let cityHtml = `<span class="city">${data.content.name}</span>`;
-
-    let countryHtml = `<span class="country">${data.content.name}</span>`;
+    let cityHtml = `<span class="city">${data.content.name}</span>`,
+        countryHtml = `<span class="country">${data.content.name}</span>`;
 
     if (data.countryId != undefined) {
       // it's a city
@@ -65,11 +70,14 @@ export class SearchFormAComponent implements OnInit {
     }
   }
 
-
+  /**
+   * 
+   */
   locationObservable = (keyword: any): Observable<any[]> => {
+
     let url: string = 
-      // 'https://maps.googleapis.com/maps/api/geocode/json?address='+keyword
-      `https://sipi-rest-api.herokuapp.com/retrieve/location/${keyword}`
+      `https://sipi-rest-api.herokuapp.com/retrieve/location/${keyword}`;
+
     if (keyword) {
       return this.http.get(url)
       .map(res => {
@@ -82,10 +90,14 @@ export class SearchFormAComponent implements OnInit {
     }
   }
 
+  /**
+   * 
+   */
   placeObservable = (keyword: any): Observable<any[]> => {
+
     let url: string = 
-      // 'https://maps.googleapis.com/maps/api/geocode/json?address='+keyword
-      `https://sipi-rest-api.herokuapp.com/retrieve/place/${keyword}`
+      `https://sipi-rest-api.herokuapp.com/retrieve/place/${keyword}`;
+
     if (keyword) {
       return this.http.get(url)
       .map(res => {
@@ -100,51 +112,6 @@ export class SearchFormAComponent implements OnInit {
 
   // the form group
   public search: FormGroup;
-
-  public terms = [
-  {
-    name: 'Restaurantes',
-    type: 'Category'
-  },
-  {
-    name: 'Bombay Grill',
-    type: 'Place',
-    id: 123,
-    img: 'https://pbs.twimg.com/profile_images/723442376933396481/V3QBgFkA.jpg'
-  },
-  {
-    name: 'Compras',
-    type: 'Category'
-  },
-  {
-    name: 'Mejicano',
-    type: 'Subcategory'
-  },
-  {
-    name: 'Bitbit',
-    type: 'Place',
-    id: 234,
-    img: 'https://pbs.twimg.com/profile_images/723442376933396481/V3QBgFkA.jpg'
-  }
-  ];
-
-  public locations = [
-  {
-    name: 'El Salvador',
-    type: 'Country'
-  },
-  {
-    name: 'Guatemala',
-    type: 'Country'
-  },
-  {
-    name: 'San Salvador',
-    type: 'City'
-  },
-  {
-
-  }
-  ];
 
   /**
    * On Init
@@ -195,14 +162,18 @@ export class SearchFormAComponent implements OnInit {
    */
   onSubmit(search): void {
 
-    var term = this.search.value['term'];
-    var location = this.search.value['location'];
+   let term = this.search.value['term'],
+       location = this.search.value['location'];
 
     // route to place list, with search terms passed as URL parameters
     this.router.navigate([
-      '/busqueda'],
-      // { categoria: term, ubicacion: location }
-      { queryParams: { categoria: term, ubicacion: location } }
+      '/lugares'],
+      {
+        queryParams: {
+          t: term,
+          u: location
+        }
+      }
     );
   }
 
