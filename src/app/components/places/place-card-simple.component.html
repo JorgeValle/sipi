@@ -17,12 +17,12 @@
       </div>
       <span>$$&nbsp;|&nbsp;</span>
       <span class="card-subtitle mb-2 text-muted">
-        <a href="#" routerLink="/busqueda">Hindu</a>,&nbsp;
-        <a href="#" routerLink="/busqueda">Asiatico</a>
+        <a href="#" routerLink="/lugares">Hindu</a>,&nbsp;
+        <a href="#" routerLink="/lugares">Asiatico</a>
       </span>
       <span *ngIf="place.price">{{place.price}}&nbsp;|&nbsp;</span>
       <span class="card-subtitle mb-2 text-muted" *ngFor="let subcategory of place.category.subcats">
-        <a *ngIf="place.category.subcats" routerLink="/busqueda" [queryParams]="{categoria: subcategory | lowercase}">{{subcategory}}</a>,&nbsp;
+        <a *ngIf="place.category.subcats" routerLink="/lugares" [queryParams]="{categoria: subcategory | lowercase}">{{subcategory}}</a>,&nbsp;
       </span>
     </div>
     <div class="col-12">

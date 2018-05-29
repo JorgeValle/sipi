@@ -15,7 +15,7 @@
       </div>
       <span *ngIf="place.price">{{place.price}}&nbsp;|&nbsp;</span>
       <span class="card-subtitle mb-2 text-muted" *ngFor="let subcategory of place.category.subcats">
-        <a routerLink="/busqueda" [queryParams]="{categoria: subcategory | lowercase}">{{subcategory}}</a>,&nbsp;
+        <a routerLink="/lugares" [queryParams]="{t: subcategory | lowercase}">{{subcategory}}</a>,&nbsp;
       </span>
     </div>
     <div class="col-12 col-sm-4" *ngIf="place.address">
