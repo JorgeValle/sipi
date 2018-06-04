@@ -157,7 +157,7 @@ const appRoutes: Routes = [
   },
   // places
   {
-    path: 'lugar/:id',
+    path: 'lugar/:id/:name',
     component: PlaceDetailComponent
   },
   // users
@@ -194,8 +194,9 @@ const appRoutes: Routes = [
     component: AdvertisingPageComponent
   },
   {
-    path: 'sitemap.xml',
-    component: SitemapComponent
+    path: 'sitemap',
+    component: SitemapComponent,
+    outlet: 'sitemap'
   },
   // all pages
   {

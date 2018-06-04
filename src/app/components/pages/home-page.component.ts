@@ -35,7 +35,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
 	
-    this.setTitle('Sipi | La Guia Urbana de [Pais]');  // set the document title	
+    this.setTitle('Sipi | La Aplicación Urbana de Centroamérica y el Caribe');  // set the document title	
 	
   }
 

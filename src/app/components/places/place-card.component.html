@@ -5,7 +5,7 @@
     </div> -->
     <div class="col-8 col-sm-8">
       <h2 class="card-title h4">
-        <a routerLink="/lugar/{{place.system.id}}">{{place.content.name}}</a>
+        <a routerLink="/lugar/{{place.system.id}}/{{place.content.slug}}">{{place.content.name}}</a>
       </h2>
       <div *ngIf="place.rating">
         <i class="material-icons stars" *ngFor="let i of Arr(place.rating).fill(1)">grade</i>
