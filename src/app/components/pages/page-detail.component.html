@@ -1,29 +1,11 @@
 <main class="container">
   <div class="row mt-5 mb-5">
-    <div class="col-12 col-sm-12 col-md-8">	
+    <div class="col-12 col-sm-12">	
       <div *ngIf="page">
-        <h1>{{page.title}}</h1>
-        <div [innerHTML]="page.body"></div><!-- gets sanitized in Angular 4 -->
+        <h1>{{page.content.title}}</h1>
+        <div [innerHTML]="page.content.body"></div><!-- gets sanitized in Angular 4 -->
       </div>
     </div>
-    <div class="col-12 col-sm-12 col-md-4">
-      <ul class="list-group">
-        <li class="list-group-item">
-          <a [routerLink]="['somepath']" fragment="Test">Jump to 'Test' anchor </a>
-        </li>
-        <li class="list-group-item">
-          <a href="#registro">Registro</a>
-        </li>
-        <li class="list-group-item">
-          <a href="#contenido">Contenido</a>
-        </li>
-        <li class="list-group-item">
-          <a href="">Porta ac consectetur ac</a>
-        </li>
-        <li class="list-group-item">
-          <a href="">Vestibulum at eros</a>
-        </li>
-      </ul>
-    </div>
+
   </div>
 </main>

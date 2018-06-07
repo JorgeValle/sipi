@@ -19,12 +19,12 @@ export class PageService {
   /**
    * Gets one specific page from endpoint, by id
    * @async
-   * @param {number} id - The id of the page we want to fetch
+   * @param {string} slug - The slug of the page we want to fetch
    * @returns {object} - The returned, singular page from the endpoint
    */
-  getPage(id: number) {
+  getPage(slug: string) {
 
-    return this.http.get(`http://localhost:4100/api/retrieve/page/${id}`)
+    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/page/${slug}`)
     .map((res:Response) => res.json())
   }
 
