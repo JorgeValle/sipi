@@ -194,15 +194,14 @@ const appRoutes: Routes = [
     component: AdvertisingPageComponent
   },
   {
-    path: 'sitemap',
-    component: SitemapComponent,
-    outlet: 'sitemap'
+    path: 'sitemap.xml',
+    component: SitemapComponent
   },
-  // all pages
-  {
-    path: ':slug',
-    component: PageDetailComponent
-  }
+  // all other pages
+  // {
+  //   path: ':slug',
+  //   component: PageDetailComponent
+  // }
 ];
 
 // an NgModule, whether a root or feature, is a class with an @NgModule decorator

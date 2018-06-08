@@ -13,7 +13,7 @@ export class SitemapComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-
+    window.location.href = 'https://sipi-rest-api.herokuapp.com/retrieve/sitemap.xml';
   }
 
 }
