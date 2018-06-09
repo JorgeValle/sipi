@@ -133,6 +133,10 @@ import { UserDetailPlacesComponent }   from './components/users/user-detail-plac
 import { UserDetailProfileComponent }  from './components/users/user-detail-profile.component';
 import { UserDetailSettingsComponent } from './components/users/user-detail-settings.component';
 
+// Angular Universal
+import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
+import { isPlatformBrowser }           from '@angular/common';
+
 // ...and finally the app
 import { AppComponent } from './app.component';
 
@@ -203,6 +207,7 @@ const appRoutes: Routes = [
   //   component: PageDetailComponent
   // }
 ];
+
 
 // an NgModule, whether a root or feature, is a class with an @NgModule decorator
 @NgModule({
@@ -300,7 +305,9 @@ const appRoutes: Routes = [
   ],
   // other modules whose exported classes are needed by component templates declared in this module
   imports: [
-    BrowserModule,
+    // Angular adds the appId value to the style-names of the server-rendered pages...
+    // so that they can be identified and removed when the client app starts
+    BrowserModule.withServerTransition({appId: 'sipi'}),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
@@ -339,6 +346,14 @@ const appRoutes: Routes = [
   // launch the app by bootstrapping the root module
   bootstrap: [AppComponent]
 })
+
+// constructor(
+//   @Inject(PLATFORM_ID) private platformId: Object,
+//   @Inject(APP_ID) private appId: string) {
+//   const platform = isPlatformBrowser(platformId) ?
+//     'in the browser' : 'on the server';
+//   console.log(`Running ${platform} with appId=${appId}`);
+// }
 
 // for illustrative purposes only, a root module has no reason to export anything because other components don't need to import the root module
 export class AppModule { }
