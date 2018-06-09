@@ -121,8 +121,8 @@ import { Ng2CompleterModule }                     from 'ng2-completer';
 import { Ng2AutoCompleteModule, Ng2AutoComplete } from 'ng2-auto-complete';
 import { OrderModule }                            from 'ngx-order-pipe';
 import { NguiAutoCompleteModule }                 from '@ngui/auto-complete';
-import { FileUploadModule }                       from 'ng2-file-upload';
-import { Ng4FilesModule }                         from 'angular4-files-upload';
+// import { FileUploadModule }                       from 'ng2-file-upload';
+// import { Ng4FilesModule }                         from 'angular4-files-upload';
 
 // users
 import { LatestUsersComponent }        from './components/users/latest-users.component';
@@ -327,8 +327,8 @@ const appRoutes: Routes = [
     Ng2CompleterModule,
     OrderModule,
     NguiAutoCompleteModule,
-    FileUploadModule,
-    Ng4FilesModule
+    // FileUploadModule,
+    // Ng4FilesModule
   ],
   // creators of services that this module contributes to the global collection of services; they become accessible in all parts of the app
   // register app-wide services in the root AppModule [providers]
