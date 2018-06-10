@@ -51,6 +51,9 @@ import { UpdateEmailSettingsFormComponent }   from './components/forms/update-em
 import { UpdatePrivacySettingsFormComponent } from './components/forms/update-privacy-settings-form.component';
 import { UploadUserPhotoFormComponent }       from './components/forms/upload-user-photo-form.component';
 
+// footers
+// import { FooterComponent } from './components/footers/footer.component';
+
 // maps
 import { MultiMarkerMapComponent }  from './components/maps/multi-marker-map.component';
 import { SingleMarkerMapComponent } from './components/maps/single-marker-map.component';
@@ -202,10 +205,10 @@ const appRoutes: Routes = [
     component: SitemapComponent
   },
   // all other pages
-  // {
-  //   path: ':slug',
-  //   component: PageDetailComponent
-  // }
+  {
+    path: ':slug',
+    component: PageDetailComponent
+  }
 ];
 
 
@@ -252,6 +255,8 @@ const appRoutes: Routes = [
     UpdateEmailSettingsFormComponent,
     UpdatePrivacySettingsFormComponent,
     UploadUserPhotoFormComponent,
+    // footers
+    // FooterComponent,
     // maps
     MultiMarkerMapComponent,
     SingleMarkerMapComponent,
