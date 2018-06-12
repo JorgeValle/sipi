@@ -1,3 +1,5 @@
+
+import {map} from 'rxjs/operators';
 // Angular core
 import { Injectable }              from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
@@ -32,8 +34,8 @@ export class LocationService {
         drIp = '66.98.0.40',
         cubaIp = '152.206.0.0';
 
-    return this.http.get(`https://freegeoip.net/json/${costaRicaIp}`)
-    .map((res:Response) => res.json())
+    return this.http.get(`https://freegeoip.net/json/${costaRicaIp}`).pipe(
+    map((res:Response) => res.json()))
 
   }
 

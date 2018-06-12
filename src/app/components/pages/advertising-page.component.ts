@@ -5,7 +5,7 @@ import { Location }                 from '@angular/common';
 import { Title }                    from '@angular/platform-browser';
 
 // Third party
-import 'rxjs/add/operator/switchMap';
+
 
 
 @Component({

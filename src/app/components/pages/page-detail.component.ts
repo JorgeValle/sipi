@@ -1,3 +1,5 @@
+
+import {switchMap} from 'rxjs/operators';
 // Angular core
 import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -9,7 +11,7 @@ import { Page }        from './page';
 import { PageService } from '../../services/page.service';
 
 // Third party
-import 'rxjs/add/operator/switchMap';
+
 
 @Component({
   selector: 'page-detail',
@@ -51,8 +53,8 @@ export class PageDetailComponent implements OnInit {
 
     this.pageSlug = this.route.snapshot.params.slug;  // get the page slug from router
 
-    this.route.paramMap
-    .switchMap((params: ParamMap) => this.pageService.getPage(params.get('slug')))
+    this.route.paramMap.pipe(
+    switchMap((params: ParamMap) => this.pageService.getPage(params.get('slug'))))
     .subscribe(page => this.page = page);
 
     // this.setTitle(`${this.page.title} | Sipi`);  // set the document title

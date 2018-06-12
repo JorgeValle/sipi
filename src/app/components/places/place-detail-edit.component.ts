@@ -1,4 +1,6 @@
-import 'rxjs/add/operator/switchMap';
+
+import {switchMap} from 'rxjs/operators';
+
 
 // importing, through native JS, from Angular core or libraries
 import { Component, OnInit }        from '@angular/core';
@@ -45,8 +47,8 @@ export class PlaceDetailEditComponent implements OnInit {
    */
   ngOnInit(): void {
     
-    this.route.paramMap
-    .switchMap((params: ParamMap) => this.placeService.getPlace(+params.get('id')))
+    this.route.paramMap.pipe(
+    switchMap((params: ParamMap) => this.placeService.getPlace(+params.get('id'))))
     .subscribe(place => {
       
       this.place = place;

@@ -1,3 +1,5 @@
+
+import {map} from 'rxjs/operators';
 // Angular core
 import { Injectable }    from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
@@ -6,8 +8,8 @@ import { Headers, Http, Response } from '@angular/http';
 import { Page } from '../components/pages/page';
 
 // Third party
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/map';
+
+
 
 @Injectable()
 export class PageService {
@@ -24,8 +26,8 @@ export class PageService {
    */
   getPage(slug: string) {
 
-    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/page/${slug}`)
-    .map((res:Response) => res.json())
+    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/page/${slug}`).pipe(
+    map((res:Response) => res.json()))
   }
 
 }

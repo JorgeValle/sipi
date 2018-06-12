@@ -1,3 +1,5 @@
+
+import {switchMap} from 'rxjs/operators';
 // Angular core
 import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -13,9 +15,9 @@ import { User }           from './user';
 import { UserService }    from '../../services/user.service';
 
 // Third party
-import { Observable } from 'rxjs';
-import 'rxjs/add/operator/switchMap';
-import { IntervalObservable } from "rxjs/observable/IntervalObservable";
+// import { Observable } from 'rxjs';
+
+// import { IntervalObservable } from "rxjs/observable/IntervalObservable";
 
 @Component({
   selector: 'user-detail',
@@ -69,8 +71,8 @@ export class UserDetailComponent {
    */
   ngOnInit(): void {
     
-    this.route.paramMap
-    .switchMap((params: ParamMap) => this.userService.getUser(+params.get('id')))
+    this.route.paramMap.pipe(
+    switchMap((params: ParamMap) => this.userService.getUser(+params.get('id'))))
     .subscribe(user => {
       this.user = user[0];
       console.log(`firstName is ${this.user.firstName}`);
@@ -78,19 +80,19 @@ export class UserDetailComponent {
     });
 
     // get our data every subsequent 10 seconds
-    IntervalObservable.create(10000)
-    .subscribe(() => {
-      this.userService.getUser(809)
-      .subscribe(user => {
-        this.user = user[0];
-        this.setTitle(`${this.user.firstName} ${this.user.lastName} | Sipi`);  // set the document title
-      });
-      this.placeService.getPlaces()
-      .subscribe(data => {
-        this.places = data;
-      });
-      }
-    );
+    // IntervalObservable.create(10000)
+    // .subscribe(() => {
+    //   this.userService.getUser(809)
+    //   .subscribe(user => {
+    //     this.user = user[0];
+    //     this.setTitle(`${this.user.firstName} ${this.user.lastName} | Sipi`);  // set the document title
+    //   });
+    //   this.placeService.getPlaces()
+    //   .subscribe(data => {
+    //     this.places = data;
+    //   });
+    //   }
+    // );
 
   }
 

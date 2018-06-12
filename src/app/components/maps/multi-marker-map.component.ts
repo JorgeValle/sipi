@@ -8,7 +8,7 @@ import { Place }         from '../places/place';
 import { WindowService } from '../../services/window.service';
 
 // Third party
-import 'rxjs/add/operator/switchMap';
+
 
 // declaring google variable, for use with google maps
 declare var google: any;

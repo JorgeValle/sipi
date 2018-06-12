@@ -4,7 +4,7 @@ import { ActivatedRoute, ParamMap }                       from '@angular/router'
 import { Location, NgClass }                              from '@angular/common';
 
 // Sipi custom
-import 'rxjs/add/operator/switchMap';
+
 
 @Component({
   selector: 'sort-places-form',

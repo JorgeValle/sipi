@@ -6,7 +6,7 @@ import { Headers, Http } from '@angular/http';
 import { CategoryFilter } from '../components/categories/category-filter';
 
 // Third party
-import 'rxjs/add/operator/toPromise';
+
 
 // application logic is added here, in the service
 @Injectable()

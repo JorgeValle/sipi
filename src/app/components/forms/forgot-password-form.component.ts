@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule }              from '@angular/forms';
 import { Location }                 from '@angular/common';
 
 // Third party
-import 'rxjs/add/operator/switchMap';
+
 
 // component decorator
 @Component({

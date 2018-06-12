@@ -11,7 +11,7 @@ import { User }           from './user';
 import { UserService }    from '../../services/user.service';
 
 // Third party
-import 'rxjs/add/operator/switchMap';
+
 
 @Component({
   selector: 'user-detail-places',

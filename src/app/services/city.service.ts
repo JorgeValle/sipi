@@ -1,3 +1,5 @@
+
+import {map} from 'rxjs/operators';
 // Angular core
 import { Injectable }    from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
@@ -6,8 +8,8 @@ import { Headers, Http, Response } from '@angular/http';
 import { City } from '../components/cities/city';
 
 // Third party
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/map';
+
+
 
 @Injectable()
 export class CityService {
@@ -23,8 +25,8 @@ export class CityService {
    */
   getCitiesByCountry(countryId) {
     // return this.http.get(`http://localhost:4100/api/retrieve/cities/${countryId}`)
-    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/cities/${countryId}`)
-    .map((res:Response) => res.json());
+    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/cities/${countryId}`).pipe(
+    map((res:Response) => res.json()));
   }
 
 }

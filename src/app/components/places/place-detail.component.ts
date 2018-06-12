@@ -9,8 +9,8 @@ import { Place }        from './place';
 import { PlaceService } from '../../services/place.service';
 
 // Third party
-import 'rxjs/add/operator/switchMap';
-import { Observable } from 'rxjs/Observable';
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'place-detail',

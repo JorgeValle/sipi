@@ -1,3 +1,5 @@
+
+import {map} from 'rxjs/operators';
 // Angular core
 import { Injectable }              from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
@@ -7,9 +9,9 @@ import { HttpHeaders }             from '@angular/common/http';
 import { Place } from '../components/places/place';
 
 // Third party
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/Observable';
+
+
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class PlaceService {
@@ -27,8 +29,8 @@ export class PlaceService {
     return this.http.get(
       // `http://localhost:4100/api/retrieve/places`
       `https://sipi-rest-api.herokuapp.com/retrieve/places`
-    )
-    .map((res:Response) => res.json());
+    ).pipe(
+    map((res:Response) => res.json()));
   }
 
   /**
@@ -40,8 +42,8 @@ export class PlaceService {
     return this.http.get(
       // `http://localhost:4100/api/retrieve/places/${ownerId}`
       `https://sipi-rest-api.herokuapp.com/retrieve/places/${ownerId}`
-    )
-    .map((res:Response) => res.json());
+    ).pipe(
+    map((res:Response) => res.json()));
   }
 
   /**
@@ -57,8 +59,8 @@ export class PlaceService {
     return this.http.get(
       `https://sipi-rest-api.herokuapp.com/retrieve/places/search?q=${term}&l=${location}`
       // `http://localhost:4100/api/retrieve/places`
-    )
-    .map((res:Response) => res.json());
+    ).pipe(
+    map((res:Response) => res.json()));
   }
 
   /**
@@ -70,8 +72,8 @@ export class PlaceService {
   getPlace(id: number): Observable<Place> {
     return this.http.get(
       `https://sipi-rest-api.herokuapp.com/retrieve/place/${id}`
-    )
-    .map((res:Response) => res.json());
+    ).pipe(
+    map((res:Response) => res.json()));
   }
 
   /**
@@ -85,8 +87,8 @@ export class PlaceService {
     return this.http.post(
       `http://localhost:4100/api/create/place`,
       place
-    )
-    .map((res:Response) => res.json())
+    ).pipe(
+    map((res:Response) => res.json()))
   }
 
   /**
@@ -106,8 +108,8 @@ export class PlaceService {
     return this.http.put(
       `http://localhost:4100/api/update/place`,
       updatedPlace
-    )
-    .map((res:Response) => res.json())
+    ).pipe(
+    map((res:Response) => res.json()))
   }
 
   /**

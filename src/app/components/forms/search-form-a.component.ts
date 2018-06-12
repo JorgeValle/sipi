@@ -1,3 +1,7 @@
+
+import {of as observableOf,  Observable } from 'rxjs';
+
+import {map} from 'rxjs/operators';
 // Angular core
 import { Component, NgModule, OnInit }                            from '@angular/core';
 import { ActivatedRoute, ParamMap, Router, RouterModule, Routes } from '@angular/router';
@@ -12,8 +16,7 @@ import { PlaceService }    from '../../services/place.service';
 import { LocationService } from '../../services/location.service';
 
 // Third party
-import { CompleterService, CompleterData } from 'ng2-completer';
-import { Observable } from 'rxjs/Observable';
+// import { CompleterService, CompleterData } from 'ng2-completer';
 
 @Component({
   selector: 'search-form-a',
@@ -79,14 +82,14 @@ export class SearchFormAComponent implements OnInit {
       `https://sipi-rest-api.herokuapp.com/retrieve/location/${keyword}`;
 
     if (keyword) {
-      return this.http.get(url)
-      .map(res => {
+      return this.http.get(url).pipe(
+      map(res => {
         let json = res.json();
         console.log(json);
         return json;
-      })
+      }))
     } else {
-      return Observable.of([]);
+      return observableOf([]);
     }
   }
 
@@ -99,14 +102,14 @@ export class SearchFormAComponent implements OnInit {
       `https://sipi-rest-api.herokuapp.com/retrieve/place/${keyword}`;
 
     if (keyword) {
-      return this.http.get(url)
-      .map(res => {
+      return this.http.get(url).pipe(
+      map(res => {
         let json = res.json();
         console.log(json);
         return json;
-      })
+      }))
     } else {
-      return Observable.of([]);
+      return observableOf([]);
     }
   }
 

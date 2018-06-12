@@ -9,7 +9,7 @@ import { Place }        from './place';
 import { PlaceService } from '../../services/place.service';
 
 // Third party
-import 'rxjs/add/operator/switchMap';
+
 
 @Component({
   selector: 'place-detail-profile',

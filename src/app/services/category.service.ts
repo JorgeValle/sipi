@@ -1,3 +1,5 @@
+
+import {map} from 'rxjs/operators';
 // Angular core
 import { Injectable }              from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
@@ -6,8 +8,8 @@ import { Headers, Http, Response } from '@angular/http';
 import { Category } from '../components/categories/category';
 
 // Third party
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/map';
+
+
 
 @Injectable()
 export class CategoryService {
@@ -24,8 +26,8 @@ export class CategoryService {
   getCategories() {
     
     // return this.http.get(`http://localhost:4100/api/retrieve/categories`)
-    return this.http.get(`https://sipi-antares.herokuapp.com/api/retrieve/categories`)
-    .map((res:Response) => res.json());
+    return this.http.get(`https://sipi-antares.herokuapp.com/api/retrieve/categories`).pipe(
+    map((res:Response) => res.json()));
   }
 
 }

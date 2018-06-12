@@ -12,8 +12,8 @@ import { PlaceFilterPipe } from '../../pipes/place-filter.pipe';
 import { PriceFilterPipe } from '../../pipes/price-filter.pipe';
 
 // Third party
-import 'rxjs/add/operator/switchMap';
-import { Observable } from 'rxjs/Observable';
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'place-list',

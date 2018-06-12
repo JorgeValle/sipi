@@ -1,3 +1,5 @@
+
+import {map} from 'rxjs/operators';
 // Angular core
 import { Injectable }              from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
@@ -6,8 +8,8 @@ import { Headers, Http, Response } from '@angular/http';
 import { Country } from '../components/countries/country';
 
 // Third party
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/map';
+
+
 
 @Injectable()
 export class CountryService {
@@ -22,8 +24,8 @@ export class CountryService {
    * @returns {observable} - All the countries, indiscriminately
    */
   getCountries() {
-    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/countries`)
-    .map((res:Response) => res.json());
+    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/countries`).pipe(
+    map((res:Response) => res.json()));
   }
 
 }

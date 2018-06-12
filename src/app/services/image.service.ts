@@ -1,14 +1,16 @@
+
+import {map} from 'rxjs/operators';
 // Angular core
 import { Injectable }              from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import { HttpHeaders }             from '@angular/common/http';
 
 // Third party
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/map';
-import { Observable } from "rxjs";
-import 'rxjs/Rx';
+
+
+
+// import { Observable } from "rxjs";
+// import 'rxjs/Rx';
 
 @Injectable()
 export class ImageService {
@@ -28,8 +30,8 @@ export class ImageService {
     return this.http.post(
       'http://localhost:4100/api/upload/user/image',
       fileToUpload
-    )
-    .map((res:Response) => res.json());
+    ).pipe(
+    map((res:Response) => res.json()));
   }
 
   // /**

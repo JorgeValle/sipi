@@ -8,7 +8,7 @@ import { Place }        from './place';
 import { PlaceService } from '../../services/place.service';
 
 // Third party
-import 'rxjs/add/operator/switchMap';
+
 
 @Component({
   // this selector is the html tag

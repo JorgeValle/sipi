@@ -2,14 +2,14 @@
 import { Component, OnInit }                              from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterModule, Routes } from '@angular/router';
 import { Location }                                       from '@angular/common';
-import { FormControl, FormBuilder, FormGroup }                    from "@angular/forms";
+import { FormControl, FormBuilder, FormGroup }            from "@angular/forms";
 
 // Sipi custom
-import { Search } from './search-form.interface';
+import { Search }          from './search-form.interface';
 import { LocationService } from '../../services/location.service';
 
 // Third party
-import { CompleterService, CompleterData }                from "ng2-completer";
+// import { CompleterService, CompleterData }                from "ng2-completer";
 
 @Component({
   selector: 'search-form-b',
@@ -26,7 +26,7 @@ export class SearchFormBComponent implements OnInit {
     private builder: FormBuilder,
   ) {}
 
-  protected dataService: CompleterData;
+  // protected dataService: CompleterData;
 
   search: FormGroup;
 

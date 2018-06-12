@@ -1,4 +1,4 @@
-import 'rxjs/add/operator/switchMap';
+
 
 // importing, through native JS, from Angular core or libraries
 import { Component, OnInit }                           from '@angular/core';

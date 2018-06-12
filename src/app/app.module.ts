@@ -6,8 +6,8 @@ import { ReactiveFormsModule, FormsModule }          from '@angular/forms';
 import { RouterModule, Routes }                      from '@angular/router';
 import { HttpModule }                                from '@angular/http';
 import { HttpClientModule }                          from '@angular/common/http';
-import { InMemoryWebApiModule }                      from 'angular-in-memory-web-api';
-import { InMemoryDataService }                       from './in-memory-data.service';
+// import { InMemoryWebApiModule }                      from 'angular-in-memory-web-api';
+// import { InMemoryDataService }                       from './in-memory-data.service';
 import { NgModule }                                  from '@angular/core';
 
 // ads
@@ -120,10 +120,10 @@ import { SubcategoryService }    from './services/subcategory.service';
 
 // third party
 import { NgxPaginationModule }                    from 'ngx-pagination';
-import { Ng2CompleterModule }                     from 'ng2-completer';
-import { Ng2AutoCompleteModule, Ng2AutoComplete } from 'ng2-auto-complete';
+// import { Ng2CompleterModule }                     from 'ng2-completer';
+// import { Ng2AutoCompleteModule, Ng2AutoComplete } from 'ng2-auto-complete';
 import { OrderModule }                            from 'ngx-order-pipe';
-import { NguiAutoCompleteModule }                 from '@ngui/auto-complete';
+// import { NguiAutoCompleteModule }                 from '@ngui/auto-complete';
 // import { FileUploadModule }                       from 'ng2-file-upload';
 // import { Ng4FilesModule }                         from 'angular4-files-upload';
 
@@ -318,9 +318,9 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService, {
-      passThruUnknownUrl: true  // allows real endpoints that are not in in-memory api
-    }),
+    // InMemoryWebApiModule.forRoot(InMemoryDataService, {
+    //   passThruUnknownUrl: true  // allows real endpoints that are not in in-memory api
+    // }),
     AppRoutingModule,
     RouterModule.forRoot(
       appRoutes,
@@ -328,10 +328,10 @@ const appRoutes: Routes = [
     ),
     // third party
     NgxPaginationModule,
-    Ng2AutoCompleteModule,
-    Ng2CompleterModule,
+    // Ng2AutoCompleteModule,
+    // Ng2CompleterModule,
     OrderModule,
-    NguiAutoCompleteModule,
+    // NguiAutoCompleteModule,
     // FileUploadModule,
     // Ng4FilesModule
   ],

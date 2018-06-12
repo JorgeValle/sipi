@@ -8,7 +8,7 @@ import { Subcategory }        from '../categories/subcategory';
 import { SubcategoryService } from '../../services/subcategory.service';
 
 // Third party
-import 'rxjs/add/operator/switchMap';
+
 
 @Component({
   selector: 'contact-form',
