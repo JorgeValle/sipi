@@ -16,9 +16,13 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // compress all responses
 app.use(compression());
 
+app.get('/sitemap.xml', (req, res) => {
+  res.send('Sitemap here');
+});
+
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/browser/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 /**
