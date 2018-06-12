@@ -52,7 +52,7 @@ import { UpdatePrivacySettingsFormComponent } from './components/forms/update-pr
 import { UploadUserPhotoFormComponent }       from './components/forms/upload-user-photo-form.component';
 
 // footers
-// import { FooterComponent } from './components/footers/footer.component';
+import { FooterComponent } from './components/footers/footer.component';
 
 // maps
 import { MultiMarkerMapComponent }  from './components/maps/multi-marker-map.component';
@@ -256,7 +256,7 @@ const appRoutes: Routes = [
     UpdatePrivacySettingsFormComponent,
     UploadUserPhotoFormComponent,
     // footers
-    // FooterComponent,
+    FooterComponent,
     // maps
     MultiMarkerMapComponent,
     SingleMarkerMapComponent,
