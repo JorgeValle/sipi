@@ -200,10 +200,6 @@ const appRoutes: Routes = [
     path: 'publicidad',
     component: AdvertisingPageComponent
   },
-  {
-    path: 'sitemap.xml',
-    component: SitemapComponent
-  },
   // all other pages
   {
     path: ':slug',
