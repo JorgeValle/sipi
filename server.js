@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use(compression());
 
 app.get('/sitemap.xml', (req, res) => {
-  res.send('Sitemap here');
+  res.redirect('https://sipi-rest-api.herokuapp.com/retrieve/sitemap.xml');
 });
 
 // Catch all other routes and return the index file
