@@ -101,6 +101,12 @@ export class PlaceListComponent implements OnInit {
     // run the search
     this.searchPlaces(term, location);
 
+    // SEO
+    this.titleService.setTitle(`Lugares | Sipi`);  // set the document title
+    this.meta.addTags([
+      { name: 'description', content: `Resultados de búsqueda para lugares.` },
+    ]);
+
   }
 
   /**

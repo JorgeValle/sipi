@@ -66,12 +66,6 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
         // { name: 'tags', content: `Sipi,${this.place$},${this.place$},${this.place$}` }
       ]);
     });
-
-    // SEO stuff
-
-    if (this.place) {
-
-    }
   }
 
   /**
