@@ -9,7 +9,6 @@ import { Place }        from './place';
 import { PlaceService } from '../../services/place.service';
 
 // Third party
-
 import { Observable } from 'rxjs';
 
 @Component({
@@ -22,8 +21,11 @@ import { Observable } from 'rxjs';
 
 export class PlaceDetailComponent implements OnInit, OnDestroy {
 
-  place$: Observable<Place>;
+  place$: Observable<any>;
+
+  place: Place;
   placeId;
+  test;
 
   // used for tracking data loading state
   loading: boolean;
@@ -53,16 +55,23 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
 
     this.place$ = this.placeService.getPlace(this.placeId);
 
+    this.placeService.getPlace(this.placeId).subscribe(data => {
+
+      console.log(data);
+      this.place = data;
+      this.setTitle(`${this.place.content.name} | Sipi`);  // set the document title
+      this.meta.addTags([
+        // { name: 'robots', content: 'noindex' },
+        { name: 'description', content: `Información sobre el lugar ${this.place.content.name}, ubicado en ${this.place.address.city}, ${this.place.address.country}` },
+        // { name: 'tags', content: `Sipi,${this.place$},${this.place$},${this.place$}` }
+      ]);
+    });
+
     // SEO stuff
 
-    // if (this.place$) {
-    //   this.setTitle(`${this.place$} | Sipi`);  // set the document title
-    //   this.meta.addTags([
-    //     { name: 'robots', content: 'noindex' },
-    //     { name: 'description', content: `Informacion sobre el lugar ${this.place$}, ubicado en ${this.place$}` },
-    //     { name: 'tags', content: `Sipi,${this.place$},${this.place$},${this.place$}` }
-    //   ]);
-    // }
+    if (this.place) {
+
+    }
   }
 
   /**
