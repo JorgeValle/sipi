@@ -48,6 +48,15 @@ export class Place {
       movement: number;
     }
   };
+  organizational: {
+    isBranch: boolean;
+    parent: {
+      id: number;
+      name: string;
+      slug: string;
+    };
+    isParent: boolean;
+  };
   status: string;
   contact: {
     phone: number;
