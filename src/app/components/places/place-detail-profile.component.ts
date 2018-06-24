@@ -22,6 +22,7 @@ import { PlaceService } from '../../services/place.service';
 export class PlaceDetailProfileComponent implements OnInit {
 
   @Input() place: Place;
+  @Input() branches: Place[];
 
   constructor(
     private placeService: PlaceService,

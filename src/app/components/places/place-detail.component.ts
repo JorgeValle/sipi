@@ -27,6 +27,8 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
   placeId;
   test;
 
+  branches: Place[];
+
   // used for tracking data loading state
   loading: boolean;
 
@@ -65,6 +67,17 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
         { name: 'description', content: `Información sobre el lugar ${this.place.content.name}, ubicado en ${this.place.address.city}, ${this.place.address.country}` },
         // { name: 'tags', content: `Sipi,${this.place$},${this.place$},${this.place$}` }
       ]);
+
+      // get children
+      this.placeService.getBranches(this.placeId).subscribe(data => {
+
+        this.branches = data;
+
+
+      });
+
+
+
     });
   }
 
