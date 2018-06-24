@@ -55,8 +55,8 @@ export class PlaceService {
    */
   searchPlaces(term?, location?) {
     return this.http.get(
-      // `https://sipi-rest-api.herokuapp.com/retrieve/places/search?q=${term}&l=${location}`
-      `http://localhost:4100/retrieve/places/search?q=${term}&l=${location}`
+      `https://sipi-rest-api.herokuapp.com/retrieve/places/search?q=${term}&l=${location}`
+      // `http://localhost:4100/retrieve/places/search?q=${term}&l=${location}`
     ).pipe(
     map((res:Response) => res.json()));
   }
@@ -69,8 +69,8 @@ export class PlaceService {
    */
   getPlace(id: number): Observable<Place> {
     return this.http.get(
-      `http://localhost:4100/retrieve/place/${id}`
-      // `https://sipi-rest-api.herokuapp.com/retrieve/place/${id}`
+      // `http://localhost:4100/retrieve/place/${id}`
+      `https://sipi-rest-api.herokuapp.com/retrieve/place/${id}`
     ).pipe(
     map((res:Response) => res.json()));
   }
@@ -83,8 +83,8 @@ export class PlaceService {
    */
   getBranches(id: number): Observable<Place[]> {
     return this.http.get(
-      // `https://sipi-rest-api.herokuapp.com/retrieve/places/branches/${id}`
-      `http://localhost:4100/retrieve/places/branches/${id}`
+      `https://sipi-rest-api.herokuapp.com/retrieve/places/branches/${id}`
+      // `http://localhost:4100/retrieve/places/branches/${id}`
     ).pipe(
     map((res:Response) => res.json()));
   }
