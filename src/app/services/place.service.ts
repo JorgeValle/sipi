@@ -9,8 +9,6 @@ import { HttpHeaders }             from '@angular/common/http';
 import { Place } from '../components/places/place';
 
 // Third party
-
-
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -57,8 +55,8 @@ export class PlaceService {
    */
   searchPlaces(term?, location?) {
     return this.http.get(
-      `https://sipi-rest-api.herokuapp.com/retrieve/places/search?q=${term}&l=${location}`
-      // `http://localhost:4100/api/retrieve/places`
+      // `https://sipi-rest-api.herokuapp.com/retrieve/places/search?q=${term}&l=${location}`
+      `http://localhost:4100/retrieve/places/search?q=${term}&l=${location}`
     ).pipe(
     map((res:Response) => res.json()));
   }
@@ -71,7 +69,22 @@ export class PlaceService {
    */
   getPlace(id: number): Observable<Place> {
     return this.http.get(
-      `https://sipi-rest-api.herokuapp.com/retrieve/place/${id}`
+      `http://localhost:4100/retrieve/place/${id}`
+      // `https://sipi-rest-api.herokuapp.com/retrieve/place/${id}`
+    ).pipe(
+    map((res:Response) => res.json()));
+  }
+
+  /**
+   * Gets branches, by id
+   * @async
+   * @param {number} id - The id of the parent, of which we want to get branches for
+   * @returns {object} - The returned branch children
+   */
+  getBranches(id: number): Observable<Place[]> {
+    return this.http.get(
+      // `https://sipi-rest-api.herokuapp.com/retrieve/places/branches/${id}`
+      `http://localhost:4100/retrieve/places/branches/${id}`
     ).pipe(
     map((res:Response) => res.json()));
   }

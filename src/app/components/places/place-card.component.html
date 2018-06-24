@@ -19,11 +19,16 @@
       </span>
     </div>
     <div class="col-12 col-sm-4" *ngIf="place.address">
-      <address class="card-text">
+      <!-- when not parent -->
+      <address class="card-text" *ngIf="!place.organizational.isParent">
         {{place.address.number}} {{place.address.street}} <br>
         {{place.address.city}}, {{place.address.country}} <br>
         <i class="material-icons align-top">phone</i>
         <a href="tel:{{place.contact.phone}}">&nbsp;{{place.contact.phone}}</a>
+      </address>
+      <!-- when parent -->
+      <address class="card-text" *ngIf="place.organizational.isParent">
+        Varias ubicaciones en {{place.address.country}} <br>
       </address>
     </div>
   </div>

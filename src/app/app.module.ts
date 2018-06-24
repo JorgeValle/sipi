@@ -167,6 +167,10 @@ const appRoutes: Routes = [
     path: 'lugar/:id/:name',
     component: PlaceDetailComponent
   },
+  {
+    path: 'lugar/:id/:name/:branch',
+    component: PlaceDetailComponent
+  },
   // users
   {
     path: 'usuario/:id',

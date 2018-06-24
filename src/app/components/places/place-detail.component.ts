@@ -61,7 +61,22 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
 
       console.log(data);
       this.place = data;
-      this.setTitle(`${this.place.content.name} | Sipi`);  // set the document title
+     
+      /**
+       * Builds up the page title string
+       * @param place 
+       */
+      let pageTitle = (place) => {
+
+        if (place.organizational.isBranch) {
+          return `${place.organizational.parent.name} ${place.content.name}`;
+        } else {
+          return `${place.content.name}`;
+        }
+
+      }
+
+      this.setTitle(`${pageTitle(this.place)} | Sipi`);  // set the document title
       this.meta.addTags([
         // { name: 'robots', content: 'noindex' },
         { name: 'description', content: `Información sobre el lugar ${this.place.content.name}, ubicado en ${this.place.address.city}, ${this.place.address.country}` },

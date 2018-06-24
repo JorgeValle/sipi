@@ -3,7 +3,10 @@
 
 <div class="row mb-4">
   <div class="col-12">
-    <h1 class="h2">{{place.content.name}}</h1>
+    <h1 class="h2">
+      <span *ngIf="place.organizational.isBranch">{{place.organizational.parent.name}}</span>
+      {{place.content.name}}
+    </h1>
     <span class="text-muted" *ngFor="let subcategory of place.category.subcats">
       <a routerLink="/lugares" [queryParams]="{categoria: subcategory | lowercase, lugar: place.address.country | lowercase}">{{subcategory}}</a>,&nbsp;
     </span>
@@ -18,9 +21,14 @@
         <!-- <h5 class="card-title">Card title</h5> -->
         <ul class="list-group">
           <li class="list-group-item border-0">
-            <address class="card-text">
+            <!-- when not parent -->
+            <address class="card-text" *ngIf="!place.organizational.isParent">
               {{place.address.number}}, {{place.address.street}}<br>
               {{place.address.city}}, {{place.address.country}}<br>
+            </address>
+            <!-- when parent -->
+            <address class="card-text" *ngIf="place.organizational.isParent">
+              Varias ubicaciones en {{place.address.country}}<br>
             </address>
           </li>
           <li class="list-group-item border-0 pt-0 pb-0" *ngIf="place.contact.phone">
@@ -40,11 +48,11 @@
   </div>
 
   <!-- branches -->
-  <div class="col-12 col-sm-6">
+  <div class="col-12 col-sm-6" *ngIf="branches">
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let branch of branches">
         <h3 class="h4">
-          <a routerLink="/lugar/{{branch.system.id}}/{{branch.organizational.parentName}}-{{branch.content.slug}}">{{branch.content.name}}</a>
+          <a routerLink="/lugar/{{branch.system.id}}/{{branch.organizational.parent.slug}}/{{branch.content.slug}}">{{branch.content.name}}</a>
         </h3>
         <address class="card-text">
           {{branch.address.number}}, {{branch.address.street}}<br>
