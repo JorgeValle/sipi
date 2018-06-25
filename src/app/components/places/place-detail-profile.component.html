@@ -4,7 +4,7 @@
 <div class="row mb-4">
   <div class="col-12">
     <h1 class="h2">
-      <span *ngIf="place.organizational.isBranch">{{place.organizational.parent.name}}</span>
+      <span *ngIf="place.organizational && place.organizational.isBranch">{{place.organizational.parent.name}}</span>
       {{place.content.name}}
     </h1>
     <span class="text-muted" *ngFor="let subcategory of place.category.subcats">
@@ -22,12 +22,12 @@
         <ul class="list-group">
           <li class="list-group-item border-0">
             <!-- when not parent -->
-            <address class="card-text" *ngIf="!place.organizational.isParent">
+            <address class="card-text" *ngIf="place.organizational && !place.organizational.isParent">
               {{place.address.number}}, {{place.address.street}}<br>
               {{place.address.city}}, {{place.address.country}}<br>
             </address>
             <!-- when parent -->
-            <address class="card-text" *ngIf="place.organizational.isParent">
+            <address class="card-text" *ngIf="place.organizational && place.organizational.isParent">
               Varias ubicaciones en {{place.address.country}}<br>
             </address>
           </li>
