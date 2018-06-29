@@ -1,5 +1,5 @@
 // Angular core
-import { Component, OnInit, OnDestroy }              from '@angular/core';
+import { Component, OnInit, OnDestroy }   from '@angular/core';
 import { ActivatedRoute, ParamMap }       from '@angular/router';
 import { Location }                       from '@angular/common';
 import { Meta, Title }                    from '@angular/platform-browser';
@@ -12,14 +12,14 @@ import { PlaceService } from '../../services/place.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'place-detail',
-  templateUrl: './place-detail.component.html',
+  selector: 'place-detail-loading',
+  templateUrl: './place-detail-loading.component.html',
   providers: [
     PlaceService
   ]
 })
 
-export class PlaceDetailComponent implements OnInit, OnDestroy {
+export class PlaceDetailLoadingComponent implements OnInit, OnDestroy {
 
   place$: Observable<any>;
 

@@ -17,12 +17,6 @@ import { PlaceService } from '../../services/place.service';
   providers: [PlaceService]
 })
 
-// component classes manage the html templates
-// a component controls a patch of screen called a view
-// the class is where we define what the component does to support the view
-// components are big consumers of services
-// components jobs is to enbale the user experience, nothing more
-// components should be lean
 export class PlaceDetailEditComponent implements OnInit {
 	
   place: Place;
