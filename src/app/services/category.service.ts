@@ -7,10 +7,6 @@ import { Headers, Http, Response } from '@angular/http';
 // Sipi custom
 import { Category } from '../components/categories/category';
 
-// Third party
-
-
-
 @Injectable()
 export class CategoryService {
 
@@ -26,7 +22,7 @@ export class CategoryService {
   getCategories() {
     
     // return this.http.get(`http://localhost:4100/api/retrieve/categories`)
-    return this.http.get(`https://sipi-antares.herokuapp.com/api/retrieve/categories`).pipe(
+    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/categories`).pipe(
     map((res:Response) => res.json()));
   }
 

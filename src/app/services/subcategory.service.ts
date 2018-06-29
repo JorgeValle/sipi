@@ -20,10 +20,11 @@ export class SubcategoryService {
   /**
    * Gets all subcategories, indiscriminately
    */
-  getSubcategories() {
+  getSubcategories(parentId) {
 
-    return this.http.get(`http://localhost:4100/api/retrieve/subcategories`).pipe(
+    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/subcategories/${parentId}`).pipe(
     map((res:Response) => res.json()));
   }
+  
 
 }
