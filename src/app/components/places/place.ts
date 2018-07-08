@@ -2,6 +2,10 @@ export class Place {
   system:{
     id: number;
   };
+  date: {
+    created: Date;
+    modified: Date;
+  };
   content: {
     name: string;
     slug: string;
