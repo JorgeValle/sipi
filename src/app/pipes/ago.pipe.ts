@@ -13,33 +13,77 @@ export class AgoPipe implements PipeTransform {
    */
   transform(value: any, args: string[]) {
 
-    let then = Date.parse(value);
-    let now = Date.now();
+    const then = Date.parse(value),
+          now = Date.now();
 
     let difference = now - then;
 
-    let minutesElapsed = difference/60000;
-    let hoursElapsed = minutesElapsed/60;
-    let daysElapsed = hoursElapsed/24;
-    let weeksElapsed = daysElapsed/7;
-    let monthsElapsed = weeksElapsed/4;
-    let yearsElapsed = monthsElapsed/12;
+    const minutesElapsed = difference/60000,
+          hoursElapsed = minutesElapsed/60,
+          daysElapsed = hoursElapsed/24,
+          weeksElapsed = daysElapsed/7,
+          monthsElapsed = weeksElapsed/4,
+          yearsElapsed = monthsElapsed/12;
 
 
     if (monthsElapsed > 11) {
-      return `Hace ${Math.trunc(yearsElapsed)} año`;
+
+      // for months
+      if (monthsElapsed <= 24) {
+        return `${Math.trunc(yearsElapsed)} año`;
+      } else {
+        return `${Math.trunc(yearsElapsed)} años`;
+      }
+
     } else if (monthsElapsed > 1) {
-      return `Hace ${Math.trunc(monthsElapsed)} mes`;
+
+      // for months
+      if (monthsElapsed < 2) {
+        return `${Math.trunc(monthsElapsed)} mes`;
+      } else {
+        return `${Math.trunc(monthsElapsed)} meses`;
+      }
+
     } else if (weeksElapsed > 1) {
-      return `Hace ${Math.trunc(weeksElapsed)} semana`;
+
+      // for weeks
+      if (weeksElapsed < 2) {
+        return `${Math.trunc(weeksElapsed)} semana`;
+      } else {
+        return `${Math.trunc(weeksElapsed)} semanas`;
+      }
+
     } else if (hoursElapsed > 24 ) {
-      return `Hace ${Math.trunc(daysElapsed)} días`;
+
+      // for days
+      if (hoursElapsed <= 48) {
+        return `${Math.trunc(daysElapsed)} día`;
+      } else {
+        return `${Math.trunc(daysElapsed)} días`;
+      }
+
     } else if (hoursElapsed > 1) {
-      return `Hace ${Math.trunc(hoursElapsed)} horas`;
+
+      // for hours
+      if (hoursElapsed < 2) {
+        return `${Math.trunc(hoursElapsed)} hora`;
+      } else {
+        return `${Math.trunc(hoursElapsed)} horas`;
+      }
+      
     } else if (minutesElapsed > 1) {
-      return `Hace ${Math.trunc(minutesElapsed)} minutos`;
+
+      // for minutes
+      if (minutesElapsed < 2) {
+        return `${Math.trunc(minutesElapsed)} minutos`;
+      } else {
+        return `${Math.trunc(minutesElapsed)} minuto`;
+      }
+      
     } else {
-      return `Hace unos segundos`;
+
+      // for secs
+      return `unos segundos`;
     }
 
   }
