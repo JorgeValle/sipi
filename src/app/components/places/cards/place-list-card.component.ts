@@ -2,14 +2,14 @@
 import { Component, Input } from '@angular/core';
 
 // Sipi custom
-import { Place } from './place';
+import { Place } from './../place';
 
 @Component({
-  selector: 'place-card',
-  templateUrl: './place-card.component.html'
+  selector: 'place-list-card',
+  templateUrl: './place-list-card.component.html'
 })
 
-export class PlaceCardComponent {
+export class PlaceListCardComponent {
 
   @Input() place: Place;
 

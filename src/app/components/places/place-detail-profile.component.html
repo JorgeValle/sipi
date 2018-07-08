@@ -1,9 +1,3 @@
-<!-- <div class="row">
-  <div class="col-6">
-      <breadcrumb-menu country="{{place.address.country}}" city="{{place.address.city}}" subcategories="{{place.category.subcats}}"></breadcrumb-menu>
-  </div>
-</div> -->
-
 <div class="row mb-4">
   <div class="col-12">
     <h1 class="h2">
@@ -16,42 +10,47 @@
   </div><!-- /col -->
 </div>
 
+<!-- <div class="row">
+  <div class="col-12">
+    <blockquote>
+      <p>Este lugar es realmente excelente y nos encanta. Lorem ipsum dolor.</p>
+    </blockquote>
+  </div>
+</div> -->
+
+<!-- <div class="row mb-4">
+  <div class="col-9">
+    <img src="http://via.placeholder.com/1000x120" class="img-fluid">
+  </div>
+  <div class="col-1">
+    <img src="http://via.placeholder.com/120x120" class="img-thumbnail">
+  </div>
+  <div class="col-1">
+    <img src="http://via.placeholder.com/120x120" class="img-thumbnail">
+  </div>
+  <div class="col-1">
+    <img src="http://via.placeholder.com/120x120" class="img-thumbnail">
+  </div>
+</div> -->
+
 <div class="row">
-  <div class="col-12 col-sm-6">
-    <div class="card">
-      <single-marker-map *ngIf="place.address.coordinates" class="card-img-top" [place]="place"></single-marker-map>
-      <div class="card-body">
-        <!-- <h5 class="card-title">Card title</h5> -->
-        <ul class="list-group">
-          <li class="list-group-item border-0">
-            <!-- when not parent -->
-            <address class="card-text" *ngIf="place.organizational && !place.organizational.isParent">
-              {{place.address.number}}, {{place.address.street}}<br>
-              {{place.address.city}}, {{place.address.country}}<br>
-            </address>
-            <!-- when parent -->
-            <address class="card-text" *ngIf="place.organizational && place.organizational.isParent">
-              Varias ubicaciones en {{place.address.country}}<br>
-            </address>
-          </li>
-          <li class="list-group-item border-0 pt-0 pb-0" *ngIf="place.contact.phone">
-              <i class="material-icons align-top">phone</i>&nbsp;{{place.contact.phone}}
-          </li>
-          <li class="list-group-item border-0 pt-0 pb-0" *ngIf="place.contact.website">
-              <i class="material-icons align-top">web</i>
-              <a href="{{place.contact.website}}">&nbsp;{{place.contact.website}}</a>
-          </li>
-          <li class="list-group-item border-0 pt-0 pb-0" *ngIf="place.contact.email">
-              <i class="material-icons align-top">email</i>
-              <a href="mailto:{{place.contact.email}}">&nbsp;{{place.contact.email}}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+
+  <!-- location -->
+  <div class="col-12 col-sm-5">
+    <place-location-card [place]="place"></place-location-card>
+    <place-location-card-edit [place]="place"></place-location-card-edit>
   </div>
 
+  <!-- opening hours -->
+  <!-- <div class="col-12 col-sm-3">
+    <place-hours-card [place]="place"></place-hours-card>
+  </div>
+  <div class="col-12 col-sm-3">
+    <place-hours-card-edit></place-hours-card-edit>
+  </div> -->
+
   <!-- branches -->
-  <div class="col-12 col-sm-6" *ngIf="branches">
+  <div class="col-12 col-sm-8" *ngIf="branches">
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let branch of branches">
         <h3 class="h5">

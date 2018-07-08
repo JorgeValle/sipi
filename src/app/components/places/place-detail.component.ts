@@ -57,7 +57,8 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
 
     this.place$ = this.placeService.getPlace(this.placeId);
 
-    this.placeService.getPlace(this.placeId).subscribe(data => {
+    this.placeService.getPlace(this.placeId)
+    .subscribe(data => {
 
       console.log(data);
       this.place = data;
@@ -88,7 +89,6 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
       .subscribe(data => {
 
         this.branches = data;
-
 
       });
 

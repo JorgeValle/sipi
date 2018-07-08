@@ -5,23 +5,11 @@
     <div class="col-12">
       <ul class="nav nav-tabs" id="place-tabs" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" id="list-tab" data-toggle="tab" href="#informacion" role="tab" aria-controls="info" aria-selected="true">
+          <a class="nav-link active" id="info-tab" data-toggle="tab" href="#informacion" role="tab" aria-controls="info" aria-selected="true">
             <i class="material-icons md-18 align-top">subject</i>
             <span class="d-none d-sm-none d-md-inline d-lg-inline d-xl-inline">&nbsp;Información</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" id="list-tab" data-toggle="tab" href="#actualizar" role="tab" aria-controls="actualizar" aria-selected="false">
-            <i class="material-icons md-18 align-top">create</i>
-            <span class="d-none d-sm-none d-md-inline d-lg-inline d-xl-inline">&nbsp;Actualizar</span>
-          </a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" id="list-tab" data-toggle="tab" href="#historia" role="tab" aria-controls="historia" aria-selected="false">
-            <i class="material-icons md-18 align-top">history</i>
-            <span class="d-none d-sm-none d-md-inline d-lg-inline d-xl-inline">&nbsp;Historia</span>
-          </a>
-        </li> -->
       </ul>
     </div>
   </div>
@@ -29,25 +17,9 @@
   <div class="row">
     <div class="col-12">
       <div class="tab-content" id="place-tab-content">
-        <div class="tab-pane fade show active" id="info">
+        <!-- info section -->
+        <div class="tab-pane fade show active" id="informacion">
           <place-detail-profile [place]="place" [branches]="branches"></place-detail-profile>
-        </div><!-- info section -->
-        
-        <div class="tab-pane fade" id="actualizar">
-          <div class="row">
-            <div class="col-12">
-              <h3>Actualizar lugar</h3>
-              <p>Tus cambios seran registrados, y la comunidad los verificara.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-8">
-              <update-place-form [place]="place"></update-place-form>
-            </div>
-            <div class="col-sm-12 col-md-4">
-              <editable-marker-map class="card-img-top" [place]="place"></editable-marker-map>
-            </div>
-          </div>
         </div>
       </div>
     </div>

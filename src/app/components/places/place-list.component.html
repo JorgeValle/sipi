@@ -24,24 +24,7 @@
 
       <!-- <sort-places-form (predicateChanged)="handlePredicateChanged($event)"></sort-places-form> -->
       <div class="card mb-4" *ngFor="let place of places | orderBy: orderPredicate: reverseOrder | paginate: { itemsPerPage: 10, currentPage: p }">
-        <!-- <ng-template #loading>
-            <div class="card-body">
-                <div class="row">
-                  <div class="col-8 col-sm-8">
-                    <h2 class="card-title h4">
-                      Temp
-                    </h2>
-                    <div>
-                      Temp
-                    </div>
-                  </div>
-                  <div class="col-12 col-sm-4">
-                    Temp
-                  </div>
-                </div>
-              </div>
-        </ng-template> -->
-        <place-card [place]="place"></place-card>
+        <place-list-card [place]="place"></place-list-card>
       </div>
       <pagination-controls nextLabel="Proximo" (pageChange)="p = $event" previousLabel="Anterior"></pagination-controls>
 
