@@ -5532,7 +5532,7 @@ header {
   width: 100%; }
 
 #editable-marker-map {
-  height: 400px;
+  height: 200px;
   width: 100%; }
 
 .oro {
@@ -5556,3 +5556,7 @@ header {
 
 .grey {
   background-color: #ebecee; }
+
+.progress {
+  height: 2px;
+  border-radius: 0; }
