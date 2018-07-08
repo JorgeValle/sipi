@@ -38,7 +38,7 @@
   <!-- location -->
   <div class="col-12 col-sm-5">
     <place-location-card [place]="place"></place-location-card>
-    <place-location-card-edit [place]="place"></place-location-card-edit>
+    <!-- <place-location-card-edit [place]="place"></place-location-card-edit> -->
   </div>
 
   <!-- opening hours -->
@@ -46,22 +46,13 @@
     <place-hours-card [place]="place"></place-hours-card>
   </div>
   <div class="col-12 col-sm-3">
-    <place-hours-card-edit></place-hours-card-edit>
+    <place-hours-card-edit [place]="place"></place-hours-card-edit>
   </div> -->
 
   <!-- branches -->
-  <div class="col-12 col-sm-8" *ngIf="branches">
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let branch of branches">
-        <h3 class="h5">
-          <a routerLink="/lugar/{{branch.system.id}}/{{branch.organizational.parent.slug}}/{{branch.content.slug}}">{{branch.content.name}}</a>
-        </h3>
-        <address class="card-text">
-          {{branch.address.number}}, {{branch.address.street}}<br>
-          {{branch.address.city}}, {{branch.address.country}}<br>
-        </address>
-      </li>
-    </ul>
+  <div class="col-12 col-sm-7" *ngIf="branches">
+    <place-branches-card [branches]="branches"></place-branches-card>
+    <place-branches-card-edit [branches]="branches"></place-branches-card-edit>
   </div>
 
 </div>

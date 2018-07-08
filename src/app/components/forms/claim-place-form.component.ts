@@ -34,7 +34,7 @@ export class ClaimPlaceFormComponent implements OnInit {
    */
   getSubcategories(): void {
     this.subcategoryService
-    .getSubcategories()
+    .getSubcategories(1)
     .subscribe(
       data => {
         this.subcategories = data

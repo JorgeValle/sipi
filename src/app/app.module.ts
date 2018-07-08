@@ -36,7 +36,7 @@ import { CountriesListComponent } from './components/countries/countries-list.co
 import { AddPlaceFormComponent }              from './components/forms/add-place-form.component';
 import { ClaimPlaceFormComponent }            from './components/forms/claim-place-form.component';
 import { ContactFormComponent }               from './components/forms/contact-form.component';
-import { EditPlaceFormComponent }             from './components/forms/edit-place-form.component';
+import { UpdatePlaceFormComponent }           from './components/forms/update-place-form.component';
 import { EditUserFormComponent }              from './components/forms/edit-user-form.component';
 import { FilterPlacesFormComponent }          from './components/forms/filter-places-form.component';
 import { ForgotPasswordFormComponent }        from './components/forms/forgot-password-form.component';
@@ -51,12 +51,10 @@ import { UpdateEmailSettingsFormComponent }   from './components/forms/update-em
 import { UpdatePrivacySettingsFormComponent } from './components/forms/update-privacy-settings-form.component';
 import { UploadUserPhotoFormComponent }       from './components/forms/upload-user-photo-form.component';
 
-// footers
-
-
 // maps
-import { MultiMarkerMapComponent }  from './components/maps/multi-marker-map.component';
-import { SingleMarkerMapComponent } from './components/maps/single-marker-map.component';
+import { MultiMarkerMapComponent }    from './components/maps/multi-marker-map.component';
+import { SingleMarkerMapComponent }   from './components/maps/single-marker-map.component';
+import { EditableMarkerMapComponent } from './components/maps/editable-marker-map.component';
 
 // menus
 import { BreadcrumbMenuComponent } from './components/menus/breadcrumb-menu.component';
@@ -88,14 +86,21 @@ import { PlaceFilterPipe } from './pipes/place-filter.pipe';
 import { PriceFilterPipe } from './pipes/price-filter.pipe';
 
 // places
-import { PlaceCardComponent }           from './components/places/place-card.component';
-import { PlaceCardFeaturedComponent }   from './components/places/place-card-featured.component';
-import { PlaceCardSimpleComponent }     from './components/places/place-card-simple.component';
+
+// place cards
+import { PlaceListCardComponent }         from './components/places/cards/place-list-card.component';
+import { PlaceHoursCardComponent }        from './components/places/cards/place-hours-card.component';
+import { PlaceHoursCardEditComponent }    from './components/places/cards/place-hours-card-edit.component';
+import { PlaceLocationCardComponent }     from './components/places/cards/place-location-card.component';
+import { PlaceLocationCardEditComponent } from './components/places/cards/place-location-card-edit.component';
+import { PlaceBranchesCardComponent }     from './components/places/cards/place-branches-card.component';
+import { PlaceBranchesCardEditComponent } from './components/places/cards/place-branches-card-edit.component';
+
 import { PlaceDetailComponent }         from './components/places/place-detail.component';
 import { PlaceDetailEditComponent }     from './components/places/place-detail-edit.component';
 import { PlaceDetailProfileComponent }  from './components/places/place-detail-profile.component';
 import { PlaceListComponent }           from './components/places/place-list.component';
-import { PlaceScheduleComponent }       from './components/places/place-schedule.component';
+import { PlaceDetailLoadingComponent }  from './components/places/place-detail-loading.component';
 import { SuggestedPlacesListComponent } from './components/places/suggested-places-list.component';
 
 // progress bar
@@ -241,7 +246,7 @@ const appRoutes: Routes = [
     AddPlaceFormComponent,
     ClaimPlaceFormComponent,
     ContactFormComponent,
-    EditPlaceFormComponent,
+    UpdatePlaceFormComponent,
     EditUserFormComponent,
     FilterPlacesFormComponent,
     ForgotPasswordFormComponent,
@@ -259,6 +264,7 @@ const appRoutes: Routes = [
     // maps
     MultiMarkerMapComponent,
     SingleMarkerMapComponent,
+    EditableMarkerMapComponent,
     // menus
     MainMenuAComponent,
     MainMenuAuthComponent,
@@ -283,15 +289,20 @@ const appRoutes: Routes = [
     PhonePipe,
     PlaceFilterPipe,
     PriceFilterPipe,
+    // place cards
+    PlaceListCardComponent,
+    PlaceHoursCardComponent,
+    PlaceHoursCardEditComponent,
+    PlaceLocationCardComponent,
+    PlaceLocationCardEditComponent,
+    PlaceBranchesCardComponent,
+    PlaceBranchesCardEditComponent,
     // places
-    PlaceCardComponent,
-    PlaceCardFeaturedComponent,
-    PlaceCardSimpleComponent,
     PlaceDetailComponent,
     PlaceDetailEditComponent,
     PlaceDetailProfileComponent,
+    PlaceDetailLoadingComponent,
     PlaceListComponent,
-    PlaceScheduleComponent,
     SuggestedPlacesListComponent,
     // reviews
     ReviewCardComponent,

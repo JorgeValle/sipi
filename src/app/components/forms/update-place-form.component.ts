@@ -94,11 +94,12 @@ export class UpdatePlaceFormComponent implements OnInit {
      * Populate the form inputs
      */
     this.updatedPlace = new FormGroup({
+      
       name: new FormControl(this.place.content.name),
 
       // categories
       category: new FormControl(this.place.category.name),
-      subcategory: new FormControl('Mariscos'),
+      subcategory: new FormControl(this.place.category.subcats),
       // address
       street: new FormControl(this.place.address.street),
       country: new FormControl(this.place.address.country),

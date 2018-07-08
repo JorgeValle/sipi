@@ -1,62 +1,36 @@
-<form [formGroup]="updatedPlace" (ngSubmit)="onSubmit(place)" novalidate>
-  <!-- name -->
+<form [formGroup]="updatedPlace" (ngSubmit)="onSubmit(updatedPlace)" novalidate>
+  <!-- map -->
   <div class="row">
     <div class="col-12">
-      <div class="form-group">
-        <label for="name-input">Nombre</label>
-        <input aria-describedby="name-help" class="form-control" formControlName="name" id="name-input" name="name" placeholder="El nombre del lugar" type="text" readonly>
-        <small id="name-help" class="form-text text-muted">El nombre no se puede cambiar.</small>
-      </div>
-    </div>
-  </div>
-  <!-- categories -->
-  <div class="row">
-    <div class="col-6">
-      <div class="form-group">
-        <label for="category-input">Categoría</label>
-        <select aria-described-by="category-help" class="form-control" formControlName="category" id="category-input" name="category" (change)="updateSubcategories(updatedPlace)">
-          <option *ngFor="let category of categories" value="{{category.system.id}}">{{category.content.name}}</option>
-        </select>
-        <small id="category-help" class="form-text text-muted">Lo podes cambiar despues, si es necesario.</small>
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="form-group">
-        <label for="subcategory-input">Subcategorías</label>
-        <select aria-described-by="" class="form-control" formControlName="subcategory" id="subcategory-input" name="subcategory" multiple>
-          <option *ngFor="let subcategory of subcategories">{{subcategory.content.name}}</option>
-        </select>
-        <small class="form-text text-muted">Podes escoger varias.</small>
-      </div>
+      <editable-marker-map class="card-img-top" [place]="place"></editable-marker-map>
     </div>
   </div>
   <!-- address -->
-  <div class="row">
-    <div class="col-8">
-      <div class="form-group">
-        <label for="street-input">Calle</label>
-        <input aria-describedby="street-help" class="form-control" formControlName="street" id="street-input" name="street" placeholder="La direccion de calle" type="text">
-        <small id="street-help" class="form-text text-muted">La calle en donde se encuentra el lugar.</small>
-      </div>
-    </div>
-    <div class="col-4">
+  <div class="row mt-2 px-3">
+    <div class="col-12">
       <div class="form-group">
         <label for="street-input">Número</label>
         <input aria-describedby="number-help" class="form-control" formControlName="number" id="number-input" name="number" placeholder="La direccion de calle" type="text">
-        <small id="number-help" class="form-text text-muted">El número del lugar.</small>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <label for="street-input">Calle</label>
+        <input aria-describedby="street-help" class="form-control" formControlName="street" id="street-input" name="street" placeholder="La direccion de calle" type="text">
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-5">
+  <div class="row px-3">
+    <div class="col-12">
       <div class="form-group">
         <label for="country-input">Pais</label>
         <select aria-described-by="" class="form-control" formControlName="country" id="country-input" name="country" (change)="updateCities(updatedPlace)">
-            <option *ngFor="let country of countries" value="{{country.system.id}}">{{country.content.name}}</option>
+          <option *ngFor="let country of countries"
+                   value="{{country.system.id}}">{{country.content.name}}</option>
         </select>
       </div>
     </div>
-    <div class="col-7">
+    <div class="col-12">
       <div class="form-group">
         <label for="country-input">Ciudad</label>
         <select aria-described-by="" class="form-control" formControlName="city" id="city-input" name="city">
@@ -66,38 +40,25 @@
     </div>
   </div>
   <!-- contact -->
-  <div class="row">
+  <div class="row px-3">
     <div class="col-12">
       <div class="form-group">
-        <label for="phone-input">Telefono</label>
+        <label for="phone-input">Teléfono</label>
         <input aria-describedby="phone-help" class="form-control" formControlName="phone" id="phone-input" name="phone" placeholder="El telefono del lugar" type="number">
-        <small id="phone-help" class="form-text text-muted">Media vez lo has puesto, no lo podras cambiar.</small>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-12">
       <div class="form-group">
         <label for="website-input">Sitio Web</label>
         <input aria-describedby="website-help" class="form-control" formControlName="website" id="website-input" name="website" placeholder="El sitio web del lugar" type="text">
-        <small id="phone-help" class="form-text text-muted">El sitio web del lugar.</small>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-12">
       <div class="form-group">
         <label for="website-input">Correo Electrónico</label>
         <input aria-describedby="website-help" class="form-control" formControlName="email" id="email-input" name="email" placeholder="El sitio web del lugar" type="text">
-        <small id="phone-help" class="form-text text-muted">El correo electrónico.</small>
       </div>
     </div>
   </div>
-  <!-- <div class="form-group">
-    <label for="website-input">Es este lugar una sucursal?</label>
-    <input aria-describedby="website-help" class="form-control" formControlName="website" id="website-input" name="website" placeholder="El sitio web del lugar" type="text">
-    <small id="phone-help" class="form-text text-muted">Media vez lo has puesto, no lo podras cambiar.</small>
-  </div> -->
-  <div class="form-group">
-    <label for="website-input">Password</label>
-    <input aria-describedby="website-help" class="form-control" formControlName="password" id="website-input" name="password" placeholder="El sitio web del lugar" type="text">
-  </div>
-  <!-- <single-marker-map [place]="place"></single-marker-map> -->
-  <button type="submit" class="btn btn-primary">Actualizar lugar</button>
+  <button type="button" class="btn btn-success btn-block rounded-0">Actualizar ubicación</button>
 </form>

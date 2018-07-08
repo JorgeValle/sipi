@@ -26,7 +26,9 @@ export class PageService {
    */
   getPage(slug: string) {
 
-    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/page/${slug}`).pipe(
+    return this.http.get(
+      `https://sipi-rest-api.herokuapp.com/retrieve/page/${slug}`
+    ).pipe(
     map((res:Response) => res.json()))
   }
 

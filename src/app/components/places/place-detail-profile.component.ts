@@ -24,6 +24,7 @@ export class PlaceDetailProfileComponent implements OnInit {
   @Input() place: Place;
   @Input() branches: Place[];
 
+
   constructor(
     private placeService: PlaceService,
     private route: ActivatedRoute,

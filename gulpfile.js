@@ -1,7 +1,7 @@
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+const gulp = require('gulp'),
+      sass = require('gulp-sass');
  
 gulp.task('sass', function () {
   return gulp.src('src/assets/sass/sipi.scss')

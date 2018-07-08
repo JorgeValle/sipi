@@ -1,5 +1,7 @@
 export class Page {
-  slug: string;
-  title: string;
-  body: string;
+  content: {
+    name: string;
+    slug: string;
+    body: string;
+  }
 }
