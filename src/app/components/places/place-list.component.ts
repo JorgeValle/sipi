@@ -1,5 +1,5 @@
 // Angular core
-import { Component, OnInit, Pipe, PipeTransform }                from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform, Input }         from '@angular/core';
 import { ActivatedRoute, ParamMap, Params }                      from '@angular/router';
 import { Location }                                              from '@angular/common';
 import { Meta, Title }                                           from '@angular/platform-browser';
@@ -22,25 +22,7 @@ import { Observable } from 'rxjs';
     PlaceService,
     PlaceFilterPipe,
     PriceFilterPipe
-  ],
-  // animations: [
-  //   trigger('fadeIn', [
-  //     transition(':enter', [
-  //       style({ opacity: '0' }),
-  //       animate('3s ease-out', style({ opacity: '1' })),
-  //     ]),
-  //   ]),
-  //   trigger('animating', [
-  //     state('inactive', style({
-  //       opacity: '0.8'
-  //     })),
-  //     state('active', style({
-  //       opacity: '1'
-  //     })),
-  //     transition('inactive => active', animate('1000ms ease-in')),
-  //     transition('active => inactive', animate('1000ms ease-out'))
-  //   ]),
-  // ],
+  ]
 })
 
 @Pipe({
@@ -48,6 +30,8 @@ import { Observable } from 'rxjs';
 })
 
 export class PlaceListComponent implements OnInit {
+
+  selectedPlace: Place;
 
   p;
   name: string;
@@ -133,8 +117,10 @@ export class PlaceListComponent implements OnInit {
    * Handles a user clicking on a marker, on the multi marker map
    */
   handleMarkerClick(event): void {
-    console.log(`From map, marker was clicked: ${event}`);
-    this.firstListing = event;
+    console.log(`From map, marker was clicked: ${event.content.name}`);
+
+    this.selectedPlace = event;
+
   }
 
   /**

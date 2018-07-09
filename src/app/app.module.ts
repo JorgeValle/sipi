@@ -120,6 +120,7 @@ import { CategoryFilterService } from './services/category-filter.service';
 import { DistanceService }       from './services/distance.service';
 import { ImageService }          from './services/image.service';
 import { LocationService }       from './services/location.service';
+import { MapService }            from './services/map.service';
 import { WindowService }         from './services/window.service';
 import { SubcategoryService }    from './services/subcategory.service';
 
@@ -352,6 +353,7 @@ const appRoutes: Routes = [
     DistanceService,
     CategoryService,
     CategoryFilterService,
+    MapService,
     ImageService,
     LocationService,
     Title,
