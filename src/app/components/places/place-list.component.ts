@@ -121,7 +121,14 @@ export class PlaceListComponent implements OnInit {
 
     this.selectedPlace = event;
 
+    console.log(this.selectedPlace);
+
   }
+
+  /**
+   * 
+   */
+  makeFirst
 
   /**
    * Filters by price
