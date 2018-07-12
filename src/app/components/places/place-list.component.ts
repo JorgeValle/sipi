@@ -47,8 +47,8 @@ export class PlaceListComponent implements OnInit {
   loading: boolean;
 
   // used for sorting
-  orderPredicate: any = 'hits';
-  reverseOrder: boolean = true;
+  orderPredicate: any = 'content.name';
+  reverseOrder: boolean = false;
 
   // used for animations
   state: string = 'inactive';
