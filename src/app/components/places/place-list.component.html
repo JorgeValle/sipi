@@ -28,7 +28,7 @@
   <div class="row">
     <div class="col-12 col-sm-12 col-md-7 tab-pane fade show active" id="list">
 
-      <!-- <sort-places-form (predicateChanged)="handlePredicateChanged($event)"></sort-places-form> -->
+      <sort-places-form (predicateChanged)="handlePredicateChanged($event)"></sort-places-form>
       <div class="card mb-4" *ngFor="let place of places | orderBy: orderPredicate: reverseOrder | paginate: { itemsPerPage: 10, currentPage: p }">
         <place-list-card [place]="place"></place-list-card>
       </div>
@@ -37,9 +37,9 @@
     </div>
 
     <div class="col-12 col-sm-12 col-md-5 tab-pane fade show" id="map">
-<!-- 
+
       <multi-marker-map (selectedPlace)="handleMarkerClick($event)" (mapBoundsChanged)="handleNewMapBounds($event)" [places]="places"></multi-marker-map>
-     -->
+    
     </div>
 
   </div>

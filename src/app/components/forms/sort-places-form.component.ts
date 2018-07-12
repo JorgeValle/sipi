@@ -23,7 +23,7 @@ export class SortPlacesFormComponent implements OnInit {
    */
   ngOnInit(): void {
 
-    this.sortPredicate = 'rating';
+    this.sortPredicate = 'content.name';
     this.predicateChanged.emit(this.sortPredicate);
     console.log('Sort places form is ready');
   }
