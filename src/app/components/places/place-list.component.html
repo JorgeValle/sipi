@@ -20,8 +20,8 @@
   </div>
 
   <!-- <div class="row">
-    <div class="col">
-      {{selectedPlace}}
+    <div class="col" *ngIf="selectedPlace">
+      {{selectedPlace.content.name}}
     </div>
   </div> -->
 
@@ -45,7 +45,7 @@
 
     <div class="col-12 col-sm-12 col-md-5 tab-pane fade show" id="map">
 
-      <multi-marker-map (selectedPlace)="handleMarkerClick($event)" (mapBoundsChanged)="handleNewMapBounds($event)" [places]="places"></multi-marker-map>
+      <multi-marker-map (selectedPlace)="handleMarkerClick($event)" (mapBoundsChanged)="handleNewMapBounds($event)" [places]="places | paginate: { itemsPerPage: paginationSize, currentPage: p }"></multi-marker-map>
     
     </div>
 

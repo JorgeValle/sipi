@@ -127,6 +127,7 @@ export class PlaceListComponent implements OnInit {
    * Handles a user clicking on a marker, on the multi marker map
    */
   handleMarkerClick(event): void {
+    
     console.log(`From map, marker was clicked: ${event.content.name}`);
 
     this.selectedPlace = event;
