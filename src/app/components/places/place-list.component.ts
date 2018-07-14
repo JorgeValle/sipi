@@ -50,6 +50,8 @@ export class PlaceListComponent implements OnInit {
   orderPredicate: any = 'content.name';
   reverseOrder: boolean = false;
 
+  paginationSize: any = 10;
+
   // used for animations
   state: string = 'inactive';
 
@@ -104,6 +106,14 @@ export class PlaceListComponent implements OnInit {
 
     this.state = 'inactive';
 
+  }
+
+  /**
+   * 
+   */
+  handlePaginationSize(predicate): void {
+
+    this.paginationSize = predicate;
   }
 
   /**

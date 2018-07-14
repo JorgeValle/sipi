@@ -28,8 +28,15 @@
   <div class="row">
     <div class="col-12 col-sm-12 col-md-7 tab-pane fade show active" id="list">
 
-      <sort-places-form (predicateChanged)="handlePredicateChanged($event)"></sort-places-form>
-      <div class="card mb-4" *ngFor="let place of places | orderBy: orderPredicate: reverseOrder | paginate: { itemsPerPage: 10, currentPage: p }">
+      <div class="row">
+        <div class="col-12 col-sm-4 col-md-6 col-lg-3 mb-4">
+          <pagination-size-form (paginationNumberChanged)="handlePaginationSize($event)"></pagination-size-form>
+        </div>
+        <div class="col-12 col-sm-8 col-md-6 col-lg-9 mb-4">
+          <sort-places-form (predicateChanged)="handlePredicateChanged($event)"></sort-places-form>
+        </div>
+      </div>
+      <div class="card mb-4" *ngFor="let place of places | orderBy: orderPredicate: reverseOrder | paginate: { itemsPerPage: paginationSize, currentPage: p }">
         <place-list-card [place]="place"></place-list-card>
       </div>
       <pagination-controls nextLabel="Proximo" (pageChange)="p = $event" previousLabel="Anterior"></pagination-controls>

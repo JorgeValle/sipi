@@ -40,6 +40,7 @@ import { UpdatePlaceFormComponent }           from './components/forms/update-pl
 import { EditUserFormComponent }              from './components/forms/edit-user-form.component';
 import { FilterPlacesFormComponent }          from './components/forms/filter-places-form.component';
 import { ForgotPasswordFormComponent }        from './components/forms/forgot-password-form.component';
+import { PaginationSizeFormComponent }        from './components/forms/pagination-size-form.component';
 import { ReviewPlaceFormComponent }           from './components/forms/review-place-form.component';
 import { RequestUserDeletionFormComponent }   from './components/forms/request-user-deletion-form.component';
 import { SearchFormAComponent }               from './components/forms/search-form-a.component';
@@ -251,6 +252,7 @@ const appRoutes: Routes = [
     EditUserFormComponent,
     FilterPlacesFormComponent,
     ForgotPasswordFormComponent,
+    PaginationSizeFormComponent,
     ReviewPlaceFormComponent,
     RequestUserDeletionFormComponent,
     SearchFormAComponent,

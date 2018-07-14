@@ -1,10 +1,8 @@
 <form>
-  <div class="form-group row">
-    <label for="sort-form" class="col-sm-3 col-form-label">Ordenar Por</label>
-    <div class="col-sm-9">
-      <select class="form-control" id="sort-form" name="sortPredicate" [ngModel]="sortPredicate" (ngModelChange)="updateSortOrder($event)">
-        <option value="content.name">Alfabético</option>
-      </select>
-    </div>
+  <label class="sr-only" for="sort-form">Ordenar Por</label>
+  <div class="input-group">
+    <select class="form-control" id="sort-form" name="sortPredicate" [ngModel]="sortPredicate" (ngModelChange)="updateSortOrder($event)">
+      <option value="content.name">Alfabético</option>
+    </select>
   </div>
 </form>
