@@ -45,12 +45,11 @@ export class MultiMarkerMapComponent implements OnInit {
 
     let allPlaces = this.places;
 
-    // console.log(allPlaces);
-
     var map = new google.maps.Map(document.getElementById('multi-marker-map'), {
       zoom: 12,
       center: new google.maps.LatLng(13.6929403, -89.21819110000001),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: this.mapService.returnBaseStyles()
     });
 
     // let coordsArray = [];
@@ -73,7 +72,8 @@ export class MultiMarkerMapComponent implements OnInit {
 
         let marker = new google.maps.Marker({
           position: new google.maps.LatLng(currentPlace.address.coordinates.lat, currentPlace.address.coordinates.lng),
-          map: map
+          map: map,
+          title: currentPlace.content.name
         });
   
         /**

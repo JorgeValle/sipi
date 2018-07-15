@@ -58,4 +58,45 @@ export class MapService {
     return degr * Math.PI / 180;
   }
 
+  /**
+   * Returns base styles to be used in Google Maps
+   * 
+   * 
+   */
+  returnBaseStyles() {
+    return [
+      {
+        'featureType': 'poi.business',
+        'stylers': [
+          { 'visibility': 'off' }
+        ]
+      },
+      {
+        'featureType': 'poi.government',
+        'stylers': [
+          { 'visibility': 'off' }
+        ]
+      },
+      {
+        'featureType': 'poi.school',
+        'stylers': [
+          { 'visibility': 'off' }
+        ]
+      },
+      {
+        'featureType': 'poi.place_of_worship',
+        'stylers': [
+          { 'visibility': 'off' }
+        ]
+      },
+      // {
+      //   'featureType': 'poi.attraction',
+      //   'stylers': [
+      //     { 'visibility': 'off' }
+      //   ]
+      // },
+
+    ];
+  }
+
 }

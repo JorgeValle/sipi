@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 
 // Sipi custom
+import { MapService }    from '../../services/map.service';
 import { Place }         from '../places/place';
 import { WindowService } from '../../services/window.service';
 
@@ -26,8 +27,10 @@ export class SingleMarkerMapComponent implements OnInit {
   // handle for window object
   private _window: Window;
 
-  constructor (private windowService: WindowService) {
-
+  constructor (
+    private windowService: WindowService,
+    private mapService: MapService
+  ) {
     this._window = windowService.nativeWindow;
   }
 
@@ -46,7 +49,8 @@ export class SingleMarkerMapComponent implements OnInit {
       zoom: 17,
       center: currentPlace,
       streetViewControl: false,
-      mapTypeControl: false
+      mapTypeControl: false,
+      styles: this.mapService.returnBaseStyles()
     });
     let marker = new google.maps.Marker({
       position: currentPlace,
