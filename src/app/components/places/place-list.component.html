@@ -19,12 +19,6 @@
     </div>
   </div>
 
-  <!-- <div class="row">
-    <div class="col" *ngIf="selectedPlace">
-      {{selectedPlace.content.name}}
-    </div>
-  </div> -->
-
   <div class="row">
     <div class="col-12 col-sm-12 col-md-7 tab-pane fade show active" id="list">
 
@@ -36,6 +30,7 @@
           <sort-places-form (predicateChanged)="handlePredicateChanged($event)"></sort-places-form>
         </div>
       </div>
+      <!-- <div class="card mb-4" *ngFor="let place of places; let f = first"> -->
       <div class="card mb-4" *ngFor="let place of places | orderBy: orderPredicate: reverseOrder | paginate: { itemsPerPage: paginationSize, currentPage: p }">
         <place-list-card [place]="place"></place-list-card>
       </div>

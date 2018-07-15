@@ -33,6 +33,8 @@ export class PlaceListComponent implements OnInit {
 
   selectedPlace: Place;
 
+  first;
+
   p;
   name: string;
   firstListing: Place;
@@ -93,6 +95,7 @@ export class PlaceListComponent implements OnInit {
       { name: 'description', content: `Resultados de búsqueda para lugares.` },
     ]);
 
+    console.log(this.first);
   }
 
   /**
@@ -101,9 +104,7 @@ export class PlaceListComponent implements OnInit {
    */
   handlePredicateChanged(predicate): void {
 
-    console.log(`From place list component, predicate is ${predicate}`);
     this.orderPredicate = predicate;
-
     this.state = 'inactive';
 
   }
@@ -120,26 +121,28 @@ export class PlaceListComponent implements OnInit {
    * Updates the place list, when new map bounds are selected
    */
   handleNewMapBounds(): void {
+
     console.log(`From place list component, new map bounds are set`);
+
   }
 
   /**
    * Handles a user clicking on a marker, on the multi marker map
    */
   handleMarkerClick(event): void {
-    
+
     console.log(`From map, marker was clicked: ${event.content.name}`);
 
-    this.selectedPlace = event;
-
-    console.log(this.selectedPlace);
+    this.first = event;
 
   }
 
   /**
    * 
    */
-  makeFirst
+  makeFirst(): void {
+
+  }
 
   /**
    * Filters by price

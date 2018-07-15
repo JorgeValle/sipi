@@ -6,8 +6,6 @@ import { ReactiveFormsModule, FormsModule }          from '@angular/forms';
 import { RouterModule, Routes }                      from '@angular/router';
 import { HttpModule }                                from '@angular/http';
 import { HttpClientModule }                          from '@angular/common/http';
-// import { InMemoryWebApiModule }                      from 'angular-in-memory-web-api';
-// import { InMemoryDataService }                       from './in-memory-data.service';
 import { NgModule }                                  from '@angular/core';
 
 // ads
@@ -85,6 +83,7 @@ import { DynamicDatePipe } from './pipes/dynamicDate.pipe';
 import { PhonePipe }       from './pipes/phone.pipe';
 import { PlaceFilterPipe } from './pipes/place-filter.pipe';
 import { PriceFilterPipe } from './pipes/price-filter.pipe';
+import { UrlizePipe }      from './pipes/urlize.pipe';
 
 // places
 
@@ -295,6 +294,7 @@ const appRoutes: Routes = [
     PhonePipe,
     PlaceFilterPipe,
     PriceFilterPipe,
+    UrlizePipe,
     // place cards
     PlaceListCardComponent,
     PlaceHoursCardComponent,

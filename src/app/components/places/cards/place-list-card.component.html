@@ -1,4 +1,4 @@
-<div class="card-body">
+<div class="card-body" (mouseover)="mouseOver($event)" (mouseout)="mouseOut($event)">
   <div class="row">
     <!-- <div class="col-4 col-sm-2">
       <img alt="Foto de {{place.content.name}}" class="card-img-left img-fluid" *ngIf="place.img" [src]="place.img.src">
@@ -7,15 +7,18 @@
       <h2 class="card-title h4">
         <a routerLink="/lugar/{{place.system.id}}/{{place.content.slug}}">{{place.content.name}}</a>
       </h2>
-      <div *ngIf="place.rating">
-        <i class="material-icons stars" *ngFor="let i of Arr(place.rating).fill(1)">grade</i>
-        <small>
-          <a routerLink="/lugar/{{place.system.id}}">34 comentarios</a>
-        </small>
+      <!-- <div>
+        <i class="material-icons stars">grade</i>
+        <i class="material-icons stars">grade</i>
+        <i class="material-icons stars">grade</i>
+        <i class="material-icons stars">grade</i>
       </div>
+      <small>
+        <a routerLink="/lugar/{{place.system.id}}">34 comentarios</a>
+      </small> -->
       <span *ngIf="place.price">{{place.price}}&nbsp;|&nbsp;</span>
       <span class="card-subtitle mb-2 text-muted" *ngFor="let subcategory of place.category.subcats">
-        <a routerLink="/lugares" [queryParams]="{t: subcategory | lowercase}">{{subcategory}}</a>,&nbsp;
+        <a routerLink="/lugares" [queryParams]="{t: subcategory | urlize}">{{subcategory}}</a>,&nbsp;
       </span>
     </div>
     <div class="col-12 col-sm-4 col-md-12 col-lg-4" *ngIf="place.address">

@@ -5,7 +5,7 @@
       {{place.content.name}}
     </h1>
     <span class="text-muted" *ngFor="let subcategory of place.category.subcats">
-      <a routerLink="/lugares" [queryParams]="{categoria: subcategory | lowercase, lugar: place.address.country | lowercase}">{{subcategory}}</a>,&nbsp;
+      <a routerLink="/lugares" [queryParams]="{categoria: subcategory | urlize, lugar: place.address.country | urlize}">{{subcategory}}</a>,&nbsp;
     </span>
   </div><!-- /col -->
 </div>
