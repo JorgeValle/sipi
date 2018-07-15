@@ -75,9 +75,9 @@ export class AgoPipe implements PipeTransform {
 
       // for minutes
       if (minutesElapsed < 2) {
-        return `${Math.trunc(minutesElapsed)} minutos`;
-      } else {
         return `${Math.trunc(minutesElapsed)} minuto`;
+      } else {
+        return `${Math.trunc(minutesElapsed)} minutos`;
       }
       
     } else {
