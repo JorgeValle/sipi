@@ -3,9 +3,6 @@ import { Component, EventEmitter, OnInit, Output }        from '@angular/core';
 import { ActivatedRoute, ParamMap }                       from '@angular/router';
 import { Location, NgClass }                              from '@angular/common';
 
-// Sipi custom
-
-
 @Component({
   selector: 'sort-places-form',
   templateUrl: './sort-places-form.component.html'
@@ -25,7 +22,6 @@ export class SortPlacesFormComponent implements OnInit {
 
     this.sortPredicate = 'content.name';
     this.predicateChanged.emit(this.sortPredicate);
-    console.log('Sort places form is ready');
   }
 
   /**
@@ -34,7 +30,6 @@ export class SortPlacesFormComponent implements OnInit {
    */
   updateSortOrder(sortPredicate): void {
 
-    console.log(`The sort predicate is now ${sortPredicate}`);
     this.predicateChanged.emit(sortPredicate);
     
   }

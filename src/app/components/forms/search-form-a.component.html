@@ -1,32 +1,10 @@
 <form class="row" [formGroup]="search" (ngSubmit)="onSubmit(search)" novalidate>
   <div class="col-12">
     <div class="input-group">
-      <!-- <input ngui-auto-complete
-             class="form-control"
-             formControlName="term"
-             [source]="placeObservable.bind(this)"
-             [list-formatter]="placeListFormatter"
-             value-property-name="content.name"
-             display-property-name="content.name"
-             blank-option-text=""
-             loading-text="Buscando..."
-             no-match-found-text="No hemos encontrado ningun lugar"
-             placeholder="¿Que? Restaurantes, La Gastroteca"> -->
       <input class="form-control"
              type="text"
              placeholder="¿Que? Restaurantes, La Gastroteca"
              formControlName="term" />
-      <!-- <input ngui-auto-complete
-             class="form-control"
-             formControlName="location"
-             [source]="locationObservable.bind(this)"
-             [list-formatter]="locationListFormatter"
-             value-property-name="content.name"
-             display-property-name="content.name"
-             loading-text="Buscando..."
-             no-match-found-text="No hemos encontrado ninguna ubicación"
-             placeholder="¿Adonde? San Salvador, Panamá"
-             (selected)="selected($event)"> -->
       <input class="form-control"
              type="text"
              placeholder="¿Adonde? San Salvador, Panamá"

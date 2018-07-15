@@ -1,7 +1,6 @@
+import { of as observableOf,  Observable } from 'rxjs';
+import { map }                             from 'rxjs/operators';
 
-import {of as observableOf,  Observable } from 'rxjs';
-
-import {map} from 'rxjs/operators';
 // Angular core
 import { Component, NgModule, OnInit }                            from '@angular/core';
 import { ActivatedRoute, ParamMap, Router, RouterModule, Routes } from '@angular/router';
@@ -14,9 +13,6 @@ import { Http, Response, Headers, RequestOptions }                from '@angular
 // Sipi custom
 import { PlaceService }    from '../../services/place.service';
 import { LocationService } from '../../services/location.service';
-
-// Third party
-// import { CompleterService, CompleterData } from 'ng2-completer';
 
 @Component({
   selector: 'search-form-a',

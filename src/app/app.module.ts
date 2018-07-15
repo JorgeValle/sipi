@@ -126,13 +126,16 @@ import { WindowService }         from './services/window.service';
 import { SubcategoryService }    from './services/subcategory.service';
 
 // third party
-import { NgxPaginationModule }                    from 'ngx-pagination';
+import { NgxPaginationModule }  from 'ngx-pagination';
+import { OrderModule }          from 'ngx-order-pipe';
+import { NgAutoCompleteModule } from 'ng-auto-complete';
 // import { Ng2CompleterModule }                     from 'ng2-completer';
 // import { Ng2AutoCompleteModule, Ng2AutoComplete } from 'ng2-auto-complete';
-import { OrderModule }                            from 'ngx-order-pipe';
+
 // import { NguiAutoCompleteModule }                 from '@ngui/auto-complete';
 // import { FileUploadModule }                       from 'ng2-file-upload';
 // import { Ng4FilesModule }                         from 'angular4-files-upload';
+
 
 // users
 import { LatestUsersComponent }        from './components/users/latest-users.component';
@@ -341,8 +344,7 @@ const appRoutes: Routes = [
     ),
     // third party
     NgxPaginationModule,
-    // Ng2AutoCompleteModule,
-    // Ng2CompleterModule,
+    NgAutoCompleteModule,
     OrderModule,
     // NguiAutoCompleteModule,
     // FileUploadModule,
