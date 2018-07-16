@@ -7,6 +7,7 @@ import { Meta, Title }                    from '@angular/platform-browser';
 // Sipi custom
 import { Place }        from './place';
 import { PlaceService } from '../../services/place.service';
+import { SeoService }   from '../../services/seo.service';
 
 // Third party
 import { Observable } from 'rxjs';
@@ -15,7 +16,8 @@ import { Observable } from 'rxjs';
   selector: 'place-detail',
   templateUrl: './place-detail.component.html',
   providers: [
-    PlaceService
+    PlaceService,
+    SeoService
   ]
 })
 
@@ -37,7 +39,8 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private location: Location,
     private titleService: Title,
-    private meta: Meta
+    private meta: Meta,
+    private seoService: SeoService
   ) {}
 
   /**
@@ -83,6 +86,7 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
         { name: 'description', content: `Información sobre el lugar ${this.place.content.name}, ubicado en ${this.place.address.city}, ${this.place.address.country}` },
         // { name: 'tags', content: `Sipi,${this.place$},${this.place$},${this.place$}` }
       ]);
+      this.seoService.createLinkForCanonicalURL();
 
       // get children
       this.placeService.getBranches(this.placeId)

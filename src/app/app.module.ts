@@ -123,6 +123,7 @@ import { LocationService }       from './services/location.service';
 import { MapService }            from './services/map.service';
 import { WindowService }         from './services/window.service';
 import { SubcategoryService }    from './services/subcategory.service';
+import { SeoService }            from './services/seo.service';
 
 // third party
 import { NgxPaginationModule }  from 'ngx-pagination';
@@ -362,7 +363,8 @@ const appRoutes: Routes = [
     LocationService,
     Title,
     WindowService,
-    SubcategoryService
+    SubcategoryService,
+    SeoService
   ],
   // launch the app by bootstrapping the root module
   bootstrap: [AppComponent]
