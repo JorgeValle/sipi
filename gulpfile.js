@@ -1,12 +1,14 @@
 'use strict';
 
 const gulp = require('gulp'),
-      sass = require('gulp-sass');
+      sass = require('gulp-sass'),
+      clean = require('gulp-clean-css');
  
 gulp.task('sass', function () {
-  return gulp.src('src/assets/sass/sipi.scss')
+  return gulp.src('src/assets/sass/styles.scss')
     .pipe(sass())
-    .pipe(gulp.dest('src/assets/css'));
+    .pipe(clean())
+    .pipe(gulp.dest('./src'));
 });
  
 gulp.task('sass:watch', function () {

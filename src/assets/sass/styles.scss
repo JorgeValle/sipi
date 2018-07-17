@@ -64,7 +64,7 @@
 @import 'bootstrap/jumbotron';
 
 /**
- * Sipi v.3.0.0-alpha
+ * Sipi v.3.7.0
  */
 @import 'sipi/colors';
 @import 'sipi/type';
@@ -86,3 +86,8 @@
 @import 'sipi/ratings';
 @import 'sipi/tabs';
 @import 'sipi/progress';
+
+/**
+ * Flags
+ */
+// @import './node_modules/flag-icon-css/sass/flag-icon.scss';
