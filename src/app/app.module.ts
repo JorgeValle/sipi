@@ -151,7 +151,9 @@ import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { isPlatformBrowser }           from '@angular/common';
 
 // ...and finally the app
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component';;
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 // the router logs activity in the browser's history journal so the back and forward buttons work as well
 const appRoutes: Routes = [
@@ -346,7 +348,8 @@ const appRoutes: Routes = [
     // third party
     NgxPaginationModule,
     NgAutoCompleteModule,
-    OrderModule,
+    OrderModule,,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
     // NguiAutoCompleteModule,
     // FileUploadModule,
     // Ng4FilesModule
