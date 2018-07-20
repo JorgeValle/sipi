@@ -24,7 +24,7 @@ export class Place {
     name: string;
     subcats: [string]
   };
-  schedule: {
+  hours: {
     monday: {
       open: number;
       close: number;
@@ -38,6 +38,18 @@ export class Place {
       close: number;
     },
     thursday: {
+      open: number;
+      close: number;
+    },
+    friday: {
+      open: number;
+      close: number;
+    },
+    saturday: {
+      open: number;
+      close: number;
+    },
+    sunday: {
       open: number;
       close: number;
     }
