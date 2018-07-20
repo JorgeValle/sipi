@@ -1,5 +1,5 @@
 <div class="row mb-4">
-  <div class="col-12">
+  <div class="col-8">
     <h1 class="h2">
       <span *ngIf="place.organizational && place.organizational.isBranch">{{place.organizational.parent.name}}</span>
       {{place.content.name}}
@@ -8,6 +8,12 @@
       <a routerLink="/lugares" [queryParams]="{categoria: subcategory | urlize, lugar: place.address.country | urlize}">{{subcategory}}</a>,&nbsp;
     </span>
   </div><!-- /col -->
+  <div class="col-4">
+    <share-modal></share-modal>
+    <!-- <button class="btn btn-light" data-toggle="modal" data-target="#share-modal" type="button">
+      <i class="align-top material-icons md-16">favorite</i>
+    </button> -->
+  </div>
 </div>
 
 <!-- <div class="row">
@@ -42,12 +48,10 @@
   </div>
 
   <!-- opening hours -->
-  <!-- <div class="col-12 col-sm-3">
+  <div class="col-12 col-sm-4" *ngIf="place.hours">
     <place-hours-card [place]="place"></place-hours-card>
+    <!-- <place-hours-card-edit [place]="place"></place-hours-card-edit> -->
   </div>
-  <div class="col-12 col-sm-3">
-    <place-hours-card-edit [place]="place"></place-hours-card-edit>
-  </div> -->
 
   <!-- branches -->
   <div class="col-12 col-sm-7" *ngIf="branches">
