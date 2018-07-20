@@ -1,6 +1,11 @@
 export class Category {
-  id: number;
-  name: string;
-  slug: string;
+  system: {
+    id: number;
+  };
+  content: {
+    name: string;
+    slug: string;
+    summary: string;
+  };
   iconId: string;
 }
