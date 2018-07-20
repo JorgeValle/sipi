@@ -1,10 +1,10 @@
 // Get dependencies
-const express = require('express');
-const path = require('path');
-const http = require('http');
-const bodyParser = require('body-parser');
-var compression = require('compression');
-const app = express();
+const express = require('express'),
+      path = require('path'),
+      http = require('http'),
+      bodyParser = require('body-parser'),
+      compression = require('compression'),
+      app = express();
 
 // Parsers for POST data
 app.use(bodyParser.json());
