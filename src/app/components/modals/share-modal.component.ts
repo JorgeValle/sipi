@@ -1,23 +1,13 @@
-
-
-// importing, through native JS, from Angular core or libraries
 import { Component, Input, OnInit }                from '@angular/core';
 import { ActivatedRoute, ParamMap, Router }        from '@angular/router';
 import { Location }                                from '@angular/common';
 
 
 @Component({
-	selector: 'share-modal',
-	templateUrl: './share-modal.component.html',
-	//providers: [PlaceService]
+  selector: 'share-modal',
+  templateUrl: './share-modal.component.html',
 })
 
-// component classes manage the html templates
-// a component controls a patch of screen called a view
-// the class is where we define what the component does to support the view
-// components are big consumers of services
-// components jobs is to enbale the user experience, nothing more
-// components should be lean
 export class ShareModalComponent {
 
   constructor(private router: Router) {};
@@ -62,8 +52,8 @@ export class ShareModalComponent {
    * Send current URL by email
    */
   sendByEmail(): void {
-    window.location.href = `mailto:?subject=Mira este lugar en Sipi!
-                                   &body=Mira este lugar en Sipi! https://www.sipi.com${this.router.url}`;
+    window.location.href = `mailto:?subject=¡Mira lo que encontré en Sipi!
+                                   &body=Encontré este lugar en Sipi: https://www.sipi.app${this.router.url}`;
   };
 
 
