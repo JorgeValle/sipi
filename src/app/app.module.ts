@@ -79,7 +79,7 @@ import { SnapshotPageComponent }    from './components/pages/snapshot-page.compo
 
 // pipes
 import { AgoPipe }         from './pipes/ago.pipe';
-import { DynamicDatePipe } from './pipes/dynamicDate.pipe';
+import { AmPmPipe }        from './pipes/ampm.pipe';
 import { PhonePipe }       from './pipes/phone.pipe';
 import { PlaceFilterPipe } from './pipes/place-filter.pipe';
 import { PriceFilterPipe } from './pipes/price-filter.pipe';
@@ -291,7 +291,7 @@ const appRoutes: Routes = [
     SnapshotPageComponent,
     // pipes
     AgoPipe,
-    DynamicDatePipe,
+    AmPmPipe,
     PhonePipe,
     PlaceFilterPipe,
     PriceFilterPipe,
