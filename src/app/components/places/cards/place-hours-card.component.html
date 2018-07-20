@@ -1,31 +1,33 @@
 <div class="card">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Lunes 4-8pm</time>
+      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Lunes {{place.hours.monday[0].open | ampm}} - {{place.hours.monday[0].close | ampm}}</time>
     </li>
     <li class="list-group-item">
-      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Martes 4-8pm</time>
+      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Martes {{place.hours.tuesday[0].open | ampm}} - {{place.hours.tuesday[0].close | ampm}}</time>
     </li>
     <li class="list-group-item">
-      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Miercoles 4-8pm</time>
+      <!-- <small class="text-success"><i class="material-icons md-10 align-top text-success">schedule</i>&nbsp;Abierto ahorita</small><br> -->
+      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Miercoles {{place.hours.wednesday[0].open | ampm}} - {{place.hours.wednesday[0].close | ampm}}</time>&nbsp;
     </li>
     <li class="list-group-item">
-      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Jueves 4-8pm</time>
+      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Jueves {{place.hours.thursday[0].open | ampm}} - {{place.hours.thursday[0].close | ampm}}</time>
     </li>
     <li class="list-group-item">
-      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Viernes 4-8pm</time>
+      <!-- <small class="text-danger"><i class="material-icons md-18 align-top text-danger">watch_later</i>&nbsp;Cerrado ahorita</small><br> -->
+      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Viernes {{place.hours.friday[0].open | ampm}} - {{place.hours.friday[0].close | ampm}}</time>&nbsp;
     </li>
     <li class="list-group-item">
-      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Sabado 4-8pm</time>
+      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Sabado {{place.hours.saturday[0].open | ampm}} - {{place.hours.saturday[0].close | ampm}}</time>
     </li>
     <li class="list-group-item">
-      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Domingo 4-8pm</time>
+      <time itemprop="openingHours" datetime="Mo 16:00-20:00">Domingo {{place.hours.sunday[0].open | ampm}} - {{place.hours.sunday[0].close | ampm}}</time>
     </li>
   </ul>
-  <div class="card-footer text-muted">
+  <!-- <div class="card-footer text-muted">
     <small>
       Actualizado hace 13 dias
       <a class="card-link" href="#"><i class="material-icons md-18 align-top">create</i>&nbsp;Actualizar</a>
     </small>
-  </div>
+  </div> -->
 </div>

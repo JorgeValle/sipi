@@ -2,7 +2,8 @@
 import { Component, Input } from '@angular/core';
 
 // Sipi custom
-import { Place } from './../place';
+import { AmPmPipe } from '../../../pipes/ampm.pipe';
+import { Place }    from './../place';
 
 @Component({
   selector: 'place-hours-card',
@@ -12,9 +13,5 @@ import { Place } from './../place';
 export class PlaceHoursCardComponent {
 
   @Input() place: Place;
-
-  rating;
-  Arr = Array; // Array type captured in a variable
-  num:number = 5;
 
 }
