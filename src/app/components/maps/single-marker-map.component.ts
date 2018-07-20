@@ -46,7 +46,7 @@ export class SingleMarkerMapComponent implements OnInit {
       lng: this.place.address.coordinates.lng
     };
     let map = new google.maps.Map(document.getElementById('single-marker-map'), {
-      zoom: 17,
+      zoom: 16,
       center: currentPlace,
       streetViewControl: false,
       mapTypeControl: false,
