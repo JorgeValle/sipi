@@ -1,19 +1,18 @@
-<!-- html templates with angularized markup -->
 <div class="container">
   <nav class="row">
-    <div class="col-12 col-sm-3" *ngFor="let category of categories">
+    <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3" *ngFor="let category of categories">
       <div class="card">
         <div class="card-body">
-          <div class="card-header">
-            <i class="material-icons md-18 align-top white">{{category.iconId}}</i>
-          </div>
           <h3 class="card-title h5">
-            <a routerLink="/lugares" [queryParams]="{categoria: category.name}">{{category.name}}</a>
+            <a routerLink="/lugares" [queryParams]="{t: category.content.name}">{{category.content.name}}</a>
           </h3>
-          <p class="card-text">{{category.summary}}</p>
-          <p class="card-text"><small class="text-muted">{{category.listings}} lugares</small></p>
+          <p class="card-text">{{category.content.summary}}</p>
+          <ul *ngFor="let subcategory of subcategories">
+            <li>{{subcategory.content.name}}</li>
+          </ul>
         </div>
       </div>
     </div>
   </nav>
+  {{subcategories}}
 </div>
