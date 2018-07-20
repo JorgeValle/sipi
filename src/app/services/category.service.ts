@@ -21,8 +21,9 @@ export class CategoryService {
    */
   getCategories() {
     
-    // return this.http.get(`http://localhost:4100/api/retrieve/categories`)
-    return this.http.get(`https://sipi-rest-api.herokuapp.com/retrieve/categories`).pipe(
+    return this.http.get(
+      `https://sipi-rest-api.herokuapp.com/retrieve/categories`
+    ).pipe(
     map((res:Response) => res.json()));
   }
 
