@@ -1,9 +1,7 @@
 <div class="row mb-4">
   <div class="col-8">
-    <h1 class="h2">
-      <span *ngIf="place.organizational && place.organizational.isBranch">{{place.organizational.parent.name}}</span>
-      {{place.content.name}}
-    </h1>
+    <h1 class="h2" *ngIf="place.organizational && place.organizational.isBranch">{{place.organizational.parent.name}}&nbsp;<small class="text-muted">{{place.content.name}}</small></h1>
+    <h1 class="h2" *ngIf="place.organizational && !place.organizational.isBranch">{{place.content.name}}</h1>
     <span class="text-muted" *ngFor="let subcategory of place.category.subcats">
       <a routerLink="/lugares" [queryParams]="{categoria: subcategory | urlize, lugar: place.address.country | urlize}">{{subcategory}}</a>,&nbsp;
     </span>
