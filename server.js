@@ -10,11 +10,13 @@ const express = require('express'),
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Point static path to dist
-app.use(express.static(path.join(__dirname, 'dist')));
 
 // compress all responses
 app.use(compression());
+
+// Point static path to dist
+app.use(express.static(path.join(__dirname, 'dist')));
+
 
 app.get('/sitemap.xml', (req, res) => {
   res.redirect('https://sipi-rest-api.herokuapp.com/retrieve/sitemap.xml');
