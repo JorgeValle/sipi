@@ -2,7 +2,7 @@
 import { Component, Input } from '@angular/core';
 
 // Sipi custom
-import { AmPmPipe } from '../../../pipes/ampm.pipe';
+import { AmPmPipe } from '../../../pipes/am-pm.pipe';
 import { Place }    from './../place';
 
 @Component({
