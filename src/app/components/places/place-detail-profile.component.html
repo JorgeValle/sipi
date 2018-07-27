@@ -3,7 +3,7 @@
     <h1 class="h2" *ngIf="place.organizational && place.organizational.isBranch">{{place.organizational.parent.name}}&nbsp;<small class="text-muted">{{place.content.name}}</small></h1>
     <h1 class="h2" *ngIf="place.organizational && !place.organizational.isBranch">{{place.content.name}}</h1>
     <span class="text-muted" *ngFor="let subcategory of place.category.subcats">
-      <a routerLink="/lugares" [queryParams]="{categoria: subcategory | urlize, lugar: place.address.country | urlize}">{{subcategory}}</a>,&nbsp;
+      <a routerLink="/lugares" [queryParams]="{t: subcategory | urlize, u: place.address.country | urlize}">{{subcategory}}</a>,&nbsp;
     </span>
   </div><!-- /col -->
   <div class="col-4">
