@@ -1,6 +1,6 @@
 export class Page {
   content: {
-    name: string;
+    title: string;
     slug: string;
     body: string;
   }

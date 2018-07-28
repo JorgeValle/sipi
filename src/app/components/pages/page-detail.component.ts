@@ -1,14 +1,16 @@
 
 import {switchMap} from 'rxjs/operators';
+
 // Angular core
 import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
-import { Title }                    from '@angular/platform-browser';
+import { Meta, Title }              from '@angular/platform-browser';
 
 // Sipi custom
 import { Page }        from './page';
 import { PageService } from '../../services/page.service';
+import { SeoService }  from '../../services/seo.service';
 
 // Third party
 
@@ -32,7 +34,9 @@ export class PageDetailComponent implements OnInit {
     private location: Location,
     private pageService: PageService,
     private route: ActivatedRoute,
-    private titleService: Title
+    private meta: Meta,
+    private titleService: Title,
+    private seoService: SeoService
   ) {}
 
 
@@ -55,9 +59,19 @@ export class PageDetailComponent implements OnInit {
 
     this.route.paramMap.pipe(
     switchMap((params: ParamMap) => this.pageService.getPage(params.get('slug'))))
-    .subscribe(page => this.page = page);
+    .subscribe(page => {
 
-    // this.setTitle(`${this.page.title} | Sipi`);  // set the document title
+      this.page = page;
+
+      this.setTitle(`${this.page.content.title} | Sipi`);  // set the document title
+      this.meta.addTags([
+        { name: 'description', content: `Lea esta página para obtener mayor información sobre Sipi.` },
+        // { name: 'tags', content: `Sipi,${this.place$},${this.place$},${this.place$}` }
+      ]);
+      this.seoService.createLinkForCanonicalURL();
+    
+    
+    });
     
   }
   
