@@ -52,21 +52,11 @@ export class MultiMarkerMapComponent implements OnInit {
       styles: this.mapService.returnBaseStyles()
     });
 
-    // let coordsArray = [];
+    var bounds = new google.maps.LatLngBounds();
 
     for (let i = 0; i < allPlaces.length; i++) {
 
       let currentPlace = allPlaces[i];
-      
-      // let currentCoords = [];
-
-      // if (currentPlace.address.coordinates) {
-
-      //   currentCoords.push(currentPlace.address.coordinates.lat, currentPlace.address.coordinates.lng);
-
-      // }
-
-      // coordsArray.push(currentCoords);
 
       if (currentPlace.address.coordinates) {
 
@@ -75,6 +65,8 @@ export class MultiMarkerMapComponent implements OnInit {
           map: map,
           title: currentPlace.content.name
         });
+
+        bounds.extend(marker.getPosition());
   
         /**
          * Marker click listener
@@ -83,7 +75,6 @@ export class MultiMarkerMapComponent implements OnInit {
   
           this.selectedPlace.emit(currentPlace);
           map.panTo(marker.position);
-          // map.panTo(this.getPosition());
           map.setZoom(15);
   
         });
@@ -94,12 +85,13 @@ export class MultiMarkerMapComponent implements OnInit {
         google.maps.event.addListener(map, 'bounds_changed', function() {
   
           this.boundsChanged = true; // sets to true if map bounds changed, to reveal button
-          // console.log(`Map bounds are: ${map.getBounds()}`);
   
         });
 
       }
     }
+
+    map.fitBounds(bounds);
     
   }
 
