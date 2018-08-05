@@ -54,44 +54,47 @@ export class MultiMarkerMapComponent implements OnInit {
 
     var bounds = new google.maps.LatLngBounds();
 
-    for (let i = 0; i < allPlaces.length; i++) {
+    if (allPlaces.length > 0) {
 
-      let currentPlace = allPlaces[i];
+      for (let i = 0; i < allPlaces.length; i++) {
 
-      if (currentPlace.address.coordinates) {
+        let currentPlace = allPlaces[i];
 
-        let marker = new google.maps.Marker({
-          position: new google.maps.LatLng(currentPlace.address.coordinates.lat, currentPlace.address.coordinates.lng),
-          map: map,
-          title: currentPlace.content.name
-        });
+        if (currentPlace.address.coordinates) {
 
-        bounds.extend(marker.getPosition());
-  
-        /**
-         * Marker click listener
-         */
-        marker.addListener('click', () => {
-  
-          this.selectedPlace.emit(currentPlace);
-          map.panTo(marker.position);
-          map.setZoom(15);
-  
-        });
-  
-        /**
-         * Listens for bound change
-         */
-        google.maps.event.addListener(map, 'bounds_changed', function() {
-  
-          this.boundsChanged = true; // sets to true if map bounds changed, to reveal button
-  
-        });
+          let marker = new google.maps.Marker({
+            position: new google.maps.LatLng(currentPlace.address.coordinates.lat, currentPlace.address.coordinates.lng),
+            map: map,
+            title: currentPlace.content.name
+          });
 
+          bounds.extend(marker.getPosition());
+    
+          /**
+           * Marker click listener
+           */
+          marker.addListener('click', () => {
+    
+            this.selectedPlace.emit(currentPlace);
+            map.panTo(marker.position);
+            map.setZoom(15);
+    
+          });
+    
+          /**
+           * Listens for bound change
+           */
+          google.maps.event.addListener(map, 'bounds_changed', function() {
+    
+            this.boundsChanged = true; // sets to true if map bounds changed, to reveal button
+    
+          });
+
+        }
       }
+    
+      map.fitBounds(bounds);
     }
-
-    map.fitBounds(bounds);
     
   }
 

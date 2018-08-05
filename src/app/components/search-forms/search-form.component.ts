@@ -15,15 +15,15 @@ import { PlaceService }    from '../../services/place.service';
 import { LocationService } from '../../services/location.service';
 
 @Component({
-  selector: 'search-form-a',
-  templateUrl: './search-form-a.component.html',
+  selector: 'search-form',
+  templateUrl: './search-form.component.html',
   providers: [
     LocationService,
     PlaceService
   ]
 })
 
-export class SearchFormAComponent implements OnInit {
+export class SearchFormComponent implements OnInit {
 
   constructor(
     private placeService: PlaceService,

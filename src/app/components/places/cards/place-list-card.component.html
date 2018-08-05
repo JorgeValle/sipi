@@ -3,7 +3,7 @@
     <!-- <div class="col-4 col-sm-2">
       <img alt="Foto de {{place.content.name}}" class="card-img-left img-fluid" *ngIf="place.img" [src]="place.img.src">
     </div> -->
-    <div class="col-12 col-sm-8 col-md-12 col-lg-8">
+    <div class="col-12">
       <h2 class="card-title h4">
         <a routerLink="/lugar/{{place.system.id}}/{{place.content.slug}}">{{place.content.name}}</a>
       </h2>
@@ -21,7 +21,7 @@
         <a routerLink="/lugares" [queryParams]="{t: subcategory | urlize}">{{subcategory}}</a>,&nbsp;
       </span>
     </div>
-    <div class="col-12 col-sm-4 col-md-12 col-lg-4" *ngIf="place.address">
+    <div class="col-12" *ngIf="place.address">
       <!-- when not parent -->
       <address class="card-text" *ngIf="!place.organizational.isParent">
         {{place.address.number}} {{place.address.street}} <br>

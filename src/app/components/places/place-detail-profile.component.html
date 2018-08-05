@@ -40,19 +40,19 @@
 <div class="row">
 
   <!-- location -->
-  <div class="col-12 col-sm-5">
+  <div class="col-12 col-sm-12 col-md-5 mt-3">
     <place-location-card [place]="place"></place-location-card>
     <!-- <place-location-card-edit [place]="place"></place-location-card-edit> -->
   </div>
 
   <!-- opening hours -->
-  <div class="col-12 col-sm-4" *ngIf="place.hours">
+  <div class="col-12 col-sm-12 col-md-7 mt-3" *ngIf="place.hours">
     <place-hours-card [place]="place"></place-hours-card>
     <!-- <place-hours-card-edit [place]="place"></place-hours-card-edit> -->
   </div>
 
   <!-- branches -->
-  <div class="col-12 col-sm-7" *ngIf="branches">
+  <div class="col-12 col-sm-12 col-md-8 mt-3" *ngIf="branches">
     <place-branches-card [branches]="branches"></place-branches-card>
     <place-branches-card-edit [branches]="branches"></place-branches-card-edit>
   </div>

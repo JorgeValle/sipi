@@ -1,13 +1,15 @@
-<!-- html templates with angularized markup -->
-<section class="outer-container brand-light-blue">
-  <form class="container">
-    <div class="form-group row">
-      <label for="inputPassword" class="col-sm-2 col-form-label"><i class="material-icons">location_on</i>Ubicacion</label>
-      <div class="col-sm-10">
-        <select class="form-control">
-          <option *ngFor="let country of countries" value="">{{country.name}}</option>
-        </select>
+<nav class="row">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3" *ngFor="let country of countries">
+    <div class="card">
+      <a routerLink="/lugares" [queryParams]="{u: country.content.name | urlize}">
+        <img *ngIf="country.images" class="card-img-top" src="/assets/images/countries/{{country.images.featured.fileName}}" alt="Card image cap" />
+      </a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a routerLink="/lugares" [queryParams]="{u: country.content.name | urlize}">{{country.content.name}}</a>
+        </h4>
+        <p *ngIf="country.content.tagline" class="card-text">...{{country.content.tagline}}</p>
       </div>
     </div>
-  </form>
-</section>
+</div>
+</nav>

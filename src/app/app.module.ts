@@ -41,14 +41,15 @@ import { ForgotPasswordFormComponent }        from './components/forms/forgot-pa
 import { PaginationSizeFormComponent }        from './components/forms/pagination-size-form.component';
 import { ReviewPlaceFormComponent }           from './components/forms/review-place-form.component';
 import { RequestUserDeletionFormComponent }   from './components/forms/request-user-deletion-form.component';
-import { SearchFormAComponent }               from './components/forms/search-form-a.component';
-import { SearchFormBComponent }               from './components/forms/search-form-b.component';
 import { SignInFormComponent }                from './components/forms/sign-in-form.component';
 import { SignUpFormComponent }                from './components/forms/sign-up-form.component';
 import { SortPlacesFormComponent }            from './components/forms/sort-places-form.component';
 import { UpdateEmailSettingsFormComponent }   from './components/forms/update-email-settings-form.component';
 import { UpdatePrivacySettingsFormComponent } from './components/forms/update-privacy-settings-form.component';
 import { UploadUserPhotoFormComponent }       from './components/forms/upload-user-photo-form.component';
+
+// masthead
+import { MastheadComponent }  from './components/mastheads/masthead.component';
 
 // maps
 import { MultiMarkerMapComponent }    from './components/maps/multi-marker-map.component';
@@ -57,9 +58,6 @@ import { EditableMarkerMapComponent } from './components/maps/editable-marker-ma
 
 // menus
 import { BreadcrumbMenuComponent } from './components/menus/breadcrumb-menu.component';
-import { MainMenuAComponent }      from './components/menus/main-menu-a.component';
-import { MainMenuBComponent }      from './components/menus/main-menu-b.component';
-import { MainMenuAuthComponent }   from './components/menus/main-menu-auth.component';
 import { PaginationMenuComponent } from './components/menus/pagination-menu.component';
 
 // modals
@@ -85,8 +83,6 @@ import { PlaceFilterPipe } from './pipes/place-filter.pipe';
 import { PriceFilterPipe } from './pipes/price-filter.pipe';
 import { UrlizePipe }      from './pipes/urlize.pipe';
 
-// places
-
 // place cards
 import { PlaceListCardComponent }         from './components/places/cards/place-list-card.component';
 import { PlaceHoursCardComponent }        from './components/places/cards/place-hours-card.component';
@@ -110,8 +106,8 @@ import { ProgressBarComponent } from './components/progress-bars/progress-bar.co
 import { ReviewCardComponent } from './components/reviews/review-card.component';
 import { ReviewListComponent } from './components/reviews/review-list.component';
 
-// sitemap
-import { SitemapComponent } from './components/sitemap/sitemap.component';
+// search forms
+import { SearchFormComponent }               from './components/search-forms/search-form.component';
 
 // services
 import { AlertService }          from './services/alert.service';
@@ -261,8 +257,7 @@ const appRoutes: Routes = [
     PaginationSizeFormComponent,
     ReviewPlaceFormComponent,
     RequestUserDeletionFormComponent,
-    SearchFormAComponent,
-    SearchFormBComponent,
+    SearchFormComponent,
     SignInFormComponent,
     SignUpFormComponent,
     SortPlacesFormComponent,
@@ -270,14 +265,13 @@ const appRoutes: Routes = [
     UpdatePrivacySettingsFormComponent,
     UploadUserPhotoFormComponent,
     // footers
+    // masthead
+    MastheadComponent,
     // maps
     MultiMarkerMapComponent,
     SingleMarkerMapComponent,
     EditableMarkerMapComponent,
     // menus
-    MainMenuAComponent,
-    MainMenuAuthComponent,
-    MainMenuBComponent,
     PaginationMenuComponent,
     // modals
     FilterModalComponent,
@@ -325,8 +319,6 @@ const appRoutes: Routes = [
     UserDetailPlacesComponent,
     UserDetailProfileComponent,
     UserDetailSettingsComponent,
-    // sitemap
-    SitemapComponent
   ],
   // other modules whose exported classes are needed by component templates declared in this module
   imports: [
