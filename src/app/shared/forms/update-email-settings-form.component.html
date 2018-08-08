@@ -1,0 +1,41 @@
+<form [formGroup]="settings" (ngSubmit)="updateEmailSettings(settings)" novalidate>
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-legend col-sm-2">Sipi Semanal</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" formControlName="weekly" type="radio" value="option1">
+            Si, lo quiero recibir
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" formControlName="weekly" type="radio" value="option2">
+            No, no lo quiero recibir
+          </label>
+        </div>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <legend class="col-form-legend col-sm-2">Personalizado</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" formControlName="never" type="radio" value="option1">
+            Si, lo quiero recibir
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" formControlName="never" type="radio" value="option2">
+            No, no lo quiero recibir
+          </label>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Actualizar Preferencias de Correo</button>
+</form>

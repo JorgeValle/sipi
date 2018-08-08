@@ -1,0 +1,19 @@
+<form class="row" [formGroup]="search" (ngSubmit)="onSubmit(search)" novalidate>
+  <div class="col">
+    <div class="input-group">
+      <input class="form-control"
+             type="text"
+             placeholder="¿Que? Restaurantes, La Gastroteca"
+             formControlName="term" />
+      <input class="form-control"
+             type="text"
+             placeholder="¿Adonde? San Salvador, Panamá"
+             formControlName="location" />
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary rounded-0 rounded-right" routerLink="/lugares">
+          <i class="material-icons md-14">search</i>
+        </button>
+      </span>
+    </div>
+  </div>
+</form>
