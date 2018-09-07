@@ -1,0 +1,39 @@
+<div class="card">
+  <single-marker-map *ngIf="place.address.coordinates" class="card-img-top p-2" [place]="place"></single-marker-map>
+  <div class="card-body">
+    <!-- when not parent -->
+    <address class="card-text" *ngIf="place.organizational && !place.organizational.isParent">
+      {{place.address.number}}, {{place.address.street}}<br>
+      {{place.address.city}}, {{place.address.country}}
+    </address>
+    <!-- when parent -->
+    <address class="card-text" *ngIf="place.organizational && place.organizational.isParent">
+      Varias ubicaciones en {{place.address.country}}
+    </address>
+    <p class="card-text">
+      <span *ngIf="place.contact.phone">
+        <i class="material-icons align-top">phone</i>&nbsp;{{place.contact.phone}}<br>
+      </span>
+
+      <span *ngIf="place.contact.website">
+        <i class="material-icons align-top">computer</i>
+        <a href="{{place.contact.website}}">&nbsp;{{place.contact.website}}</a><br>
+      </span>
+
+      <span *ngIf="place.contact.email">
+        <i class="material-icons align-top">email</i>
+        <a href="mailto:{{place.contact.email}}">&nbsp;{{place.contact.email}}</a>
+      </span>
+
+    </p>
+  </div>
+  
+  
+ 
+  <div class="card-footer text-muted">
+    <small>
+      Actualizado hace {{place.date.modified | ago}}
+      <!-- <a class="card-link" (click)="toggleEdit()"><i class="material-icons md-18 align-top">create</i>&nbsp;Actualizar</a> -->
+    </small>
+  </div>
+</div>

@@ -1,17 +1,17 @@
 import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-import { PlaceDetailComponent }	from './components/places/place-detail.component';
-import { PlaceListComponent }  from './components/places/place-list.component';
-
-
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
-
+  {
+    path: 'lugar',
+    loadChildren: './places/place.module#PlaceModule'
+  }
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

@@ -1,0 +1,60 @@
+<div class="row mb-4">
+  <div class="col-8">
+    <h1 class="h2" *ngIf="place.organizational && place.organizational.isBranch">{{place.organizational.parent.name}}&nbsp;<small class="text-muted">{{place.content.name}}</small></h1>
+    <h1 class="h2" *ngIf="place.organizational && !place.organizational.isBranch">{{place.content.name}}</h1>
+    <span class="text-muted" *ngFor="let subcategory of place.category.subcats">
+      <a routerLink="/lugares" [queryParams]="{t: subcategory | urlize, u: place.address.country | urlize}">{{subcategory}}</a>,&nbsp;
+    </span>
+  </div><!-- /col -->
+  <div class="col-4">
+    <share-modal></share-modal>
+    <!-- <button class="btn btn-light" data-toggle="modal" data-target="#share-modal" type="button">
+      <i class="align-top material-icons md-16">favorite</i>
+    </button> -->
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col-12">
+    <blockquote>
+      <p>Este lugar es realmente excelente y nos encanta. Lorem ipsum dolor.</p>
+    </blockquote>
+  </div>
+</div> -->
+
+<!-- <div class="row mb-4">
+  <div class="col-9">
+    <img src="http://via.placeholder.com/1000x120" class="img-fluid">
+  </div>
+  <div class="col-1">
+    <img src="http://via.placeholder.com/120x120" class="img-thumbnail">
+  </div>
+  <div class="col-1">
+    <img src="http://via.placeholder.com/120x120" class="img-thumbnail">
+  </div>
+  <div class="col-1">
+    <img src="http://via.placeholder.com/120x120" class="img-thumbnail">
+  </div>
+</div> -->
+
+<div class="row">
+
+  <!-- location -->
+  <div class="col-12 col-sm-12 col-md-5 mt-3">
+    <place-location-card [place]="place"></place-location-card>
+    <!-- <place-location-card-edit [place]="place"></place-location-card-edit> -->
+  </div>
+
+  <!-- opening hours -->
+  <div class="col-12 col-sm-12 col-md-7 mt-3" *ngIf="place.hours">
+    <place-hours-card [place]="place"></place-hours-card>
+    <!-- <place-hours-card-edit [place]="place"></place-hours-card-edit> -->
+  </div>
+
+  <!-- branches -->
+  <div class="col-12 col-sm-12 col-md-8 mt-3" *ngIf="branches">
+    <place-branches-card [branches]="branches"></place-branches-card>
+    <place-branches-card-edit [branches]="branches"></place-branches-card-edit>
+  </div>
+
+</div>

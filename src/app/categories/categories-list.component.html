@@ -1,0 +1,15 @@
+<nav class="row">
+  <div class="col-12 mb-3" *ngFor="let category of categories">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title h5">
+          <a routerLink="/lugares" [queryParams]="{t: category.content.name}">{{category.content.name}}</a>
+        </h3>
+        <p class="card-text">{{category.content.summary}}</p>
+        <ul *ngFor="let subcategory of subcategories">
+          <li>{{subcategory.content.name}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
