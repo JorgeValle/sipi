@@ -124,7 +124,7 @@ import { SeoService }            from './services/seo.service';
 // third party
 import { NgxPaginationModule }  from 'ngx-pagination';
 import { OrderModule }          from 'ngx-order-pipe';
-import { NgAutoCompleteModule } from 'ng-auto-complete';
+// import { NgAutoCompleteModule } from 'ng-auto-complete';
 // import { Ng2CompleterModule }                     from 'ng2-completer';
 // import { Ng2AutoCompleteModule, Ng2AutoComplete } from 'ng2-auto-complete';
 
@@ -340,7 +340,7 @@ const appRoutes: Routes = [
     ),
     // third party
     NgxPaginationModule,
-    NgAutoCompleteModule,
+    // NgAutoCompleteModule,
     OrderModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
     // NguiAutoCompleteModule,
