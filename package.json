@@ -45,7 +45,7 @@
     "preboot": "^6.0.0",
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.4.0",
-    "ts-loader": "^4.5.0",
+    "ts-loader": "^8.0.14",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
