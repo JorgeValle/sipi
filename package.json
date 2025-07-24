@@ -35,7 +35,7 @@
     "angular4-files-upload": "^1.0.2",
     "auth0-js": "^9.10.0",
     "body-parser": "^1.18.3",
-    "compression": "^1.7.3",
+    "compression": "^1.8.1",
     "core-js": "^2.6.4",
     "express": "^4.16.4",
     "intersection-observer": "^0.5.1",
